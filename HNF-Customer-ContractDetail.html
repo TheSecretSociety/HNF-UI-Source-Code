@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/HNFStyle.css">
+
+</head>
+
+<body>
+
+  <!--===== TOPBAR =====-->
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <form class="form-inline my-2 my-xl-0 ">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link " href="#">Thông Báo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hnf-nav-link" href="#">Quản Trị Viên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link hnf-nav-link" href="#">Đăng Xuất</a>
+          </li>
+          <div class="dropdown-divider"></div>
+          <div id="sidebar-top-menu">
+            <ul class="navbar-nav">
+              <h6 class="dropdown-header">ĐỊNH TUYẾN</h6>
+              <li class="nav-item">
+                <a class="nav-link" href="HNF-Dashboard.html">Trang Chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="HNF-Customer.html">Khách Hàng</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sản Xuất</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Thống Kê</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nhân Viên</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Chăm Sóc Khách Hàng</a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </form>
+    </div>
+  </nav>
+  <!--===== end of TOPBAR =====-->
+
+  <div id="wrapper">
+
+    <!--===== SIDEBAR =====-->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="HNF-Dashboard.html">TRANG CHỦ</a></li>
+        <li class="sidebar-active"><a href="HNF-Customer.html">KHÁCH HÀNG</a></li>
+        <li><a href="#">SẢN XUẤT</a></li>
+        <li><a href="#">THỐNG KÊ</a></li>
+        <li><a href="#">CHAT</a></li>
+        <li><a href="#">NHÂN VIÊN</a></li>
+        <li><a href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+      </ul>
+    </div>
+    <!--===== end of [SIDERBAR] =====-->
+
+    <!--===== PAGE CONTENT =====-->
+    <div id="page-content-wrapper">
+      <div class="page-content">
+        <div class="container-fluid">
+
+          <!--===== DIVIDER =====-->
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
+              <div id="divider"></div>
+            </div>
+          </div>
+          <!--===== end of [DIVIDER] =====-->
+          <!--===== Component Rows =====-->
+          <!-- 1 -->
+          <div class = "row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+              <div class="card">
+                <div class="card-block">
+                  <h6 class="card-subtitle mb-1 text-muted">Mã Hợp Đồng</h6>
+                  <h4 class="card-title">HD02112016</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+              <div class="card">
+                <div class="card-block">
+                  <h6 class="card-subtitle mb-1 text-muted">Khách Hàng</h6>
+                  <h4 class="card-title">Nguyễn Thị Xuân Diệu</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+              <div class="card">
+                <div class="card-block">
+                  <h6 class="card-subtitle mb-1 text-muted">Ngày Tạo Hợp Đồng</h6>
+                  <h4 class="card-title">2/11/2016</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+              <div class="card">
+                <div class="card-block">
+                  <h6 class="card-subtitle mb-1 text-muted">Ngày Tạo Hợp Đồng</h6>
+                  <h4 class="card-title">Ngô Tấn Lộc</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class = "row">
+            <div class= "col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+              <div class="card form-input-margin">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                  </span>
+                  <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Thời Gian" readonly>
+                </div>
+              </div>
+            </div>
+            <div class= "col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xm-9">
+              <div class= "card form-input-margin">
+                <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                    <label class="sr-only" for="inlineFormInputGroup">date</label>
+                    <div class="input-group mb-2 mr-sm-0 mb-sm-0">
+                      <div class="input-group-addon">Ngày Tư Vấn</div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
+                    </div></div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4"><label class="sr-only" for="inlineFormInputGroup">date</label>
+                      <div class="input-group mb-2 mr-sm-0 mb-sm-0">
+                        <div class="input-group-addon">Ngày Hẹn Gặp</div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div></div>
+                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">  <label class="sr-only" for="inlineFormInputGroup">date</label>
+                        <div class="input-group mb-0 mr-sm-0 mb-sm-0">
+                          <div class="input-group-addon">Ghi Chú</div>
+                          <input type="text" class="form-control" id="inlineFormInputGroup" >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <!-- 3 -->
+          <div class = "row">
+                <div class= "col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+                  <div class="card form-input-margin">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </span>
+                      <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Thiết kế và gởi Market" readonly>
+                    </div>
+                  </div>
+                </div>
+                <div class= "col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xm-9">
+                  <div class= "card form-input-margin">
+                    <div class = "row">
+                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                        <div class="mb-2 mr-sm-2 mb-sm-0">
+                          <label class="custom-file">
+                            <input type="file" id="file" class="custom-file-input">
+                            <span class="custom-file-control"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Tên Hợp Đồng" readonly>
+                        </div>
+                      </div>
+                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                        <div class="input-group mb-0 mr-sm-2 mb-sm-0">
+                          <button type="button" class="btn btn-primary btn-block">Chi Tiết Thiết Kế</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <!-- 4 -->
+          <div class = "row">
+            <div class= "col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+              <div class="card form-input-margin">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                  </span>
+                  <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Báo Giá" readonly>
+                </div>
+              </div>
+            </div>
+            <div class= "col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xm-9">
+              <div class= "card form-input-margin">
+                <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                    <label class="sr-only" for="inlineFormInputGroup">date</label>
+                    <div class="input-group mb-2 mr-sm-0 mb-sm-0">
+                      <div class="input-group-addon">Ngày Tư Vấn</div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                    <label class="sr-only" for="inlineFormInputGroup">date</label>
+                      <div class="input-group mb-2 mr-sm-0 mb-sm-0">
+                        <div class="input-group-addon">Ngày Hẹn Gặp</div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                    <label class="sr-only" for="inlineFormInputGroup">date</label>
+                        <div class="input-group mb-0 mr-sm-0 mb-sm-0">
+                          <div class="input-group-addon">Ghi Chú</div>
+                          <input type="text" class="form-control" id="inlineFormInputGroup" >
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>

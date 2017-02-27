@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/HNFStyle.css">
+
+</head>
+
+<body>
+    <!--===== TOPBAR =====-->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline my-2 my-xl-0 ">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Thông Báo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hnf-nav-link" href="#">Quản Trị Viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hnf-nav-link" href="#">Đăng Xuất</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <div id="sidebar-top-menu">
+                        <ul class="navbar-nav">
+                            <h6 class="dropdown-header">ĐỊNH TUYẾN</h6>
+                            <li class="nav-item">
+                                <a class="nav-link" href="HNF-Dashboard.html">Trang Chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="HNF-Customer.html">Khách Hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sản Xuất</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Thống Kê</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nhân Viên</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chăm Sóc Khách Hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </form>
+        </div>
+    </nav>
+
+    <!--===== end of TOPBAR =====-->
+    <div id="wrapper">
+        <!--===== SIDEBAR =====-->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li><a href="HNF-Dashboard.html">TRANG CHỦ</a></li>
+                <li class="sidebar-active"><a href="HNF-Customer.html">KHÁCH HÀNG</a></li>
+                <li><a href="#">SẢN XUẤT</a></li>
+                <li><a href="#">THỐNG KÊ</a></li>
+                <li><a href="#">CHAT</a></li>
+                <li><a href="#">NHÂN VIÊN</a></li>
+                <li><a href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+            </ul>
+        </div>
+        <!--===== end of [SIDERBAR] =====-->
+        <!--===== PAGE CONTENT =====-->
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!--===== DIVIDER =====-->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                            <div id="divider"></div>
+                        </div>
+                    </div>
+                    <!--===== end of [DIVIDER] =====-->
+
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xm-8">
+                            <div class="form-input-background">
+                                <h3>THÔNG TIN KHÁCH HÀNG</h3>
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xm-6">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Họ Tên</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Số Điện Thoại</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Thông Tin Công Ty</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Ngành Nghề</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Địa Chỉ</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleSelect1">Tình Trạng Tư Vấn</label>
+                                                <select class="form-control" id="exampleSelect1">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xm-6">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="exampleTextarea">Quan tâm về Dịch Vụ / Sản Phẩm gì?</label>
+                                                <textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Loại Áo Đã Làm</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Loại Vải</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Giá Thành</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Nhận Xét</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Công Ty Đã Thực Hiện</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleTextarea">Ghi Chú</label>
+                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xm-4">
+                            <div class="form-input-background">
+                                <h3>THÔNG TIN SẢN PHẨM</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Loại Áo</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Loại Vải</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Mục Đích Sử Dụng</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xm-6">
+                                            <div class="form-group">
+                                                <label for="exampleSelect1">Đã Có Thiết
+                                                  Kế Chưa ?</label>
+                                                <select class="form-control" id="exampleSelect1">
+                                                    <option>Rồi</option>
+                                                    <option>Chưa</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xm-6">
+                                            <div class="form-group">
+                                                <label for="exampleSelect1">Màu Sắc</label>
+                                                <select class="form-control" id="exampleSelect1">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">In / Thểu ?</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xm-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Số Lượng</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xm-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Tầm Giá</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleTextarea">Ghi Chú</label>
+                                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                    </div>
+
+                                </form>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Lưu Thông Tin</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                            <div id="divider"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                            <div class="form-input-background">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+
+                                    <a href="HNF-Customer-ContractDetail.html"><button type="button" class="btn btn-success">Thêm Giao Dịch</button></a>
+                                    <button type="button" class="btn btn-danger">Xoá Giao Dịch</button>
+                                    <button type="button" class="btn btn-warning">Sửa Nhanh</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
