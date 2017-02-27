@@ -28,7 +28,7 @@
             </ul>
             <form class="form-inline my-2 my-xl-0 ">
                 <ul class="navbar-nav">
-                    
+
                     <li class="nav-item">
                         <a class="nav-link " href="#">Thông Báo</a>
                     </li>
@@ -88,58 +88,75 @@
         <div id="page-content-wrapper">
             <div class="page-content">
                 <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                            <div id="divider"></div>
+                        </div>
+                    </div><!--===== DIVIDER =====-->
+
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+                          <div class="card form-input-margin">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-block btn-success">Thêm</button>
+                                    <button type="button" class="btn bnt-block btn-warning">Sửa Nhanh</button>
+                                    <button type="button" class="btn btn-block btn-danger">Xoá</button>
+                                </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xm-9">
+                          <div class="card form-input-margin">
+                            <div class="row">
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xm-2">
+                                      <div class="dropdown ">
+                                          <button class="btn btn-block btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tháng
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                              <a class="dropdown-item" href="#">Tháng 1</a>
+                                              <a class="dropdown-item" href="#">Tháng 2</a>
+                                              <a class="dropdown-item" href="#">Tháng 3</a>
+                                              <a class="dropdown-item" href="#">Tháng 4</a>
+                                              <a class="dropdown-item" href="#">Tháng 5</a>
+                                              <a class="dropdown-item" href="#">Tháng 6</a>
+                                              <a class="dropdown-item" href="#">Tháng 7</a>
+                                              <a class="dropdown-item" href="#">Tháng 8</a>
+                                              <a class="dropdown-item" href="#">Tháng 9</a>
+                                              <a class="dropdown-item" href="#">Tháng 10</a>
+                                              <a class="dropdown-item" href="#">Tháng 11</a>
+                                              <a class="dropdown-item" href="#">Tháng 12</a>
+                                          </div>
+
+                                      </div>
+
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+                                    <input id="HNF-input" type="text" name="FirstName" placeholder="Tên">
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xm-2">
+                                    <input id="HNF-input" type="text" name="FirstName" placeholder="Số Điện Thoại">
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3">
+                                    <input id="HNF-input" type="text" name="FirstName" placeholder="Email">
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xm-2">
+                                  <button type="button" class="btn btn-block btn-info">Tìm Kiếm</button>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
                     <!--===== DIVIDER =====-->
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
                             <div id="divider"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
-                            <div id="customer-function-bar">
-                                <div class="btn-group btn-group-md" role="group" aria-label="...">
-                                    <button type="button" class="btn btn-success">Thêm</button>
-                                    <button type="button" class="btn btn-warning">Sửa Nhanh</button>
-                                    <button type="button" class="btn btn-danger">Xoá</button>
-
-                                </div>
-                                <div class="btn-group btn-group-md" role="group" aria-label="...">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Tháng
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Tháng 1</a>
-                                            <a class="dropdown-item" href="#">Tháng 2</a>
-                                            <a class="dropdown-item" href="#">Tháng 3</a>
-                                            <a class="dropdown-item" href="#">Tháng 4</a>
-                                            <a class="dropdown-item" href="#">Tháng 5</a>
-                                            <a class="dropdown-item" href="#">Tháng 6</a>
-                                            <a class="dropdown-item" href="#">Tháng 7</a>
-                                            <a class="dropdown-item" href="#">Tháng 8</a>
-                                            <a class="dropdown-item" href="#">Tháng 9</a>
-                                            <a class="dropdown-item" href="#">Tháng 10</a>
-                                            <a class="dropdown-item" href="#">Tháng 11</a>
-                                            <a class="dropdown-item" href="#">Tháng 12</a>
-                                        </div>
-                                        <input id="HNF-input" type="text" name="FirstName" placeholder="Tên">
-                                        <input id="HNF-input" type="text" name="FirstName" placeholder="Số Điện Thoại">
-                                        <input id="HNF-input" type="text" name="FirstName" placeholder="Email">
-                                        <button type="button" class="btn btn-info">Tìm Kiếm</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
-                            <div id="divider"></div>
-                        </div>
-                    </div>
+                    <!--===== DIVIDER =====-->
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12">
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center ">
+                                <ul class="pagination pagination-sm justify-content-center ">
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
@@ -389,7 +406,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!--===== end of [DIVIDER] =====-->
     </div>
