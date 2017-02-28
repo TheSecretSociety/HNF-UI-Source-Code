@@ -115,17 +115,18 @@ ul.navbar-nav li a {
   justify-content: center;
   align-items: center;
   display: flex;
+  background-color: white;
 }
 .login-form{
   background: #ffc18c; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffc18c 0%, #efad51 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffc18c 0%,#efad51 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffc18c 0%,#efad51 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(90deg, #fc6076 0%, #ff9a44 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(90deg, #fc6076 0%,#ff9a44 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(90deg, #fc6076 0%,#ff9a44 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   width:500px;
   height: 300px;
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 50px;
-  box-shadow: 0 14px 30px rgba(239,173,81,0.25), 0 10px 10px rgba(239,173,81,0.22);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.09);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .login-form-title{
