@@ -138,8 +138,6 @@ ul.navbar-nav li a {
   border-bottom: 1px solid white;
 
 }
-
-
 ::-webkit-input-placeholder { /* Chrome */
   color: rgb(219, 219, 219);
 }
@@ -150,7 +148,13 @@ ul.navbar-nav li a {
   color: rgb(219, 219, 219);
   opacity: 1;
 }
-
+.hnf-bg-production-bar{
+  background-color:rgb(255, 255, 255);
+}
+.hnf-progress-bg{
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid white;
+}
 .hnf-button-control{
   margin: 30px auto;
   width: 50%;
