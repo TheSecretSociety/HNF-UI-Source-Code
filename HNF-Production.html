@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HNF-Production</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/HNFStyle.css">
+
+</head>
+
+<body>
+    <!--===== TOPBAR =====-->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline my-2 my-xl-0 ">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Thông Báo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hnf-nav-link" href="#">Quản Trị Viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hnf-nav-link" href="#">Đăng Xuất</a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <div id="sidebar-top-menu">
+                        <ul class="navbar-nav">
+                            <h6 class="dropdown-header">ĐỊNH TUYẾN</h6>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./HNF-Dashboard.html">Trang Chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./HNF-Customer.html">Khách Hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./HNF-Production.html">Sản Xuất</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Thống Kê</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nhân Viên</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chăm Sóc Khách Hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </form>
+        </div>
+    </nav>
+
+    <!--===== end of TOPBAR =====-->
+    <div id="wrapper">
+        <!--===== SIDEBAR =====-->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li><a href="./HNF-Dashboard.html">TRANG CHỦ</a></li>
+                <li><a href="./HNF-Customer.html">KHÁCH HÀNG</a></li>
+                <li class="sidebar-active"><a href="./HNF-Production.html">SẢN XUẤT</a></li>
+                <li><a href="#">THỐNG KÊ</a></li>
+                <li><a href="#">CHAT</a></li>
+                <li><a href="#">NHÂN VIÊN</a></li>
+                <li><a href="#">CHĂM SÓC KHÁCH HÀNG</a></li>
+            </ul>
+        </div>
+        <!--===== end of [SIDERBAR] =====-->
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                  <br>
+                  <div class="card form-input-margin">
+                    <!-- Function Bar -->
+                    <div class="row">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                          <!-- Search Bar & Search Button -->
+                          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                              <!-- Search Bar -->
+                              <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="Search for...">
+                                </div>
+                              </div>
+                              <!-- Search Button -->
+                              <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <button type="button" role="button" name="button" class="btn btn-warning w-100">Tìm Kiếm</button>
+                                </div>
+                            </div>
+                          </div>
+                          <!-- Filters -->
+                          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                              <!-- Filter Tiến Độ -->
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="dropdown">
+                                  <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tiến Độ
+                                  </button>
+                                  <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Filter Tình Trạng -->
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="dropdown">
+                                  <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tình Trạng
+                                  </button>
+                                  <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Cắt Vải</a>
+                                    <a class="dropdown-item" href="#">In Thêu</a>
+                                    <a class="dropdown-item" href="#">May</a>
+                                    <a class="dropdown-item" href="#">Ủi</a>
+                                    <a class="dropdown-item" href="#">Đóng Gói</a>
+                                    <a class="dropdown-item" href="#">Giao Hàng</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Filter Chuyển Tiền -->
+                              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="dropdown">
+                                  <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Chuyển Tiền
+                                  </button>
+                                  <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">50% Số Tiền</a>
+                                    <a class="dropdown-item" href="#">100% Số Tiền</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!--===== end of [DIVIDER] =====-->
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>HNF-Customer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Latest compiled and minified CSS -->
@@ -43,13 +43,13 @@
                         <ul class="navbar-nav">
                             <h6 class="dropdown-header">ĐỊNH TUYẾN</h6>
                             <li class="nav-item">
-                                <a class="nav-link" href="HNF-Dashboard.html">Trang Chủ</a>
+                                <a class="nav-link" href="./HNF-Dashboard.html">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="HNF-Customer.html">Khách Hàng</a>
+                                <a class="nav-link" href="./HNF-Customer.html">Khách Hàng</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Sản Xuất</a>
+                                <a class="nav-link" href="./HNF-Production.html">Sản Xuất</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Thống Kê</a>
@@ -75,9 +75,9 @@
         <!--===== SIDEBAR =====-->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li><a href="HNF-Dashboard.html">TRANG CHỦ</a></li>
-                <li class="sidebar-active"><a href="HNF-Customer.html"><span class="glyphicon glyphicon-home"></span>KHÁCH HÀNG</a></li>
-                <li><a href="#">SẢN XUẤT</a></li>
+                <li><a href="./HNF-Dashboard.html">TRANG CHỦ</a></li>
+                <li class="sidebar-active"><a href="./HNF-Customer.html">KHÁCH HÀNG</a></li>
+                <li><a href="./HNF-Production.html">SẢN XUẤT</a></li>
                 <li><a href="#">THỐNG KÊ</a></li>
                 <li><a href="#">CHAT</a></li>
                 <li><a href="#">NHÂN VIÊN</a></li>
@@ -88,22 +88,20 @@
         <div id="page-content-wrapper">
             <div class="page-content">
                 <div class="container-fluid">
-
+                    <br>
+                    <!-- Function Bar -->
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div id="divider"></div>
-                        </div>
-                    </div><!--===== DIVIDER =====-->
-                    <div class="row">
+                      <!-- Function Buttons -->
                         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="card form-input-margin">
-                                <div class="btn-group" role="group" aria-label="...">
-                                    <button type="button" class="btn btn-block btn-success">Thêm</button>
-                                    <button type="button" class="btn bnt-block btn-warning">Sửa Nhanh</button>
-                                    <button type="button" class="btn btn-block btn-danger">Xoá</button>
+                                <div class="btn-group w-100" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success w-100">Thêm</button>
+                                    <button type="button" class="btn btn-warning w-100">Sửa Nhanh</button>
+                                    <button type="button" class="btn btn-danger w-100">Xoá</button>
                                 </div>
                           </div>
                         </div>
+                        <!-- Filter Bar -->
                         <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="card form-input-margin">
                             <div class="row">
@@ -147,31 +145,26 @@
 
                         </div>
                     </div>
-                    <!--===== DIVIDER =====-->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col--12">
-                            <div id="divider"></div>
-                        </div>
-                    </div>
-                    <!--===== DIVIDER =====-->
+                    <br>
+                    <!-- Pagination -->
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <nav aria-label="Page navigation example">
-                                <ul class="pagination pagination-sm justify-content-center ">
+                                <ul class="pagination justify-content-center w-100">
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">Ngô Tấn Lộc</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Nguyễn Tấn Hưng</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Nguyễn Lê Anh Minh</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Nguyễn Đức Thuận</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Lê Hoàng Nguyễn</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Diệp Phúc Bảo Huy</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Lê Thị Phú Thạnh</a></li>
-                                    <li class="page-item">
+                                    <li class="page-item "><a class="page-link" href="#">Tấn Lộc</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">Tấn Hưng</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">Anh Minh</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">Đức Thuận</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">Hoàng Nguyễn</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">Bảo Huy</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">Phú Thạnh</a></li>
+                                    <li class="page-item ">
                                         <a class="page-link" href="#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
@@ -181,8 +174,10 @@
                             </nav>
                         </div>
                     </div>
+                    <br>
+                    <!-- Table -->
                     <div class="row">
-                        <div class="col-xl-12">
+                        <div class="col-12">
                             <table class="table table-sm table-hover">
                                 <thead class="thead">
                                     <tr>
