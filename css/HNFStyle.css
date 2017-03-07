@@ -81,20 +81,24 @@ a:link {
 .sidebar-nav li a {
     color: white;
     padding: 15px;
-    display: block;
-    font-size: 0.8em;
+    display: flex;
+    font-size: 0.7em;
     text-decoration: none;
+    align-items: center;
+
 }
 .sidebar-nav li a:hover {
     color: orange;
-    background-color: #0e0f14;
+    background-color: #343434;
 }
-li.sidebar-active a {
-    background-color: #0e0f14;
-    color: orange;
-    padding-left: 10px;
+.sidebar-nav li.sidebar-active a {
+    background-color: #ff922e;
+    color: white;
 }
-ul.navbar-nav li a {
+.material-icons{
+  padding-right: 10px;
+}
+.sidebar-nav ul.navbar-nav li a {
     color: black;
 }
 .form-input-background {
@@ -202,12 +206,25 @@ ul.navbar-nav li a {
     transition: 0.5s;
     box-shadow: 0 14px 28px rgba(255, 255, 255, 0.3), 0 10px 10px rgba(255, 255, 255, 0.2);
 }
-
 .hnf-button-group{
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 @media (max-width:767px) {
     #wrapper {
         padding-left: 0;
