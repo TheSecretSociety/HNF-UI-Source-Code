@@ -221,7 +221,21 @@ a:link {
   display: flex;
   justify-content: center;
 }
-
+.hnf-search-button{
+  display: flex;
+  align-items: center;
+}
+.hnf-input-group-addon{
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+}
+.hnf-input-group-addon i{
+  padding: 0;
+  padding-right: -10px;
+  margin: 0;
+}
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
