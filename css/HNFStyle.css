@@ -175,17 +175,21 @@ a:link {
 }
 /* Dashboard cards property*/
 .hnf-card-info-number {
-    font-size: 3em;
+
+    font-size: 3.5rem;
     color: white;
 }
 .hnf-card-info-title{
   color: white;
+  font-size: 1rem;
   display: flex;
   align-items: center;
-
   justify-content: center;
 }
-
+.hnf-navtab-font{
+  text-align: center;
+  font-size: 0.9rem;
+}
 .hnf-bg-production-bar {
     background-color: rgb(255, 255, 255);
 }
