@@ -44,7 +44,6 @@ a:link {
     overflow-y: auto;
     z-index: 1000;
 }
-
 #HNF-input {
     height: 38px;
     border: 1px solid lightgray;
@@ -67,6 +66,7 @@ a:link {
     margin-bottom: 0;
     list-style: none;
 }
+
 /* Sidebar property*/
 .sidebar-nav {
     position: absolute;
@@ -182,7 +182,7 @@ a:link {
   color: white;
   display: flex;
   align-items: center;
-  
+
   justify-content: center;
 }
 
