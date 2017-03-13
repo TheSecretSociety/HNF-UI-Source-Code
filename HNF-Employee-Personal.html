@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>HNF-Chat</title>
+    <title>HNF-Employees-New Employee</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,7 @@
                         <a class="nav-link"href="#"><i class="material-icons">notifications</i>Thông Báo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hnf-nav-link" href="./HNF-Employee-Personal.html"><i class="material-icons">account_circle</i>Quản Trị Viên</a>
+                        <a class="nav-link hnf-nav-link" href="#"><i class="material-icons">account_circle</i>Quản Trị Viên</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hnf-nav-link " href="./HNF-Login.html"><i class="material-icons ">exit_to_app</i>Đăng Xuất</a>
@@ -73,9 +73,9 @@
                 <li><a href="./HNF-Dashboard.html"><i class="material-icons md-18">dashboard</i>TRANG CHỦ</a></li>
                 <li><a href="./HNF-Customer.html"><i class="material-icons md-18">perm_contact_calendar</i>KHÁCH HÀNG</a></li>
                 <li><a href="./HNF-Production.html"><i class="material-icons md-18">settings_applications</i>SẢN XUẤT</a></li>
-                <li ><a href="./HNF-Statistic.html"><i class="material-icons md-18">pie_chart</i>THỐNG KÊ</a></li>
-                <li class="sidebar-active"><a href="./HNF-Chat.html"><i class="material-icons md-18">chat</i>CHAT</a></li>
-                <li ><a href="./HNF-Employee.html"><i class="material-icons md-18">supervisor_account</i>NHÂN VIÊN</a></li>
+                <li><a href="./HNF-Statistic.html"><i class="material-icons md-18">pie_chart</i>THỐNG KÊ</a></li>
+                <li><a href="./HNF-Chat.html"><i class="material-icons md-18">chat</i>CHAT</a></li>
+                <li class="sidebar-active"><a href="./HNF-Employee.html"><i class="material-icons md-18">supervisor_account</i>NHÂN VIÊN</a></li>
                 <li><a href="./HNF-CustomerCare.html"><i class="material-icons md-18">child_care</i>CHĂM SÓC KHÁCH HÀNG</a></li>
             </ul>
         </div>
@@ -83,14 +83,81 @@
         <div id="page-content-wrapper">
             <div class="page-content">
                 <div class="container-fluid">
+                  <br>
+                  <div class="row">
+                    <div class="col-xl-12">
+                      <div class="card form-input-margin">
+                        <div class="row">
+                          <!-- cột trái  -->
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-sx-4">
+                                <h5>Thông Tin Nhân Viên</h5>
+                                <br>
+                                <div class="col-xl-12">
+                                  <div class="avatarwrapper">
+                                    <div class="avatar">
+                                      <img src="./image/avatar2.jpg" alt="..." class="img-fluid rounded-circle center-cropped mx-auto d-block ">
+                                    </div>
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="col-xl-12">
+                                  <div class="avatarbutton">
+                                    <button type="button" name="button" class="btn btn-primary">Đổi Ảnh Đại Diện</button>
+                                  </div>
+                                </div>
+                          </div>
+                          <!-- cột phải -->
+                          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-sx-8">
+                            <div class="row">
+                               <div class="col-xl-6">
+                                 <!-- Họ Tên -->
+                                 <div class="form-group">
+                                     <label for="InputName">Họ Tên</label>
+                                     <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="">
+                                 </div>
+                                 <!-- SDT -->
+                                 <div class="form-group">
 
+                                     <label for="InputPhone">Số Điện Thoại</label>
+                                     <input type="text" class="form-control" id="InputPhone" aria-describedby="emailHelp" placeholder="">
+                                 </div>
+                                 <!-- Email -->
+                                 <div class="form-group">
+                                     <label for="InputEmail">Email</label>
+                                     <input type="text" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="">
+                                 </div>                               
+                               </div>
+                               <div class="col-xl-6">
+                                 <div class="form-group">
+                                     <label for="InputID">Tài Khoản</label>
+                                     <input type="text" class="form-control" id="InputID" aria-describedby="emailHelp" placeholder="">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="InputPassword">Mật Khẩu</label>
+                                     <input type="password" class="form-control" id="InputPassword" aria-describedby="emailHelp" placeholder="">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="InputPasswordConfirm">Nhập Lại Mật Khẩu</label>
+                                     <input type="password" class="form-control" id="InputPasswordConfirm" aria-describedby="emailHelp" placeholder="">
+                                 </div>
+                                 <div class="form-group">
+                                   <br>
+                                   <div class="btn-group w-100" role="group">
+                                     <a href="#" class="btn btn-success w-100">Lưu</a>
+                                     <a href="#" class="btn btn-danger w-100">Huỷ</a>
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
         <!--===== end of [DIVIDER] =====-->
-    </div>
-    </div>
-    </div>
     </div>
 </body>
 
