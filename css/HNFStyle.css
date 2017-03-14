@@ -22,7 +22,6 @@ a:visited {
 a:link {
     text-decoration: none;
 }
-
 #wrapper {
     padding-left: 200px;
     padding-top: 55px;
@@ -85,7 +84,6 @@ a:link {
   height: 100%;
   align-items: center;
 }
-
 /* Sidebar property*/
 .sidebar-nav {
     position: absolute;
