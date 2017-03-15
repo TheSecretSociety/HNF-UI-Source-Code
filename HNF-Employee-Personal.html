@@ -5,13 +5,14 @@
     <title>HNF-Employees-New Employee</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="css/HNF-jquery.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="css/HNFStyle.css">
 
@@ -90,9 +91,10 @@
                       <div class="card form-input-margin">
                         <div class="row">
                           <!-- cột trái  -->
-                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-sx-4">
+                          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-sx-12">
                                 <h5>Thông Tin Nhân Viên</h5>
                                 <br>
+                                <!-- avatar -->
                                 <div class="col-xl-12">
                                   <div class="avatarwrapper">
                                     <div class="avatar">
@@ -101,6 +103,7 @@
                                   </div>
                                 </div>
                                 <br>
+                                <!-- nút đổi avatar -->
                                 <div class="col-xl-12">
                                   <div class="avatarbutton">
                                     <button type="button" name="button" class="btn btn-primary">Đổi Ảnh Đại Diện</button>
@@ -108,7 +111,7 @@
                                 </div>
                           </div>
                           <!-- cột phải -->
-                          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-sx-8">
+                          <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-sx-12">
                             <div class="row">
                                <div class="col-xl-6">
                                  <!-- Họ Tên -->
@@ -118,7 +121,6 @@
                                  </div>
                                  <!-- SDT -->
                                  <div class="form-group">
-
                                      <label for="InputPhone">Số Điện Thoại</label>
                                      <input type="text" class="form-control" id="InputPhone" aria-describedby="emailHelp" placeholder="">
                                  </div>
@@ -129,27 +131,34 @@
                                  </div>
                                </div>
                                <div class="col-xl-6">
+                                 <!-- Tài Khoản -->
                                  <div class="form-group">
                                      <label for="InputID">Tài Khoản</label>
                                      <input type="text" class="form-control" id="InputID" aria-describedby="emailHelp" placeholder="">
                                  </div>
+                                 <!-- Mật Khẩu -->
                                  <div class="form-group">
                                      <label for="InputPassword">Mật Khẩu</label>
                                      <input type="password" class="form-control" id="InputPassword" aria-describedby="emailHelp" placeholder="">
                                  </div>
+                                 <!-- Nhập Lại Mật Khẩu -->
                                  <div class="form-group">
                                      <label for="InputPasswordConfirm">Nhập Lại Mật Khẩu</label>
                                      <input type="password" class="form-control" id="InputPasswordConfirm" aria-describedby="emailHelp" placeholder="">
                                  </div>
-                                 <div class="form-group">
-                                   <br>
-                                   <div class="btn-group w-100" role="group">
-                                     <a href="#" class="btn btn-success w-100">Lưu</a>
-                                     <a href="#" class="btn btn-danger w-100">Huỷ</a>
-                                   </div>
-                                 </div>
+
                                </div>
-                             </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xl-12">
+                                <div class="form-group">
+                                  <br>
+                                  <div class="btn-group w-100" role="group">
+                                    <a href="#" class="btn btn-primary w-100">Cập nhật Thông Tin</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

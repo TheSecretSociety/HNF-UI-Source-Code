@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="css/HNF-jquery.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/HNFStyle.css">
 
@@ -84,7 +85,30 @@
             <div class="page-content">
                 <div class="container-fluid">
                     <br>
-                    <!-- Bảng Khách Hàng (thông tin được lấy từ trang khách hàng, tren này chỉ thể hiện lại) -->
+                    <!-- Thanh chức năng -->
+                    <div class="row">
+                      <div class="col-xl-12">
+                        <div class="card form-input-margin">
+                          <!-- Thanh tìm kiếm -->
+                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2 mb-xl-0">
+                            <div class="row">
+                              <!-- Search Bar -->
+                              <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2 mb-xl-0">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="Tìm Kiếm...">
+                                </div>
+                              </div>
+                              <!-- Search Button -->
+                              <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <button type="button" class="btn btn-block btn-warning search-button">Tìm Kiếm<i class="material-icons md-18">search</i></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <!-- Bảng Khách Hàng (thông tin được lấy từ trang khách hàng, trên này chỉ thể hiện lại) -->
                     <div class="row">
                         <div class="col-12">
                             <table class="table table-sm table-hover">
@@ -115,7 +139,7 @@
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>@mdo</td>
-                                        <td><a href="HNF-Customer-Detail.html"><button type="button" class="btn btn-sm btn-info">i</button></a></td>
+                                        <td><a href="./HNF-CustomerCare-Detail.html"><button type="button" class="btn btn-sm btn-info">i</button></a></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">

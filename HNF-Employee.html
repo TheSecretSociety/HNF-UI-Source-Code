@@ -5,13 +5,14 @@
     <title>HNF-Employees</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="css/HNF-jquery.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="css/HNFStyle.css">
 
@@ -87,7 +88,6 @@
                     <br>
                     <!-- Thanh Chức Năng -->
                     <div class="row">
-
                         <!-- Nút Chức Năng -->
                         <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="card form-input-margin">
@@ -109,7 +109,7 @@
                                     <div class="dropdown">
                                       <!-- Nút dropdown -->
                                       <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Tình Trạng
+                                        Phân Quyền
                                       </button>
                                       <!-- các nội dung trong dropdown -->
                                       <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
@@ -121,15 +121,19 @@
                                   </div>
                                 </div>
                                 <!-- trường tìm Kiếm và nút tìm kiếm -->
-                                <div class="col-xl-9 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                  <div class="input-group">
-                                    <!-- trường tìm kiếm -->
-                                     <input type="text" class="form-control" placeholder="Search for...">
-                                     <!-- nút tìm kiếm <span> là style ép button nằm cuối input-->
-                                     <span class="input-group-btn">
-                                       <button class="btn btn-secondary" type="button"><i class="material-icons md-24">search</i></button>
-                                     </span>
-                                   </div>
+                                <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2 mb-xl-0">
+                                  <div class="row">
+                                    <!-- Search Bar -->
+                                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2 mb-xl-0">
+                                      <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Tìm Kiếm...">
+                                      </div>
+                                    </div>
+                                    <!-- Search Button -->
+                                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <button type="button" class="btn btn-block btn-warning search-button">Tìm Kiếm<i class="material-icons md-18">search</i></button>
+                                    </div>
+                                  </div>
                                 </div>
                             </div>
                           </div>
@@ -142,7 +146,7 @@
                           <!-- Bản Khách Hàng -->
                             <table class="table table-sm table-hover">
                                 <thead class="thead">
-                                    <tr>
+                                    <tr id="employee-table-row">
                                         <th>
                                             <input type="checkbox" aria-label="Checkbox for following text input">
                                         </th>
@@ -193,9 +197,6 @@
             </div>
         </div>
         <!--===== end of [DIVIDER] =====-->
-    </div>
-    </div>
-    </div>
     </div>
 </body>
 
