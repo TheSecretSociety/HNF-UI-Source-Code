@@ -1,17 +1,13 @@
 
   $(document).ready(function ClearButton(){
-      // script for HNF-Customer-ContractDetail-DetailDesign
-      // Cancle Buttons
+      // script for Cancle Buttons
       $("#Cancle-Button").click(function(){
         $("input, textarea, select").val('').prop('checked', false);
-        $("option").prop("selected", function(){
-          return this.defaultSelected;
-        });
+        $("option").prop("selected", function(){return this.defaultSelected;});
       });
-
   });
   //script for Production line Bar animation
-  $(document).ready(function(){
+  $(document).ready(function ProductionProgressBar(){
     $('#check1').change(function () {
         // this will contain a reference to the checkbox
         if (this.checked) {
@@ -111,3 +107,12 @@
       });
   });
   // script for datepicker
+  $(document).ready(function(){
+    $('#sandbox-container .input-group.date').datepicker({
+    weekStart: 1,
+    orientation: "bottom auto",
+    autoclose: true,
+    format: "dd/mm/yyyy",
+    language: "vi"
+});
+  });

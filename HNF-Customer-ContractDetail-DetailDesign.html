@@ -6,15 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="css/HNF-jquery.js"></script>
+    <!-- Datetime Picker CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.vi.min.js" integrity="sha256-TnMvef6AxT9fg6mNrTsZCgPDkU4g5EyB+tu66oLAI4U=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+    <!-- Google Icon CDN -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <!-- custom CSS & Jquery modify URL -->
     <link rel="stylesheet" href="css/HNFStyle.css">
-
+    <script src="css/HNF-jquery.js"></script>
+    
 </head>
 <body>
   <br>
@@ -225,49 +231,36 @@
             <h3 class="card-title">In</h3>
             <div class="row">
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <label class="sr-only" for="inlineFormInputGroup">date</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Ngày Thực Hiện (dd/mm/yyyy)">
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
+                <!-- datetime -->
+                <div id="sandbox-container">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" placeholder="Ngày Thực Hiện(dd-mm-yyyy)"></span>
+                    <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
                   </div>
                 </div>
                 <br>
+                <!--  -->
                 <div class="input-group">
                   <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Đơn vị thực hiện">
                 </div>
                 <br>
+                <!--  -->
                 <div class="input-group">
                   <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Vị Trí">
                 </div>
                 <br>
+                <!--  -->
                 <div class="input-group">
                   <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Kích thức chi tiết">
                 </div>
                 <br>
               </div>
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <label class="sr-only" for="inlineFormInputGroup">date</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Ngày Hoàn Thành (dd/mm/yyyy)">
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div role="separator" class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
+                <!-- Datetime -->
+                <div id="sandbox-container">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" placeholder="Ngày Hoàn Thành (dd-mm-yyyy)"></span>
+                    <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
                   </div>
                 </div>
                 <br>
@@ -287,19 +280,11 @@
               <div class="row">
                 <!-- cot trái -->
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <label class="sr-only" for="inlineFormInputGroup">date</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Ngày Thực Hiện (dd/mm/yyyy)">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
+                  <!-- datetime -->
+                  <div id="sandbox-container">
+                    <div class="input-group date">
+                      <input type="text" class="form-control" placeholder="Ngày Thực Hiện(dd-mm-yyyy)"></span>
+                      <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
                     </div>
                   </div>
                   <br>
@@ -318,19 +303,11 @@
                 </div>
                 <!-- cot phải -->
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <label class="sr-only" for="inlineFormInputGroup">date</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Ngày Hoàn Thành (dd/mm/yyyy)">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
+                  <!-- datetime -->
+                  <div id="sandbox-container">
+                    <div class="input-group date">
+                      <input type="text" class="form-control" placeholder="Ngày Hoàn Thành(dd-mm-yyyy)"></span>
+                      <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
                     </div>
                   </div>
                   <br>
@@ -411,7 +388,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <br>

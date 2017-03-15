@@ -7,15 +7,20 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Latest compiled and minified CSS -->
+  <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="css/HNF-jquery.js"></script>
+  <!-- Datetime Picker CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.vi.min.js" integrity="sha256-TnMvef6AxT9fg6mNrTsZCgPDkU4g5EyB+tu66oLAI4U=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+  <!-- Google Icon CDN -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <!-- custom CSS & Jquery modify URL -->
   <link rel="stylesheet" href="css/HNFStyle.css">
-
+  <script src="css/HNF-jquery.js"></script>
 </head>
 
 <body>
@@ -91,6 +96,7 @@
           <br>
           <!-- 1 Panels -->
           <div class = "row">
+            <!-- Panel 1 -->
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card">
                 <div class="card-block">
@@ -99,6 +105,7 @@
                 </div>
               </div>
             </div>
+            <!-- Panel 2 -->
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card">
                 <div class="card-block">
@@ -107,6 +114,7 @@
                 </div>
               </div>
             </div>
+            <!-- Panel 3 -->
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card">
                 <div class="card-block">
@@ -115,6 +123,7 @@
                 </div>
               </div>
             </div>
+            <!-- Panel 4 -->
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card">
                 <div class="card-block">
@@ -127,6 +136,7 @@
           <br>
           <!-- 2 Thời Gian -->
           <div class = "row">
+            <!-- Cột Trái-->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -137,24 +147,31 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải-->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
+                  <!-- Ngày Tư Vấn  -->
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <label class="sr-only" for="inlineFormInputGroup">date</label>
-                    <div class="input-group mb-1 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-xm-0">
-                      <div class="input-group-addon">Ngày Tư Vấn</div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                      <label class="sr-only" for="inlineFormInputGroup">date</label>
-                      <div class="input-group mb-1 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-xm-0">
-                        <div class="input-group-addon">Ngày Hẹn Gặp</div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
-
+                    <!-- datetime picker -->
+                    <div id="sandbox-container">
+                      <div class="input-group date">
+                        <input type="text" class="form-control" placeholder="Ngày Tư Vấn (dd-mm-yyyy)"></span>
+                        <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
                       </div>
                     </div>
+                  </div>
+                  <!-- Ngày Hẹn Gặp -->
+                  <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+                    <!-- datetime picker -->
+                    <div id="sandbox-container">
+                      <div class="input-group date">
+                        <input type="text" class="form-control" placeholder="Ngày Hẹn Gặp (dd-mm-yyyy)"></span>
+                        <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
+                      </div>
+                    </div>
+                    </div>
+                  <!-- Ghi Chú -->
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
                     <label class="sr-only" for="inlineFormInputGroup">date</label>
                         <div class="input-group mb-1 mb-xl-0 mb-lg-0 mb-md-0 mb-sm-0 mb-xm-0">
@@ -169,6 +186,7 @@
           <br>
           <!-- 3 Thiết kế và gởi Market -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -179,13 +197,14 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
                   <div class= "card form-input-margin">
                     <div class = "row">
                       <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
                         <div class="mb-2 mb-sm-0">
                           <label class="custom-file w-100 mb-sm-2 mb-lg-0">
-                            <input type="file" id="file" class="custom-file-input hnf-custom-file-input">
+                            <input type="file" id="file" class="custom-file-input hnf-custom-file-input" placeholder="Tải file lên">
                             <span class="custom-file-control"></span>
                           </label>
                         </div>
@@ -207,6 +226,7 @@
           <br>
           <!-- 4 Báo Giá -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -217,6 +237,7 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
@@ -229,7 +250,6 @@
                     </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-
                       <div class="input-group mb-2 mb-sm-0">
                         <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Báo Giá" readonly>
                       </div>
@@ -242,6 +262,7 @@
           <br>
           <!-- 5 Hẹn Gặp -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -252,20 +273,19 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <label class="sr-only" for="inlineFormInputGroup">date</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">Ngày Tư Vấn</div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Ngày Hẹn ">
-
+                    <div id="sandbox-container">
+                      <div class="input-group date">
+                        <input type="text" class="form-control" placeholder="Ngày Hẹn Gặp (dd-mm-yyyy)"></span>
+                        <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
+                      </div>
                     </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-
-
                       <div class="input-group">
                         <span class="input-group-addon">
                           <input type="checkbox" aria-label="Checkbox for following text input">
@@ -282,6 +302,7 @@
           <br>
           <!-- 6 Áo Mẫu Đã Duyệt -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -292,6 +313,7 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
@@ -317,6 +339,7 @@
           <br>
           <!-- 7 Hợp Đồng -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -327,6 +350,7 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
@@ -352,6 +376,7 @@
           <br>
           <!-- 8 Sản Xuất -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -362,23 +387,26 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
+                  <!-- Ngày Bắt Đầu -->
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <label class="sr-only" for="inlineFormInputGroup">date</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">Ngày Bắt Đầu</div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
-
+                    <div id="sandbox-container">
+                      <div class="input-group date">
+                        <input type="text" class="form-control" placeholder="Ngày Bắt Đầu (dd-mm-yyyy)"></span>
+                        <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
+                      </div>
                     </div>
                   </div>
+                  <!-- Ngày Kết Thúc -->
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                      <label class="sr-only" for="inlineFormInputGroup">date</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">Ngày Kết Thúc</div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="dd/mm/yyyy">
-
+                      <div id="sandbox-container">
+                        <div class="input-group date">
+                          <input type="text" class="form-control" placeholder="Ngày Kết Thúc (dd-mm-yyyy)"></span>
+                          <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
+                        </div>
                       </div>
                     </div>
                     </div>
@@ -388,6 +416,7 @@
           <br>
           <!-- 9 Chuyển Tiền -->
           <div class = "row">
+             <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -398,7 +427,8 @@
                 </div>
               </div>
             </div>
-            <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+             <!-- Cột Phải -->
+            <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
                   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xm-12">
@@ -424,6 +454,7 @@
           <br>
           <!-- 10 Gọi Nhắc -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -434,6 +465,7 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
@@ -472,6 +504,7 @@
           <br>
           <!-- 11 Trạng Thái -->
           <div class = "row">
+            <!-- Cột Trái -->
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xm-12">
               <div class="card form-input-margin">
                 <div class="input-group">
@@ -482,6 +515,7 @@
                 </div>
               </div>
             </div>
+            <!-- Cột Phải -->
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xm-12">
               <div class= "card form-input-margin">
                 <div class="row">
@@ -506,9 +540,11 @@
           <br>
           <!-- 12 Buttons -->
           <div class="row">
+            <!-- Cột Trái -->
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6">
               <a class="btn btn-success btn-block" role="button" href="#">Lưu Thông Tin</a>
             </div>
+            <!-- Cột Phải -->
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 ">
               <a class="btn btn-danger btn-block" role="button" href="#">Huỷ Thông Tin</a>
             </div>
