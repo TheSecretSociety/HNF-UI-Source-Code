@@ -17,6 +17,7 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .search-button i{
   padding-left: 10px;
