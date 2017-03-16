@@ -20,7 +20,7 @@
     <!-- custom CSS & Jquery modify URL -->
     <link rel="stylesheet" href="css/HNFStyle.css">
     <script src="css/HNF-jquery.js"></script>
-    
+
 </head>
 <body>
   <br>
@@ -34,6 +34,7 @@
     <br>
     <!-- Thong Tin Co Ban & Quy Cach May -->
     <div class="row">
+      <!-- Dòng 1 -->
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card-group">
           <!-- Số Lượng -->
@@ -85,8 +86,10 @@
         </div>
         <br>
       </div>
+      <!-- Dòng 2 -->
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
+          <!-- Quy Cách May -->
           <div class="row">
             <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-xs-12">
               <div class="card-block">
@@ -119,7 +122,7 @@
               </div>
             </div>
           </div>
-          </div>
+        </div>
         </div>
     </div>
     <br>
@@ -229,41 +232,41 @@
         <div class="card">
           <div class="card-block">
             <h3 class="card-title">In</h3>
+            <!-- thời gian -->
             <div class="row">
-              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <!-- datetime -->
+              <div class="col-xl-12">
                 <div id="sandbox-container">
-                  <div class="input-group date">
-                    <input type="text" class="form-control" placeholder="Ngày Thực Hiện(dd-mm-yyyy)"></span>
-                    <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
+                  <div class="input-daterange input-group" id="datepicker">
+                      <input type="text" class="input-sm form-control" placeholder="Ngày Thực Hiện"name="start" />
+                      <span class="input-group-addon">|</span>
+                      <input type="text" class="input-sm form-control" placeholder="Ngày Hoàn Thành"name="end" />
                   </div>
                 </div>
-                <br>
-                <!--  -->
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <!-- Cột Trái -->
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <!-- Đơn Vị Thực Hiện -->
                 <div class="input-group">
                   <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Đơn vị thực hiện">
                 </div>
                 <br>
-                <!--  -->
+                <!-- Vị Trí -->
                 <div class="input-group">
                   <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Vị Trí">
                 </div>
                 <br>
-                <!--  -->
+                <!-- Kích Thức Chi Tiết -->
                 <div class="input-group">
                   <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Kích thức chi tiết">
                 </div>
                 <br>
               </div>
+              <!-- Cột Phải -->
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <!-- Datetime -->
-                <div id="sandbox-container">
-                  <div class="input-group date">
-                    <input type="text" class="form-control" placeholder="Ngày Hoàn Thành (dd-mm-yyyy)"></span>
-                    <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
-                  </div>
-                </div>
-                <br>
                 <div class="form-group">
                     <textarea class="form-control" id="exampleTextarea" rows="7" placeholder="Ghi Chú"></textarea>
                 </div>
@@ -278,16 +281,21 @@
           <div class="card-block">
             <h3 class="card-title">Thêu</h3>
               <div class="row">
+                <div class="col-xl-12">
+                  <div id="sandbox-container">
+                    <div class="input-daterange input-group" id="datepicker">
+                        <input type="text" class="input-sm form-control" placeholder="Ngày Thực Hiện"name="start" />
+                        <span class="input-group-addon">|</span>
+                        <input type="text" class="input-sm form-control" placeholder="Ngày Hoàn Thành"name="end" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
                 <!-- cot trái -->
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <!-- datetime -->
-                  <div id="sandbox-container">
-                    <div class="input-group date">
-                      <input type="text" class="form-control" placeholder="Ngày Thực Hiện(dd-mm-yyyy)"></span>
-                      <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
-                    </div>
-                  </div>
-                  <br>
                   <div class="input-group">
                     <input type="text" class="form-control" id="inputExample" aria-describedby="basic-addon3" placeholder="Đơn vị thực hiện">
                   </div>
@@ -304,13 +312,8 @@
                 <!-- cot phải -->
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <!-- datetime -->
-                  <div id="sandbox-container">
-                    <div class="input-group date">
-                      <input type="text" class="form-control" placeholder="Ngày Hoàn Thành(dd-mm-yyyy)"></span>
-                      <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
-                    </div>
-                  </div>
-                  <br>
+
+
                   <div class="form-group">
                       <textarea class="form-control" id="exampleTextarea" rows="7" placeholder="Ghi Chú"></textarea>
                   </div>
@@ -391,7 +394,7 @@
       </div>
     </div>
     <br>
-    <!-- functionButtons -->
+    <!-- function Buttons -->
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6">
         <a class="btn btn-success btn-block" id="DetailDesign-Add-Button" role="button" href="#">Lưu Thông Tin</a>
