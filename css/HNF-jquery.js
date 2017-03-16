@@ -127,3 +127,36 @@
       todayHighlight: true
     });
   });
+  //script for PasswordValidation
+  $(document).ready(function PasswordValidation(){
+    $("#Employee-Save-Button").click(function() {
+      var passwordstring;
+      var confirmpasswordstring;
+
+      passwordstring = document.getElementById('txt-input-password').value;
+      confirmpasswordstring = document.getElementById('txt-input-password-confirm').value;
+      if ( passwordstring != confirmpasswordstring){
+        window.alert("Password không trùng!");
+        $('#txt-input-password, #txt-input-password-confirm').val('');
+      }
+
+    });
+    $("#Personal-Update-Button").click(function(){
+      var oldpassword;
+      var newpassword;
+      var confirmnewpassword;
+      oldpassword=document.getElementById('txt-old-password').value;
+      newpassword=document.getElementById('txt-new-password').value;
+      confirmnewpassword=document.getElementById('txt-confirm-new-password').value;
+
+      if (oldpassword == newpassword) {
+        window.alert("Password cũ không được giống password mới");
+      }
+      if (oldpassword == confirmnewpassword) {
+        window.alert("Password cũ không được giống password mới");
+      }
+      if(newpassword != confirmnewpassword){
+        window.alert("Password mới không trùng!");
+      }
+    });
+  });
