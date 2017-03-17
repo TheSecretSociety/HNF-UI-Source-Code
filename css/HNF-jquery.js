@@ -129,6 +129,7 @@
   });
   //script for PasswordValidation
   $(document).ready(function PasswordValidation(){
+
     $("#Employee-Save-Button").click(function() {
       var passwordstring;
       var confirmpasswordstring;
@@ -140,8 +141,9 @@
       }
 
     });
-
+    // HNF-Employee-Personal
     $("#Personal-Update-Button").click(function(e){
+
       var OldPW;
       var NewPW;
       var ConfirmNewPW;
@@ -150,7 +152,8 @@
       ConfirmNewPW=document.getElementById('txt-confirm-new-password').value;
       if (OldPW == NewPW) {
         window.alert("Password cũ không được giống password mới");
-        $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');      
+        $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');
+        $("#newpasswordinput,#newpasswordinput2,#newpasswordinput3").addClass('has-danger');
         e.preventDefault();
       }else if(OldPW == ConfirmNewPW){
         window.alert("Password cũ không được giống password mới");

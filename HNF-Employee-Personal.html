@@ -97,75 +97,59 @@
                     <div class="col-xl-12">
                       <div class="card form-input-margin">
                         <div class="row">
-                          <!-- cột trái  -->
-                          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-sx-12">
-                                <h5>Thông Tin Nhân Viên</h5>
-                                <br>
-                                <!-- avatar -->
+
+                          <!-- các trường thông tin -->
+                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-sx-12">
+                            <form class="" action="index.html" method="post">
+                              <div class="row">
+                                 <div class="col-xl-6">
+                                   <!-- Họ Tên -->
+                                   <div class="form-group">
+                                       <label for="InputName">Họ Tên</label>
+                                       <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                   <!-- SDT -->
+                                   <div class="form-group">
+                                       <label for="InputPhone">Số Điện Thoại</label>
+                                       <input type="text" class="form-control" id="InputPhone" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                   <!-- Email -->
+                                   <div class="form-group">
+                                       <label for="InputEmail">Email</label>
+                                       <input type="text" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                 </div>
+                                 <div class="col-xl-6">
+                                   <!-- Mật Khẩu Cũ -->
+                                   <div class="form-group" id="newpasswordinput">
+                                       <label id="InputOldPassword">Mật Khẩu Cũ</label>
+                                       <input type="password" class="form-control" id="txt-old-password" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                   <!-- Mật Khẩu Mới-->
+                                   <div class="form-group" id="newpasswordinput2">
+                                       <label id="InputNewPassword">Mật Khẩu Mới</label>
+                                       <input type="password" class="form-control" id="txt-new-password" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                   <!-- Nhập Lại Mật Khẩu Mới -->
+                                   <div class="form-group" id="newpasswordinput3">
+                                       <label id="InputNewPasswordConfirm">Nhập Lại Mật Khẩu Mới</label>
+                                       <input type="password" class="form-control" id="txt-confirm-new-password" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                 </div>
+                                 <!-- Thông báo -->
+                              </div>
+                              <div class="row">
                                 <div class="col-xl-12">
-                                  <div class="avatarwrapper">
-                                    <div class="avatar">
-                                      <img src="./image/avatar2.jpg" alt="..." class="img-fluid rounded-circle center-cropped mx-auto d-block ">
+                                  <div class="form-group">
+                                    <br>
+                                    <div class="btn-group w-100" role="group">
+                                      <a href="#" id="Personal-Update-Button" class="btn btn-primary w-100">Cập nhật Thông Tin</a>
+
                                     </div>
                                   </div>
                                 </div>
-                                <br>
-                                <!-- nút đổi avatar -->
-                                <div class="col-xl-12">
-                                  <div class="avatarbutton">
-                                    <button type="button" name="button" class="btn btn-primary">Đổi Ảnh Đại Diện</button>
-                                  </div>
-                                </div>
-                          </div>
-                          <!-- cột phải -->
-                          <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-sx-12">
-                            <div class="row">
-                               <div class="col-xl-6">
-                                 <!-- Họ Tên -->
-                                 <div class="form-group">
-                                     <label for="InputName">Họ Tên</label>
-                                     <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                                 <!-- SDT -->
-                                 <div class="form-group">
-                                     <label for="InputPhone">Số Điện Thoại</label>
-                                     <input type="text" class="form-control" id="InputPhone" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                                 <!-- Email -->
-                                 <div class="form-group">
-                                     <label for="InputEmail">Email</label>
-                                     <input type="text" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                               </div>
-                               <div class="col-xl-6">
-                                 <!-- Mật Khẩu Cũ -->
-                                 <div class="form-group">
-                                     <label id="InputOldPassword">Mật Khẩu Cũ</label>
-                                     <input type="password" class="form-control" id="txt-old-password" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                                 <!-- Mật Khẩu Mới-->
-                                 <div class="form-group">
-                                     <label id="InputNewPassword">Mật Khẩu Mới</label>
-                                     <input type="password" class="form-control" id="txt-new-password" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                                 <!-- Nhập Lại Mật Khẩu Mới -->
-                                 <div class="form-group" id="newpasswordinput">
-                                     <label id="InputNewPasswordConfirm">Nhập Lại Mật Khẩu Mới</label>
-                                     <input type="password" class="form-control" id="txt-confirm-new-password" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-
-                               </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xl-12">
-                                <div class="form-group">
-                                  <br>
-                                  <div class="btn-group w-100" role="group">
-                                    <a href="#" id="Personal-Update-Button" class="btn btn-primary w-100">Cập nhật Thông Tin</a>
-                                  </div>
-                                </div>
                               </div>
-                            </div>
+                            </form>
                           </div>
                         </div>
                       </div>
