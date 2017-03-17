@@ -132,7 +132,6 @@
     $("#Employee-Save-Button").click(function() {
       var passwordstring;
       var confirmpasswordstring;
-
       passwordstring = document.getElementById('txt-input-password').value;
       confirmpasswordstring = document.getElementById('txt-input-password-confirm').value;
       if ( passwordstring != confirmpasswordstring){
@@ -141,22 +140,27 @@
       }
 
     });
-    $("#Personal-Update-Button").click(function(){
-      var oldpassword;
-      var newpassword;
-      var confirmnewpassword;
-      oldpassword=document.getElementById('txt-old-password').value;
-      newpassword=document.getElementById('txt-new-password').value;
-      confirmnewpassword=document.getElementById('txt-confirm-new-password').value;
 
-      if (oldpassword == newpassword) {
+    $("#Personal-Update-Button").click(function(e){
+      var OldPW;
+      var NewPW;
+      var ConfirmNewPW;
+      OldPW=document.getElementById('txt-old-password').value;
+      NewPW=document.getElementById('txt-new-password').value;
+      ConfirmNewPW=document.getElementById('txt-confirm-new-password').value;
+      if (OldPW == NewPW) {
         window.alert("Password cũ không được giống password mới");
-      }
-      if (oldpassword == confirmnewpassword) {
+        $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');      
+        e.preventDefault();
+      }else if(OldPW == ConfirmNewPW){
         window.alert("Password cũ không được giống password mới");
-      }
-      if(newpassword != confirmnewpassword){
+        $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');
+        e.preventDefault();
+      }else if(NewPW != ConfirmNewPW){
         window.alert("Password mới không trùng!");
+        $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');
+        e.preventDefault();
       }
+
     });
   });
