@@ -128,8 +128,7 @@
     });
   });
   //script for PasswordValidation
-  $(document).ready(function PasswordValidation(){
-
+  $(document).ready(function FormValidation(){
     $("#Employee-Save-Button").click(function() {
       var passwordstring;
       var confirmpasswordstring;
@@ -143,27 +142,41 @@
     });
     // HNF-Employee-Personal
     $("#Personal-Update-Button").click(function(e){
-
       var OldPW;
       var NewPW;
       var ConfirmNewPW;
+      var OldPwGroup;
+      OldPwGroup=document.getElementById('OldPasswordGroup');
       OldPW=document.getElementById('txt-old-password').value;
       NewPW=document.getElementById('txt-new-password').value;
       ConfirmNewPW=document.getElementById('txt-confirm-new-password').value;
       if (OldPW == NewPW) {
-        window.alert("Password cũ không được giống password mới");
+        // window.alert("Password cũ không được giống password mới");
         $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');
-        $("#newpasswordinput,#newpasswordinput2,#newpasswordinput3").addClass('has-danger');
+        InputWarning("OldPasswordGroup");
+        InputWarning("NewPasswordGroup");
         e.preventDefault();
       }else if(OldPW == ConfirmNewPW){
-        window.alert("Password cũ không được giống password mới");
+        // window.alert("Password cũ không được giống password mới");
         $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');
+          InputWarning("OldPasswordGroup");
+          InputWarning("ConfirmNewPasswordGroup");
         e.preventDefault();
       }else if(NewPW != ConfirmNewPW){
-        window.alert("Password mới không trùng!");
+        // window.alert("Password mới không trùng!");
         $('#txt-old-password, #txt-new-password, #txt-confirm-new-password').val('');
+        InputWarning("NewPasswordGroup");
+        InputWarning("ConfirmNewPasswordGroup");
         e.preventDefault();
       }
-
     });
+
+
+    function InputWarning(GroupID) {
+      $('#'+GroupID).addClass("has-danger");
+      window.setTimeout(function InputWarningRemove() {
+        $('#'+GroupID).removeClass("has-danger");
+      } , 2000);
+      return ;
+    }
   });
