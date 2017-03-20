@@ -174,7 +174,7 @@
 
     function InputWarning(GroupID) {
       $('#'+GroupID).addClass("has-danger");
-      window.setTimeout(function InputWarningRemove() {
+      setTimeout(function InputWarningRemove() {
         $('#'+GroupID).removeClass("has-danger");
       } , 2000);
       return ;
