@@ -149,13 +149,13 @@ a:link {
     background-color: white;
 }
 .login-form {
-    background: #ffc18c;
+    background: #ff5858;
     /* Old browsers */
-    background: -moz-linear-gradient(90deg, #fc6076 0%, #ff9a44 100%);
+    background: -moz-linear-gradient(0deg, #ff5858 0%, #f09819 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(90deg, #fc6076 0%, #ff9a44 100%);
+    background: -webkit-linear-gradient(0deg, #ff5858 0%, #f09819 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(90deg, #fc6076 0%, #ff9a44 100%);
+    background: linear-gradient(0deg, #ff5858 0%, #f09819 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     width: 500px;
     height: 300px;

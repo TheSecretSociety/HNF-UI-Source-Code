@@ -128,22 +128,15 @@
   });
   //script for PasswordValidation
   $(document).ready(function FormValidation(){
-    $("#Employee-Save-Button").click(function() {
-      var passwordstring;
-      var confirmpasswordstring;
-      passwordstring = document.getElementById('txt-input-password').value;
-      confirmpasswordstring = document.getElementById('txt-input-password-confirm').value;
-      if ( passwordstring != confirmpasswordstring){
-        InputWarning("AddEmployeePassword");
-        InputWarning("AddEmployeeConfirmPassword");
-        InputClear("txt-input-password");
-        InputClear("txt-input-password-confirm");
-
-      }
-
+    $("#Employee-Save-Button").click(function(e) {
+      e.preventDefault;
     });
     // HNF-Employee-Personal
     $("#Personal-Update-Button").click(function(e){
+      Employee_Personal_Information_FormValidation();
+      e.preventDefault;
+    });
+    function Employee_Personal_Information_FormValidation(){
       var OldPW;
       var NewPW;
       var ConfirmNewPW;
@@ -151,9 +144,7 @@
       OldPW = document.getElementById('txt-old-password').value;
       NewPW = document.getElementById('txt-new-password').value;
       ConfirmNewPW=document.getElementById('txt-confirm-new-password').value;
-
       if (OldPW == NewPW) {
-        e.preventDefault();
         InputClear("txt-old-password");
         InputClear("txt-new-password");
         InputClear("txt-confirm-new-password");
@@ -161,7 +152,7 @@
         InputWarning("NewPasswordGroup");
 
       }else if(OldPW == ConfirmNewPW){
-        e.preventDefault();
+
         InputClear("txt-old-password");
         InputClear("txt-new-password");
         InputClear("txt-confirm-new-password");
@@ -169,14 +160,14 @@
         InputWarning("ConfirmNewPasswordGroup");
 
       }else if(NewPW != ConfirmNewPW){
-        e.preventDefault();
+
         InputClear("txt-old-password");
         InputClear("txt-new-password");
         InputClear("txt-confirm-new-password");
         InputWarning("NewPasswordGroup");
         InputWarning("ConfirmNewPasswordGroup");
       }
-    });
+    }
     function InputWarning(GroupID) {
       $('#'+GroupID).addClass("has-danger");
       setTimeout(function InputWarningRemove() {
@@ -187,10 +178,5 @@
     function InputClear(InputID) {
       $('#'+InputID).val('');
       return;
-    }
-    function NameCheck() {
-      if (true) {
-
-      }
     }
   });
