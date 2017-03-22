@@ -327,7 +327,48 @@ a:link {
        padding: 0.5em 1em;
        text-decoration: none;
        color: black;
-       border-left: 1px solid #d4d4d4;
+       border-left: 1px solid #DDDDDD;
    }
 
+}
+
+.bar-tittle{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #dddddd;
+  margin: 0 0 20px 0;
+}
+
+.bar{
+    background-color: : #ffffff;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 40px;
+}
+
+.bar-inner{
+  background-color: #2ecc71;
+  width: 0%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: width 1000ms linear;
+  -moz-transition: width 1000ms linear;
+  -transition: width 1000ms linear;
+}
+
+.bar-inner:after{
+  position: absolute;
+  right: 2.5%;
+  content: attr(data-percent);
+  line-height: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.bar-90{
+    width: 90%;
+}
+.bar-100{
+    width: 100%;
 }
