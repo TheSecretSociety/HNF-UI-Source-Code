@@ -126,61 +126,36 @@
       todayHighlight: true
     });
   });
-  //script for PasswordValidation
-  $(document).ready(function FormValidation(){
-    $("#Employee-Save-Button").click(function(e) {
-      e.preventDefault;
-    });
-    // HNF-Employee-Personal
-    $("#Personal-Update-Button").click(function(e){
-      Employee_Personal_Information_FormValidation();
-      e.preventDefault;
-    });
-    function Employee_Personal_Information_FormValidation(){
-      var OldPW;
-      var NewPW;
-      var ConfirmNewPW;
-      var OldPwGroup;
-      OldPW = document.getElementById('txt-old-password').value;
-      NewPW = document.getElementById('txt-new-password').value;
-      ConfirmNewPW=document.getElementById('txt-confirm-new-password').value;
-      if (OldPW == NewPW) {
-        InputClear("txt-old-password");
-        InputClear("txt-new-password");
-        InputClear("txt-confirm-new-password");
-        InputWarning("OldPasswordGroup");
-        InputWarning("NewPasswordGroup");
 
-      }else if(OldPW == ConfirmNewPW){
-
-        InputClear("txt-old-password");
-        InputClear("txt-new-password");
-        InputClear("txt-confirm-new-password");
-        InputWarning("OldPasswordGroup");
-        InputWarning("ConfirmNewPasswordGroup");
-
-      }else if(NewPW != ConfirmNewPW){
-
-        InputClear("txt-old-password");
-        InputClear("txt-new-password");
-        InputClear("txt-confirm-new-password");
-        InputWarning("NewPasswordGroup");
-        InputWarning("ConfirmNewPasswordGroup");
+  // =========== Login Validation ===========//
+  $(document).ready(function LoginValidation() {
+      $('#LoginButton').click(function() {
+        LoginValidate();
+      });
+      // validate email and password
+      function LoginValidate() {
+        var PasswordValue = $('#TxtLoginPassword').val();
+        var UsernameValue = $('#TxtLoginID').val();
+        if (LoginUsernameValidate(UsernameValue) && LoginPasswordValidate(PasswordValue)){
+          alert("Login Successfully");
+        }else{
+          alert("Login Fail");
+        }
+      };
+      // validate email format
+      function LoginUsernameValidate(TxtLoginID){
+        var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log(EmailRegEx.test(TxtLoginID));
+        return EmailRegEx.test(TxtLoginID);
+      }
+      // validate password format
+      function LoginPasswordValidate(TxtLoginPassword) {
+        var PasswordRegEx= /^.{1,}$/;
+        console.log(PasswordRegEx.test(TxtLoginPassword));
+        return PasswordRegEx.test(TxtLoginPassword);
       }
     }
-    function InputWarning(GroupID) {
-      $('#'+GroupID).addClass("has-danger");
-      setTimeout(function InputWarningRemove() {
-        $('#'+GroupID).removeClass("has-danger");
-      } , 2000);
-      return ;
-    }
-    function InputClear(InputID) {
-      $('#'+InputID).val('');
-      return;
-    }
-  });
-
+  );
 
   (function(document) {
       var _bars = [].slice.call(document.querySelectorAll('.bar-inner'));
