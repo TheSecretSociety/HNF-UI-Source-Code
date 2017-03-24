@@ -1,5 +1,5 @@
 
-  //script for Clear button
+  //============ Clear button =============//
   $(document).ready(function ClearButton(){
       // script for Cancle Buttons
       $("#Cancle-Button").click(function(){
@@ -7,7 +7,29 @@
         $("option").prop("selected", function(){return this.defaultSelected;});
       });
   });
-  //script for Production line Bar animation
+  // =========== Delete Button Warning ======== //
+  $(document).ready(function DeleteButtonWarning() {
+    $('#EmployeeDeleteBtn').click(function() {
+      DeleteWarning();
+    })
+    $('#CustomerDetailDeleteBtn').click(function() {
+      DeleteWarning();
+    })
+    $('#CustomerDeleteBtn').click(function(){
+      DeleteWarning();
+    });
+    function DeleteWarning() {
+      var DeleteState = confirm("Bạn Có Chắc Chắn Muốn Xoá ?");
+      if (DeleteState == true) {
+        alert("Xoá Thành Công!");
+        return true;
+      }else{
+        alert("Đã Huỷ Lệnh Xoá");
+        return false;
+      }
+    }
+  });
+  //=========== Production line Bar animation ===== //
   $(document).ready(function ProductionProgressBar(){
     $('#check1').change(function () {
         // this will contain a reference to the checkbox
@@ -106,7 +128,7 @@
           }
       });
   });
-  //script for Datetimepicker
+  //========== Datetimepicker ============//
   $(document).ready(function DatetimePicker(){
     $('#sandbox-container .input-group.date').datepicker({
       weekStart: 1,
@@ -127,6 +149,7 @@
     });
   });
 
+
   // =========== Login Validation ===========//
   $(document).ready(function LoginValidation() {
       $('#LoginButton').click(function() {
@@ -138,6 +161,7 @@
         var UsernameValue = $('#TxtLoginID').val();
         if (LoginUsernameValidate(UsernameValue) && LoginPasswordValidate(PasswordValue)){
           alert("Login Successfully");
+
         }else{
           alert("Login Fail");
         }
@@ -157,6 +181,11 @@
     }
   );
 
+
+
+
+
+  // ============= Statictis ============= //
   (function(document) {
       var _bars = [].slice.call(document.querySelectorAll('.bar-inner'));
 

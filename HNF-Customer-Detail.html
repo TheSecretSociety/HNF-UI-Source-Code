@@ -101,7 +101,7 @@
                                 <h3>THÔNG TIN KHÁCH HÀNG</h3>
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <form>
+                                      <form>
                                           <!-- Họ Tên -->
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Họ Tên</label>
@@ -115,7 +115,7 @@
                                             <!-- Email -->
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                             </div>
                                             <!-- Thông Tin Công Ty -->
                                             <div class="form-group">
@@ -143,10 +143,8 @@
                                                     <option>5</option>
                                                 </select>
                                             </div>
-                                        </form>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <form>
                                           <!-- Quan tâm về Dịch Vụ / Sản Phẩm gì -->
                                             <div class="form-group">
                                                 <label for="exampleTextarea">Quan tâm về Dịch Vụ / Sản Phẩm gì?</label>
@@ -177,8 +175,6 @@
                                                 <label for="exampleInputEmail1">Công Ty Đã Thực Hiện</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                             </div>
-                                        </form>
-
                                     </div>
                                 </div>
                                 <!-- Ghi Chú -->
@@ -187,7 +183,7 @@
                                     <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                                 </div>
                             </div>
-
+                          </form>
                         </div>
                         <!-- Thông Tin Sản Phẩm -->
                         <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -264,10 +260,9 @@
                                         <label for="exampleTextarea">Ghi Chú</label>
                                         <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                                     </div>
+                                <button type="submit" id="CustomerInfoSaveBtn" class="btn btn-primary btn-lg btn-block mt-4">Lưu Thông Tin</button>
                                 </form>
-                                <button type="button" class="btn btn-primary btn-lg btn-block mt-4">Lưu Thông Tin</button>
                             </div>
-
                         </div>
                     </div>
                     <br>
@@ -283,10 +278,9 @@
                                   <a class="btn btn-warning w-100" href="#" role="button">Cập Nhập Hợp Đồng</a>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                                  <a class="btn btn-danger w-100" href="#" role="button">Xoá Hợp Đồng</a>
+                                  <a class="btn btn-danger w-100" href="#" id="CustomerDetailDeleteBtn" role="button">Xoá Hợp Đồng</a>
                                 </div>
                               </div>
-
                             </div>
                         </div>
                     </div>
