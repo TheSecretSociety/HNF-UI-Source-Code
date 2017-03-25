@@ -148,8 +148,6 @@
       todayHighlight: true
     });
   });
-
-
   // =========== Login Validation ===========//
   $(document).ready(function LoginValidation() {
       $('#LoginButton').click(function() {
@@ -180,8 +178,10 @@
       }
     }
   );
+  // =========== Customer Information Validation ======= //
+  $(document).ready(function functionName() {
 
-
+  })
 
 
 
