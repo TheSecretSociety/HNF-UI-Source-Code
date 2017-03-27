@@ -149,19 +149,31 @@
     });
   });
   // =========== Login Validation ===========//
+
   $(document).ready(function LoginValidation() {
+      $("#TxtLoginPassword").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#LoginButton").click();
+        }
+      });
+      $("#TxtLoginID").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#LoginButton").click();
+        }
+      });
       $('#LoginButton').click(function() {
         LoginValidate();
       });
       // validate email and password
-      function LoginValidate() {
+      function LoginValidate(e) {
         var PasswordValue = $('#TxtLoginPassword').val();
         var UsernameValue = $('#TxtLoginID').val();
         if (LoginUsernameValidate(UsernameValue) && LoginPasswordValidate(PasswordValue)){
           alert("Login Successfully");
-
+          window.location = "./HNF-Dashboard.html";
         }else{
           alert("Login Fail");
+          e.preventDefault();
         }
       };
       // validate email format
@@ -172,12 +184,19 @@
       }
       // validate password format
       function LoginPasswordValidate(TxtLoginPassword) {
-        var PasswordRegEx= /^.{1,}$/;
+        var PasswordRegEx= /^.\S{1,}$/;
         console.log(PasswordRegEx.test(TxtLoginPassword));
         return PasswordRegEx.test(TxtLoginPassword);
       }
     }
   );
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  // =========== Customer Information Validation ======= //
+  
+=======
+>>>>>>> Stashed changes
   // =========== Employee Personal Validation ======= //
   $(document).ready(function EmployeePersonalValidation() {
       $('#Personal-Update-Button').delay(200).click(function() {
@@ -208,6 +227,10 @@
       //validate employee information
 
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 
 
 

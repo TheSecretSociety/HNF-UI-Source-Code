@@ -287,6 +287,9 @@ a:link {
   padding-right: -10px;
   margin: 0;
 }
+.Notice{
+  color:red;
+}
 #HNF-input {
     height: 38px;
     border: 1px solid lightgray;
