@@ -148,8 +148,9 @@
       todayHighlight: true
     });
   });
-  // =========== Login Validation ===========//
 
+
+  // =========== Login Validation ===========//
   $(document).ready(function LoginValidation() {
       $("#TxtLoginPassword").keyup(function(event){
         if(event.keyCode == 13){
@@ -190,30 +191,24 @@
       }
     }
   );
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-  // =========== Customer Information Validation ======= //
-  
-=======
->>>>>>> Stashed changes
   // =========== Employee Personal Validation ======= //
   $(document).ready(function EmployeePersonalValidation() {
-      $('#Personal-Update-Button').delay(200).click(function() {
+      $('#Personal-Update-Button').click(function() {
         EmployeePersonalValidate();
       });
-      function EmployeePersonalValidate() {
+      function EmployeePersonalValidate(e) {
         var NameValue = $('#InputName').val();
         var PhoneValue = $('#InputPhone').val();
-        if (EmployeePersonalValidate(NameValue) && EmployeePersonalValidate(PhoneValue)){
+        if (EmployeeNameValidate(NameValue) && EmployeePhoneValidate(PhoneValue)){
           alert("Edit Successfully");
         }else{
           alert("Edit Fail");
+          e.preventDefault();
         }
       };
       //validate name format
       function EmployeeNameValidate(InputName){
-        var NameRegEx= /^[a-zA-Z ]{2,30}$/;
+        var NameRegEx= /^[a-zA-Z]{2,30}$/;
         console.log(NameRegEx.test(InputName));
         return NameRegEx.test(InputName);
       }
@@ -224,13 +219,8 @@
         return PhoneRegEx.test(InputPhone);
       }
     });
-      //validate employee information
+  // ========== Contract State Toggle ============ //
 
-
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 
 
