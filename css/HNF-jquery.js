@@ -178,10 +178,36 @@
       }
     }
   );
-  // =========== Customer Information Validation ======= //
-  $(document).ready(function functionName() {
+  // =========== Employee Personal Validation ======= //
+  $(document).ready(function EmployeePersonalValidation() {
+      $('#Personal-Update-Button').delay(200).click(function() {
+        EmployeePersonalValidate();
+      });
+      function EmployeePersonalValidate() {
+        var NameValue = $('#InputName').val();
+        var PhoneValue = $('#InputPhone').val();
+        if (EmployeePersonalValidate(NameValue) && EmployeePersonalValidate(PhoneValue)){
+          alert("Edit Successfully");
+        }else{
+          alert("Edit Fail");
+        }
+      };
+      //validate name format
+      function EmployeeNameValidate(InputName){
+        var NameRegEx= /^[a-zA-Z ]{2,30}$/;
+        console.log(NameRegEx.test(InputName));
+        return NameRegEx.test(InputName);
+      }
+      //validate phone number format
+      function EmployeePhoneValidate(InputPhone){
+        var PhoneRegEx= /^[\d]{2,13}$/;
+        console.log(PhoneRegEx.test(InputPhone));
+        return PhoneRegEx.test(InputPhone);
+      }
+    });
+      //validate employee information
 
-  })
+
 
 
 
