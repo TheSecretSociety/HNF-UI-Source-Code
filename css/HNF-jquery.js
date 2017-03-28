@@ -199,16 +199,34 @@
       function EmployeePersonalValidate(e) {
         var NameValue = $('#InputName').val();
         var PhoneValue = $('#InputPhone').val();
-        if (EmployeeNameValidate(NameValue) && EmployeePhoneValidate(PhoneValue)){
-          alert("Edit Successfully");
+        var EmailValue = $('#InputEmail').val();
+        var OldPasswordValue = $('#txt-old-password').val();
+        var NewPasswordValue = $('#txt-new-password').val();
+        // check for validate when edit employee information 
+        var check = 0;
+        if (EmployeeNameValidate(NameValue)){
+        }else {
+          check++;
+        }
+
+        if(EmployeePhoneValidate(PhoneValue)){
         }else{
-          alert("Edit Fail");
-          e.preventDefault();
+          check++;
+        }
+        if (EmployeeEmailValidate(EmailValue)){
+        }else{
+          check++;
+        }
+
+        if(check == 0){
+          alert("Edit Successfully");
+        }else if(check != 0) {
+            alert("Edit Fail");
         }
       };
       //validate name format
       function EmployeeNameValidate(InputName){
-        var NameRegEx= /^[a-zA-Z]{2,30}$/;
+        var NameRegEx= /^.[^.!@#$%^&*()_+-=]{0,35}$/;
         console.log(NameRegEx.test(InputName));
         return NameRegEx.test(InputName);
       }
@@ -218,6 +236,21 @@
         console.log(PhoneRegEx.test(InputPhone));
         return PhoneRegEx.test(InputPhone);
       }
+      //validate email format
+      function EmployeeEmailValidate(InputEmail){
+        var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log(EmailRegEx.test(InputEmail));
+        return EmailRegEx.test(InputEmail);
+      }
+      // validate old password
+      function EmployeeOldPasswordValidate(InputOldPassword,InputNewPassword){
+        var OldPasswordRegEx= /^.\S{1,}$/;
+        console.log(OldPasswordRegEx.test(InputOldPassword,InputNewPassword));
+        return OldPasswordRegEx.test(InputOldPassword,InputNewPassword);
+      }
+      // function EmployeeRePasswordValidate(InputConfirmPassword){
+      //   var
+      // }
     });
   // ========== Contract State Toggle ============ //
 
