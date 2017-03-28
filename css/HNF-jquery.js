@@ -306,7 +306,6 @@
 
 
 
-
   // ============= Statictis ============= //
   (function(document) {
       var _bars = [].slice.call(document.querySelectorAll('.bar-inner'));
