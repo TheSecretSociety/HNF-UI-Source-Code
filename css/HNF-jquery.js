@@ -195,10 +195,8 @@
           console.log(PasswordRegEx.test(TxtLoginPassword));
           return PasswordRegEx.test(TxtLoginPassword);
         }
-      }
-<<<<<<< HEAD
-    }
-  );
+      });
+
   // =========== Employee Personal Validation ======= //
   $(document).ready(function EmployeePersonalValidation() {
       $('#Personal-Update-Button').click(function() {
@@ -210,7 +208,7 @@
         var EmailValue = $('#InputEmail').val();
         var OldPasswordValue = $('#txt-old-password').val();
         var NewPasswordValue = $('#txt-new-password').val();
-        // check for validate when edit employee information 
+        // check for validate when edit employee information
         var check = 0;
         if (EmployeeNameValidate(NameValue)){
         }else {
@@ -260,39 +258,7 @@
       //   var
       // }
     });
-  // ========== Contract State Toggle ============ //
-=======
-    );
-    // Employee Personal Validation //
-    $(document).ready(function EmployeePersonalValidation() {
-        $('#Personal-Update-Button').click(function() {
-          EmployeePersonalValidate();
-        });
-        function EmployeePersonalValidate(e) {
-          var NameValue = $('#InputName').val();
-          var PhoneValue = $('#InputPhone').val();
-          if (EmployeeNameValidate(NameValue) && EmployeePhoneValidate(PhoneValue)){
-            alert("Edit Successfully");
-          }else{
-            alert("Edit Fail");
-            e.preventDefault();
-          }
-        };
-        //validate name format
-        function EmployeeNameValidate(InputName){
-          var NameRegEx= /^[a-zA-Z]{2,30}$/;
-          console.log(NameRegEx.test(InputName));
-          return NameRegEx.test(InputName);
-        }
-        //validate phone number format
-        function EmployeePhoneValidate(InputPhone){
-          var PhoneRegEx= /^[\d]{2,13}$/;
-          console.log(PhoneRegEx.test(InputPhone));
-          return PhoneRegEx.test(InputPhone);
-        }
-      });
-    
->>>>>>> origin/master
+
 
 
 
