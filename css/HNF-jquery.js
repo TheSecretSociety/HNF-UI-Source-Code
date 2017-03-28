@@ -133,20 +133,23 @@
     });
     // Datetimepicker //
     $(document).ready(function DatetimePicker(){
-      weekStart: 1,
-      autoclose: true,
-      todayHighlight: true,
-      format: "dd/mm/yyyy",
-      language:"vi"
-    });
-    $('#sandbox-container .input-daterange').datepicker({
-      format: "dd/mm/yyyy",
-      weekStart: 1,
-      language: "vi",
-      orientation: "bottom auto",
-      keyboardNavigation: false,
-      autoclose: true,
-      todayHighlight: true
+      $('#sandbox-container .input-group.date').datepicker({
+        weekStart: 1,
+        orientation: "bottom auto",
+        autoclose: true,
+        todayHighlight: true,
+        format: "dd/mm/yyyy",
+        language:"vi"
+      });
+      $('#sandbox-container .input-daterange').datepicker({
+        format: "dd/mm/yyyy",
+        weekStart: 1,
+        language: "vi",
+        orientation: "bottom auto",
+        keyboardNavigation: false,
+        autoclose: true,
+        todayHighlight: true
+      });
     });
 
 
@@ -288,7 +291,7 @@
         return CustomerEmail.test(txtCustomerEmail);
       }
     });
-    // HNF-Customer-ContractDetail-DetailDesign //
+    // HNF-Customer-ContractDetail-DetailDesign
     $(document).ready(function ContractDetailDesignValidation(){
       function DetailDesignValidate() {
 
