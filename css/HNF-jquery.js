@@ -196,6 +196,7 @@
           return PasswordRegEx.test(TxtLoginPassword);
         }
       });
+
     // HNF-Employee-Personal Validation //
     $(document).ready(function EmployeePersonalValidation(){
       // trigger button
@@ -256,11 +257,14 @@
         return OldPasswordRegEx.test(InputOldPassword,InputNewPassword);
       }
     });
+
+
     // HNF-Customer-Detail Validation //
     $(document).ready(function CustomerDetailValidation(){
       $("#CustomerInfoSaveBtn").click(function() {
         CustomerDetailValidate();
       })
+
       function CustomerDetailValidate() {
         var CustomerName = $('#txt-CName').val();
         var CustomerPhone = $('#txt-CPhone').val();
@@ -296,12 +300,43 @@
       function DetailDesignValidate() {
 
       }
-      function DDesign_Quantity() {
-
+      function DDesign_Quantity_Validate(QuantityValue) {
+        var QuantityRegex = /\d/;
+        console.log('Quantity =' + QuantityRegex.test(QuantityValue));
+        return QuantityRegex.test(QuantityValue);
       }
-      function DDesign_Color() {
-
+      function DDesign_Color_Validate(ColorValue) {
+        var ColorRegex = /./;
+        console.log('Color = ' + ColorRegex.test(ColorValue));
+        return ColorRegex.test(ColorValue);
       }
+      function DDesign_ArmNeck_Validate(ArmNeckValue) {
+        var ArmNeckRegex = /./;
+        console.log('ArmNeck = ' + ArmNeckRegex.test(ArmNeckValue));
+        return ArmNeckRegex.test(ArmNeckValue);
+      }
+      function DDesign_Fabricate_Validate(FabricateValue) {
+        var FabricateRegex = /./;
+        console.log('Fabricate = ' + FabricateRegex.test(FabricateValue));
+        return FabricateRegex.test(FabricateValue);
+      }
+      function DDesign_Fabric_Validate(FabricValue) {
+        var FabricRegex = /./;
+        console.log('Fabricate = ' + FabricRegex.test(FabricValue));
+        return FabricRegex.test(FabricValue);
+      }
+      function DDesign_SizeQuantity_Validate(SizeQuantityValue) {
+        var SizeQuantityRegex = /^[\d]{0,10}$/
+        console.log('SizeQuantity = ' + SizeQuantityRegex.test(SizeQuantityValue));
+        return SizeQuantityRegex.test(SizeQuantityValue);
+      }
+      function DDesign_Total_Quantity_Validate(MSmall, MMedium, MLarge, MXLarge, MXXLarge, MXXXLarge, FSmall, FMedium, FLarge, FXLarge, FXXLarge, FXXXLarge, Total) {
+        var TotalMaleSize = MSmall + MMedium + MLarge + MXLarge + MXXLarge + MXXXLarge;
+        var TotalFemaleSize = FSmall + FMedium + FLarge + FXLarge + FXXLarge + FXXXLarge;
+        var TotalSize = TotalMaleSize + TotalFemaleSize;
+        
+      }
+
     });
 
 
