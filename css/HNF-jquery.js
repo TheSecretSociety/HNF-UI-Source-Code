@@ -133,9 +133,7 @@
     });
     // Datetimepicker //
     $(document).ready(function DatetimePicker(){
-    $('#sandbox-container .input-group.date').datepicker({
       weekStart: 1,
-      orientation: "bottom auto",
       autoclose: true,
       todayHighlight: true,
       format: "dd/mm/yyyy",
@@ -150,14 +148,13 @@
       autoclose: true,
       todayHighlight: true
     });
-  });
 
 
   // ----------------------------------------------------- //
   // --------------------- VALIDATION -------------------- //
   // ----------------------------------------------------- //
-    // Login Validation //
-    $(document).ready(function LoginValidation() {
+    // HNF-Login Validation //
+    $(document).ready(function LoginValidation(){
         $("#TxtLoginPassword").keyup(function(event){
           if(event.keyCode == 13){
               $("#LoginButton").click();
@@ -196,12 +193,13 @@
           return PasswordRegEx.test(TxtLoginPassword);
         }
       });
-
-  // =========== Employee Personal Validation ======= //
-  $(document).ready(function EmployeePersonalValidation() {
+    // HNF-Employee-Personal Validation //
+    $(document).ready(function EmployeePersonalValidation(){
+      // trigger button
       $('#Personal-Update-Button').click(function() {
         EmployeePersonalValidate();
       });
+      // check validtion (calling other function)
       function EmployeePersonalValidate(e) {
         var NameValue = $('#InputName').val();
         var PhoneValue = $('#InputPhone').val();
@@ -230,35 +228,78 @@
             alert("Edit Fail");
         }
       };
-      //validate name format
+      // validate name format //
       function EmployeeNameValidate(InputName){
         var NameRegEx= /^.[^.!@#$%^&*()_+-=]{0,35}$/;
         console.log(NameRegEx.test(InputName));
         return NameRegEx.test(InputName);
       }
-      //validate phone number format
+      // validate phone number format //
       function EmployeePhoneValidate(InputPhone){
         var PhoneRegEx= /^[\d]{2,13}$/;
         console.log(PhoneRegEx.test(InputPhone));
         return PhoneRegEx.test(InputPhone);
       }
-      //validate email format
+      // validate email format //
       function EmployeeEmailValidate(InputEmail){
         var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         console.log(EmailRegEx.test(InputEmail));
         return EmailRegEx.test(InputEmail);
       }
-      // validate old password
+      // validate old password //
       function EmployeeOldPasswordValidate(InputOldPassword,InputNewPassword){
         var OldPasswordRegEx= /^.\S{1,}$/;
         console.log(OldPasswordRegEx.test(InputOldPassword,InputNewPassword));
         return OldPasswordRegEx.test(InputOldPassword,InputNewPassword);
       }
-      // function EmployeeRePasswordValidate(InputConfirmPassword){
-      //   var
-      // }
     });
+    // HNF-Customer-Detail Validation //
+    $(document).ready(function CustomerDetailValidation(){
+      $("#CustomerInfoSaveBtn").click(function() {
+        CustomerDetailValidate();
+      })
+      function CustomerDetailValidate() {
+        var CustomerName = $('#txt-CName').val();
+        var CustomerPhone = $('#txt-CPhone').val();
+        var CustomerEmail = $('#txt-CEmail').val();
+        if (CName_Format_Validate(CustomerName) &&  CPhone_Format_Validate(CustomerPhone) &&
+        CEmail_Format_Validate(CustomerEmail)){
+          alert("add Successfully");
+          return true;
+        }else{
+          alert("Invalid Input");
+          return false;
+        }
+      }
 
+      function CName_Format_Validate(txtCustomerName) {
+        var CustomerNameRegex = /^.[^.!@#$%^&*()_+-=]{0,35}$/;
+        console.log(CustomerNameRegex.test(txtCustomerName));
+        return CustomerNameRegex.test(txtCustomerName);
+      }
+      function CPhone_Format_Validate(txtCustomerPhone) {
+        var CustomerPhoneRegex = /^[\d]{2,13}$/;
+        console.log(CustomerPhoneRegex.test(txtCustomerPhone));
+        return CustomerPhoneRegex.test(txtCustomerPhone);
+      }
+      function CEmail_Format_Validate(txtCustomerEmail) {
+        var CustomerEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log(CustomerEmail.test(txtCustomerEmail));
+        return CustomerEmail.test(txtCustomerEmail);
+      }
+    });
+    // HNF-Customer-ContractDetail-DetailDesign //
+    $(document).ready(function ContractDetailDesignValidation(){
+      function DetailDesignValidate() {
+
+      }
+      function DDesign_Quantity() {
+
+      }
+      function DDesign_Color() {
+
+      }
+    });
 
 
 
