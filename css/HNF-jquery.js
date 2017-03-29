@@ -297,45 +297,50 @@
     });
     // HNF-Customer-ContractDetail-DetailDesign
     $(document).ready(function ContractDetailDesignValidation(){
+      DetailDesignValidate();
       function DetailDesignValidate() {
-
+        // fast check quantity
+        $("#txt_DD_Quantity").change(function QuantityCheck() {
+          var QuantityValue = $("#txt_DD_Quantity").val();
+          if (QuantityValue < 0){
+            QuantityValue = -QuantityValue;
+            $("#txt_DD_Quantity").val(QuantityValue);
+          }else{
+            var Result = DDesign_Quantity_Validate(QuantityValue);
+            if (Result != true) {
+              $("#txt_DD_Quantity").addClass("bg-danger");
+              $("#txt_DD_Quantity").val('');
+              window.setTimeout(function () {
+                $("#txt_DD_Quantity").removeClass("bg-danger");
+              }, 1000);
+            }
+          }
+        });
       }
+
       function DDesign_Quantity_Validate(QuantityValue) {
         var QuantityRegex = /\d/;
-        console.log('Quantity =' + QuantityRegex.test(QuantityValue));
+        console.log('Quantity = ' + QuantityRegex.test(QuantityValue));
         return QuantityRegex.test(QuantityValue);
-      }
-      function DDesign_Color_Validate(ColorValue) {
-        var ColorRegex = /./;
-        console.log('Color = ' + ColorRegex.test(ColorValue));
-        return ColorRegex.test(ColorValue);
-      }
-      function DDesign_ArmNeck_Validate(ArmNeckValue) {
-        var ArmNeckRegex = /./;
-        console.log('ArmNeck = ' + ArmNeckRegex.test(ArmNeckValue));
-        return ArmNeckRegex.test(ArmNeckValue);
-      }
-      function DDesign_Fabricate_Validate(FabricateValue) {
-        var FabricateRegex = /./;
-        console.log('Fabricate = ' + FabricateRegex.test(FabricateValue));
-        return FabricateRegex.test(FabricateValue);
-      }
-      function DDesign_Fabric_Validate(FabricValue) {
-        var FabricRegex = /./;
-        console.log('Fabricate = ' + FabricRegex.test(FabricValue));
-        return FabricRegex.test(FabricValue);
       }
       function DDesign_SizeQuantity_Validate(SizeQuantityValue) {
         var SizeQuantityRegex = /^[\d]{0,10}$/
         console.log('SizeQuantity = ' + SizeQuantityRegex.test(SizeQuantityValue));
         return SizeQuantityRegex.test(SizeQuantityValue);
       }
-      function DDesign_Total_Quantity_Validate(MSmall, MMedium, MLarge, MXLarge, MXXLarge, MXXXLarge, FSmall, FMedium, FLarge, FXLarge, FXXLarge, FXXXLarge, Total) {
-        var TotalMaleSize = MSmall + MMedium + MLarge + MXLarge + MXXLarge + MXXXLarge;
-        var TotalFemaleSize = FSmall + FMedium + FLarge + FXLarge + FXXLarge + FXXXLarge;
-        var TotalSize = TotalMaleSize + TotalFemaleSize;
-        
-      }
+      // Check the number base on the Total quantity of the shirt and size input
+      // function DDesign_Total_Quantity_Validate(MSmall, MMedium, MLarge, MXLarge, MXXLarge, MXXXLarge, FSmall, FMedium, FLarge, FXLarge, FXXLarge, FXXXLarge, TotalShirt) {
+      //   var TotalMaleSize = MSmall + MMedium + MLarge + MXLarge + MXXLarge + MXXXLarge;
+      //   var TotalFemaleSize = FSmall + FMedium + FLarge + FXLarge + FXXLarge + FXXXLarge;
+      //   var TotalSize = TotalMaleSize + TotalFemaleSize;
+      //   if (TotalSize == TotalShirt) {
+      //     console.log(true);
+      //     return true;
+      //   }else{
+      //     console.log(false);
+      //     return false;
+      //   }
+      // }
 
     });
 
