@@ -196,7 +196,6 @@
           return PasswordRegEx.test(TxtLoginPassword);
         }
       });
-
     // HNF-Employee-Personal Validation //
     $(document).ready(function EmployeePersonalValidation(){
       // trigger button
@@ -257,14 +256,11 @@
         return OldPasswordRegEx.test(InputOldPassword,InputNewPassword);
       }
     });
-
-
     // HNF-Customer-Detail Validation //
     $(document).ready(function CustomerDetailValidation(){
       $("#CustomerInfoSaveBtn").click(function() {
         CustomerDetailValidate();
       })
-
       function CustomerDetailValidate() {
         var CustomerName = $('#txt-CName').val();
         var CustomerPhone = $('#txt-CPhone').val();
@@ -278,7 +274,6 @@
           return false;
         }
       }
-
       function CName_Format_Validate(txtCustomerName) {
         var CustomerNameRegex = /^.[^.!@#$%^&*()_+-=]{0,35}$/;
         console.log(CustomerNameRegex.test(txtCustomerName));
@@ -290,57 +285,141 @@
         return CustomerPhoneRegex.test(txtCustomerPhone);
       }
       function CEmail_Format_Validate(txtCustomerEmail) {
+
+        // if (typeof txtCustomerEmail === 'undefined' ||
+        //             txtCustomerEmail === null)
+        //
+        //             if (!txtCustomerEmail)
+
         var CustomerEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         console.log(CustomerEmail.test(txtCustomerEmail));
         return CustomerEmail.test(txtCustomerEmail);
       }
     });
-    // HNF-Customer-ContractDetail-DetailDesign
+
+    // HNF-Customer-ContractDetail-DetailDesign //
     $(document).ready(function ContractDetailDesignValidation(){
       DetailDesignValidate();
       function DetailDesignValidate() {
         // fast check quantity
-        $("#txt_DD_Quantity").change(function QuantityCheck() {
-          var QuantityValue = $("#txt_DD_Quantity").val();
-          if (QuantityValue < 0){
-            QuantityValue = -QuantityValue;
-            $("#txt_DD_Quantity").val(QuantityValue);
-          }else{
+        $("#txt_DD_Quantity").change(function TotalQuantityCheck() {
+          var QuantityValue = Number($("#txt_DD_Quantity").val());
+            $("#txt_DD_Quantity").val(AntiNegativeValue(QuantityValue)); // check negative value and return the value back to the input
             var Result = DDesign_Quantity_Validate(QuantityValue);
             if (Result != true) {
               $("#txt_DD_Quantity").addClass("bg-danger");
               $("#txt_DD_Quantity").val('');
+              // warning timeout
               window.setTimeout(function () {
                 $("#txt_DD_Quantity").removeClass("bg-danger");
               }, 1000);
             }
-          }
         });
+        // Negative size converter
+        $('input').change(function MakePositive() {
+          // Male S
+          var MSmall = $('#txtMSmall').val();
+          $('#txtMSmall').val(AntiNegativeValue(MSmall));
+          // Male M
+          var MMedium = $('#txtMMedium').val();
+          $('#txtMMedium').val(AntiNegativeValue(MMedium));
+          // Male L
+          var MLarge = $('#txtMLarge').val();
+          $('#txtMLarge').val(AntiNegativeValue(MLarge));
+          // Male XL
+          var MXLarge = $('#txtMXLarge').val();
+          $('#txtMXLarge').val(AntiNegativeValue(MXLarge));
+          // Male XXL
+          var MXXLarge = $('#txtMXXLarge').val();
+          $('#txtMXXLarge').val(AntiNegativeValue(MXXLarge));
+          // Male XXXL
+          var MXXXLarge = $('#txtMXXXLarge').val();
+          $('#txtMXXXLarge').val(AntiNegativeValue(MXXXLarge));
+
+          // FeMale S
+          var FSmall = $('#txtFSmall').val();
+          $('#txtFSmall').val(AntiNegativeValue(FSmall));
+          // FeMale M
+          var FMedium = $('#txtFMedium').val();
+          $('#txtFMedium').val(AntiNegativeValue(FMedium));
+          // FeMale L
+          var FLarge = $('#txtFLarge').val();
+          $('#txtFLarge').val(AntiNegativeValue(FLarge));
+          // FeMale XL
+          var FXLarge = $('#txtFXLarge').val();
+          $('#txtFXLarge').val(AntiNegativeValue(FXLarge));
+          // FeMale XXL
+          var FXXLarge = $('#txtFXXLarge').val();
+          $('#txtFXXLarge').val(AntiNegativeValue(FXXLarge));
+          // FeMale XXXL
+          var FXXXLarge = $('#txtFXXXLarge').val();
+          $('#txtFXXXLarge').val(AntiNegativeValue(FXXXLarge));
+        });
+        // Compare total shirt with total shirt size
+        $('#DDSubmitBtn').click(function CompareQuantity() {
+
+          var MSmall = Number($('#txtMSmall').val());
+          var MMedium = Number($('#txtMMedium').val());
+          var MLarge = Number($('#txtMLarge').val());
+          var MXLarge = Number($('#txtMXLarge').val());
+          var MXXLarge = Number($('#txtMXXLarge').val());
+          var MXXXLarge = Number($('#txtMXXXLarge').val());
+          var FSmall = Number($('#txtFSmall').val());
+          var FMedium = Number($('#txtFMedium').val());
+          var FLarge = Number($('#txtFLarge').val());
+          var FXLarge = Number($('#txtFXLarge').val());
+          var FXXLarge = Number($('#txtFXXLarge').val());
+          var FXXXLarge = Number($('#txtFXXXLarge').val());
+          var TotalShirt = Number($('#txt_DD_Quantity').val());
+          DDesign_Total_Quantity_Validate(MSmall,MMedium,MLarge,MXLarge,MXXLarge,MXXXLarge,FSmall,FMedium,FLarge,FXLarge,FXXLarge,FXXXLarge,TotalShirt);
+        })
       }
 
+      // make negative number into positive
+      function AntiNegativeValue(num) {
+        if (num < 0) {
+          num = -num;
+          return num;
+        }
+        return num;
+      }
+      // check the number type of Quantity Input
       function DDesign_Quantity_Validate(QuantityValue) {
         var QuantityRegex = /\d/;
         console.log('Quantity = ' + QuantityRegex.test(QuantityValue));
         return QuantityRegex.test(QuantityValue);
       }
+      // check the total number type of size Input
       function DDesign_SizeQuantity_Validate(SizeQuantityValue) {
         var SizeQuantityRegex = /^[\d]{0,10}$/
         console.log('SizeQuantity = ' + SizeQuantityRegex.test(SizeQuantityValue));
         return SizeQuantityRegex.test(SizeQuantityValue);
       }
       // Check the number base on the Total quantity of the shirt and size input
-      // function DDesign_Total_Quantity_Validate(MSmall, MMedium, MLarge, MXLarge, MXXLarge, MXXXLarge, FSmall, FMedium, FLarge, FXLarge, FXXLarge, FXXXLarge, TotalShirt) {
-      //   var TotalMaleSize = MSmall + MMedium + MLarge + MXLarge + MXXLarge + MXXXLarge;
-      //   var TotalFemaleSize = FSmall + FMedium + FLarge + FXLarge + FXXLarge + FXXXLarge;
-      //   var TotalSize = TotalMaleSize + TotalFemaleSize;
-      //   if (TotalSize == TotalShirt) {
-      //     console.log(true);
-      //     return true;
-      //   }else{
-      //     console.log(false);
-      //     return false;
-      //   }
-      // }
+      function DDesign_Total_Quantity_Validate(MSmall, MMedium, MLarge, MXLarge, MXXLarge, MXXXLarge, FSmall, FMedium, FLarge, FXLarge, FXXLarge, FXXXLarge, TotalShirt) {
+
+        var TotalMaleSize = MSmall + MMedium + MLarge + MXLarge + MXXLarge + MXXXLarge;
+        console.log('Total Male Size = '+ TotalMaleSize);
+
+        var TotalFemaleSize = FSmall + FMedium + FLarge + FXLarge + FXXLarge + FXXXLarge;
+        console.log('Total Female Size = '+TotalFemaleSize);
+
+        var TotalSize = TotalMaleSize + TotalFemaleSize;
+        console.log('Total Size = '+TotalSize);
+        if (TotalSize == TotalShirt) {
+          console.log('equal = ' + true);
+          return true;
+        }else{
+          console.log('equal = ' +false);
+          $(".table-input").addClass('bg-danger');
+          window.setTimeout(function () {
+            $(".table-input").removeClass('bg-danger');
+          }, 1000);
+
+          return false;
+
+        }
+      }
 
     });
 
