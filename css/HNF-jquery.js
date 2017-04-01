@@ -12,6 +12,8 @@
       DeleteButtonWarning();
       ProductionProgressBar();
       DatetimePicker();
+
+
     });
 
   // ----------------------------------------------------- //
@@ -170,11 +172,16 @@
       });
     }
 
+    // Alert //
+
+
   // ----------------------------------------------------- //
   // --------------------- VALIDATION -------------------- //
   // ----------------------------------------------------- //
     // HNF-Login Validation //
     function LoginValidation(){
+      // keyboard input listener (Enter Key)
+      function KeyboardInput() {
         $("#TxtLoginPassword").keyup(function(event){
           if(event.keyCode == 13){
               $("#LoginButton").click();
@@ -185,33 +192,42 @@
               $("#LoginButton").click();
           }
         });
-        $('#LoginButton').click(function() {
-          Validate();
-        });
-        // validate email and password
-        function Validate() {
-          var PasswordValue = $('#TxtLoginPassword').val();
-          var UsernameValue = $('#TxtLoginID').val();
-          if (LoginUsernameValidate(UsernameValue) && LoginPasswordValidate(PasswordValue)){
-            alert("Login Successfully");
-            window.location = "./HNF-Dashboard.html";
-          }else{
-            alert("Login Fail");
-          }
-        };
-        // validate email format
-        function LoginUsernameValidate(TxtLoginID){
-          var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          console.log('Email ID :' + EmailRegEx.test(TxtLoginID));
-          return EmailRegEx.test(TxtLoginID);
-        }
-        // validate password format
-        function LoginPasswordValidate(TxtLoginPassword) {
-          var PasswordRegEx= /^.\S{1,}$/;
-          console.log('Password :' + PasswordRegEx.test(TxtLoginPassword));
-          return PasswordRegEx.test(TxtLoginPassword);
-        }
       }
+      // validate email format
+      $('#TxtLoginID').change(function IDValidation(){
+        var UsernameValue = $('#TxtLoginID').val();
+        if (LoginUsernameValidate(UsernameValue)) {
+          $('.IDError').empty();
+          // nếu đúng controller sẽ thực hiện
+          return true;
+        }else{
+          $('.IDError').append('<small style="color:white;">Vui lòng nhập lại Email!</small>');
+          return false;
+        }
+      });
+      $('#TxtLoginPassword').change(function PasswordValidation(){
+        var PasswordValue = $('#TxtLoginPassword').val();
+        if (LoginPasswordValidate(PasswordValue)) {
+          $('.PasswordError').empty();
+          // nếu đúng controller sẽ thực hiện
+          return true;
+        }else{
+          $('.PasswordError').append('<small style="color:white;">Password không được có khoản trắng!');
+          return false;
+        }
+      });
+      function LoginUsernameValidate(TxtLoginID){
+        var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log('Email ID :' + EmailRegEx.test(TxtLoginID));
+        return EmailRegEx.test(TxtLoginID);
+      }
+      // validate password format
+      function LoginPasswordValidate(TxtLoginPassword) {
+        var PasswordRegEx= /^.\S{1,}$/;
+        console.log('Password :' + PasswordRegEx.test(TxtLoginPassword));
+        return PasswordRegEx.test(TxtLoginPassword);
+      }
+    }
 
     // HNF-Employee-Personal Validation //
     function EmployeePersonalValidation(){
@@ -287,6 +303,7 @@
             window.setTimeout(function () {
               $('#txt-CName').removeClass('bg-warning');
             }, 1500);
+
           }
         })
         $('#txt-CPhone').change(function() {
