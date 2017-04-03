@@ -13,7 +13,7 @@
       ProductionProgressBar();
       DatetimePicker();
 
-
+      DemoChart();
     });
 
   // ----------------------------------------------------- //
@@ -180,6 +180,7 @@
   // ----------------------------------------------------- //
     // HNF-Login Validation //
     function LoginValidation(){
+      Validate();
       // keyboard input listener (Enter Key)
       function KeyboardInput() {
         $("#TxtLoginPassword").keyup(function(event){
@@ -193,29 +194,36 @@
           }
         });
       }
-      // validate email format
-      $('#TxtLoginID').change(function IDValidation(){
-        var UsernameValue = $('#TxtLoginID').val();
-        if (LoginUsernameValidate(UsernameValue)) {
+      // calling validate funtions
+      function Validate() {
+        $('#TxtLoginID').change(function IDValidation(){
+          var UsernameValue = $('#TxtLoginID').val();
           $('.IDError').empty();
-          // nếu đúng controller sẽ thực hiện
-          return true;
-        }else{
-          $('.IDError').append('<small style="color:white;">Vui lòng nhập lại Email!</small>');
-          return false;
-        }
-      });
-      $('#TxtLoginPassword').change(function PasswordValidation(){
-        var PasswordValue = $('#TxtLoginPassword').val();
-        if (LoginPasswordValidate(PasswordValue)) {
+          if (LoginUsernameValidate(UsernameValue)) {
+            $('.IDError').empty();
+            // nếu đúng controller sẽ thực hiện
+            return true;
+          }else{
+            $('.IDError').append('<small style="color:white;">Vui lòng nhập lại Email!</small>');
+            return false;
+          }
+        });
+        $('#TxtLoginPassword').change(function PasswordValidation(){
+          var PasswordValue = $('#TxtLoginPassword').val();
           $('.PasswordError').empty();
-          // nếu đúng controller sẽ thực hiện
-          return true;
-        }else{
-          $('.PasswordError').append('<small style="color:white;">Password không được có khoản trắng!');
-          return false;
-        }
-      });
+          if (LoginPasswordValidate(PasswordValue)) {
+            $('.PasswordError').empty();
+            // nếu đúng controller sẽ thực hiện
+            return true;
+          }else{
+            $('.PasswordError').append('<small style="color:white;">Password không được có khoản trắng!');
+            return false;
+          }
+        });
+      }
+
+
+      // validate email format
       function LoginUsernameValidate(TxtLoginID){
         var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         console.log('Email ID :' + EmailRegEx.test(TxtLoginID));
@@ -296,36 +304,26 @@
       function Validate() {
         $('#txt-CName').change(function() {
           var CustomerName = $('#txt-CName').val();
+          $('#txt-CName').removeClass('bg-warning');
           if (CName_Format_Validate(CustomerName)) {
-
           }else{
             $('#txt-CName').addClass('bg-warning');
-            window.setTimeout(function () {
-              $('#txt-CName').removeClass('bg-warning');
-            }, 1500);
-
           }
         })
         $('#txt-CPhone').change(function() {
           var CustomerPhone = $('#txt-CPhone').val();
+          $('#txt-CPhone').removeClass('bg-warning');
           if (CPhone_Format_Validate(CustomerPhone)) {
-
           }else{
             $('#txt-CPhone').addClass('bg-warning');
-            window.setTimeout(function () {
-              $('#txt-CPhone').removeClass('bg-warning');
-            }, 1500);
           }
         })
         $('#txt-CEmail').change(function () {
           var CustomerEmail = $('#txt-CEmail').val();
+          $('#txt-CEmail').removeClass('bg-warning');
           if (CEmail_Format_Validate(CustomerEmail)) {
-
           }else {
             $('#txt-CEmail').addClass('bg-warning');
-            window.setTimeout(function () {
-            $('#txt-CEmail').removeClass('bg-warning');
-            }, 1500);
           }
         })
         $('#txt-CPrice').change(function() {
@@ -490,12 +488,95 @@
 
 
   // ============= Statictis ============= //
-  (function(document) {
-      var _bars = [].slice.call(document.querySelectorAll('.bar-inner'));
-
-      _bars.map(function (bar, index) {
-          setTimeout(function() {
-            bar.style.width = bar.dataset.percent;
-        }, 0);
-      })
-  })(document);
+  // Test Chart
+    function DemoChart() {
+      // bar chart
+        var barchart = document.getElementById("BarChart");
+        var myChart = new Chart(barchart, {
+            type: 'bar',
+            data: {
+              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255,99,132,1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+      // line chart
+        var linechart = document.getElementById('LineChart');
+        var LineChartData = new Chart(linechart,{
+          type: 'line',
+          data:{
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets:
+              [
+                {
+                  label: "Doanh Số Bán Hàng",
+                  fill: true,
+                  lineTension: 0.1,
+                  backgroundColor: "rgba(75,192,192,0.4)",
+                  borderColor: "rgba(75,192,192,1)",
+                  borderCapStyle: 'butt',
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  borderJoinStyle: 'miter',
+                  pointBorderColor: "rgba(75,192,192,1)",
+                  pointBackgroundColor: "#fff",
+                  pointBorderWidth: 2,
+                  pointHoverRadius: 5,
+                  pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                  pointHoverBorderColor: "rgba(220,220,220,1)",
+                  pointHoverBorderWidth: 2,
+                  pointRadius: 5,
+                  pointHitRadius: 10,
+                  data: [1, 2, 8, 4, 5, 2, 7],
+                  spanGaps: false,
+                }
+              ]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+              }
+          }
+        });
+    }
+  // (function(document) {
+  //     var _bars = [].slice.call(document.querySelectorAll('.bar-inner'));
+  //
+  //     _bars.map(function (bar, index) {
+  //         setTimeout(function() {
+  //           bar.style.width = bar.dataset.percent;
+  //       }, 0);
+  //     })
+  // })(document);

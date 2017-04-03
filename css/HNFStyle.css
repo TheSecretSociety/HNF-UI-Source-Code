@@ -256,6 +256,7 @@ a:link {
 .hnf-navtab-font{
   text-align: center;
   font-size: 0.9rem;
+  color: black;
 }
 .hnf-bg-production-bar {
     background-color: rgb(255, 255, 255);
