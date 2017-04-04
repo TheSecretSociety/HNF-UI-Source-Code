@@ -7,6 +7,7 @@
       EmployeePersonalValidation();
       CustomerDetailValidation();
       ContractDetailDesignValidation();
+      EmployeeAddValidation();
 
       ClearButton();
       DeleteButtonWarning();
@@ -14,7 +15,7 @@
       DatetimePicker();
 
       DemoChart();
-      
+
     });
 
   // ----------------------------------------------------- //
@@ -222,8 +223,6 @@
           }
         });
       }
-
-
       // validate email format
       function LoginUsernameValidate(TxtLoginID){
         var EmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -296,6 +295,102 @@
         var OldPasswordRegEx= /^.\S{1,}$/;
         console.log(OldPasswordRegEx.test(InputOldPassword,InputNewPassword));
         return OldPasswordRegEx.test(InputOldPassword,InputNewPassword);
+      }
+    }
+
+    // HNF-Employee-AddEmployee Validaion
+    function EmployeeAddValidation() {
+      Validate();
+      function Validate() {
+        $("#InputName").change(function () {
+          var ANameValue = $("#InputName").val();
+          $("#InputName").removeClass("bg-warning");
+          if(ANameValidate(ANameValue)){
+          }else{
+            $("#InputName").addClass("bg-warning");
+            $("#InputName").val('');
+          }
+        });
+        $("#InputPhone").change(function () {
+          var APhoneValue = $("#InputPhone").val();
+          $("#InputPhone").removeClass("bg-warning");
+          if(APhoneValidate(APhoneValue)){
+          }else{
+            $("#InputPhone").addClass("bg-warning");
+            $("#InputPhone").val('');
+
+          }
+        });
+        $("#InputEmail").change(function () {
+          var AEmailValue = $("#InputEmail").val();
+          $("#InputEmail").removeClass("bg-warning");
+          if(AEmailValidate(AEmailValue)){
+          }else{
+            $("#InputEmail").addClass("bg-warning");
+            $("#InputEmail").val('');
+
+          }
+        });
+        $('#txt-input-password').change(function(){
+          var APasswordValue = $('#txt-input-password').val();
+          $('#txt-input-password').removeClass("bg-warning");
+          if(APasswordValidate(APasswordValue)){
+          }else {
+            $('#txt-input-password').addClass("bg-warning");
+            $('#txt-input-password').val('');
+          }
+        });
+        $('#txt-input-password-confirm').change(function(){
+          var APasswordValue = $('#txt-input-password-confirm').val();
+          $('#txt-input-password-confirm').removeClass("bg-warning");
+          if(APasswordValidate(APasswordValue)){
+          }else {
+            $('#txt-input-password-confirm').addClass("bg-warning");
+            $('#txt-input-password-confirm').val('');
+          }
+
+        });
+        $('#AddNewEmployeeBtn').click(function() {
+          var Password = $('#txt-input-password').val();
+          console.log(Password);
+          var ConfirmPassword = $('#txt-input-password-confirm').val();
+          console.log(ConfirmPassword);
+          $('#txt-input-password').removeClass('bg-warning');
+          $('#txt-input-password-confirm').removeClass('bg-warning');
+          if (Password == ConfirmPassword) {
+            console.log('Password & ConfirmPassword: true');
+            return true;
+          }else{
+            $('#txt-input-password').addClass('bg-warning');
+            $('#txt-input-password-confirm').addClass('bg-warning');
+            return false;
+          }
+        })
+      }
+
+      // validate name format //
+      function ANameValidate(NameValue){
+        var ANameRegEx= /^.{0,35}[^!@#.$%^&*()_+-=]$/;
+        console.log('Aname = ' + ANameRegEx.test(NameValue));
+        return ANameRegEx.test(NameValue);
+      }
+      // validate phone number format //
+      function APhoneValidate(PhoneValue){
+        var APhoneRegEx= /^[\d]{2,13}$/;
+        console.log('Aphone = ' + APhoneRegEx.test(PhoneValue));
+        return APhoneRegEx.test(PhoneValue);
+      }
+      // validate email format //
+      function AEmailValidate(EmailValue){
+        var AEmailRegEx= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log('AEmail = ' + AEmailRegEx.test(EmailValue));
+        return AEmailRegEx.test(EmailValue);
+      }
+      //   // validate old password //
+      function APasswordValidate(PasswordValue){
+        var APasswordRegEx= /^.\S{1,}$/;
+        console.log('APassword = ' + APasswordRegEx.test(PasswordValue));
+        return APasswordRegEx.test(PasswordValue);
       }
     }
 
@@ -609,12 +704,3 @@
             },
         });
     }
-  // (function(document) {
-  //     var _bars = [].slice.call(document.querySelectorAll('.bar-inner'));
-  //
-  //     _bars.map(function (bar, index) {
-  //         setTimeout(function() {
-  //           bar.style.width = bar.dataset.percent;
-  //       }, 0);
-  //     })
-  // })(document);
