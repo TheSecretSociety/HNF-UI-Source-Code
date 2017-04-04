@@ -14,7 +14,7 @@
       DatetimePicker();
 
       DemoChart();
-      GetHtmlData();
+      
     });
 
   // ----------------------------------------------------- //
@@ -490,14 +490,7 @@
 
   // ============= Statictis ============= //
   // Test Chart
-    function GetHtmlData() {
 
-      var htmlData = document.getElementsByName('bardataset').value;
-      for (var i = 0; i < htmlData.length; i++) {
-        console.log(htmlData[i]);
-      }
-      
-    }
     function DemoChart() {
       // bar chart
         var barchart = document.getElementById("BarChart");

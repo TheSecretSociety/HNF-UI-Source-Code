@@ -91,66 +91,73 @@
             <div class="page-content">
                 <div class="container-fluid">
                   <br>
-                  <div class="row">
-                    <div class="col-xl-12">
-                      <div class="card form-input-margin">
-                        <div class="row">
-                          <!-- Thông tin nhân  -->
-                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-sx-12">
-                            <h5>Thông Tin Nhân Viên</h5>
-                            <div class="row">
+                  <form class="" action="" method="post">
+                    <div class="row">
+                      <div class="col-xl-12">
+                        <div class="card form-input-margin">
+                          <div class="row">
+                            <!-- Thông tin nhân  -->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-sx-12">
+                              <h5>Thông Tin Nhân Viên</h5>
+                              <div class="row">
+                                 <div class="col-xl-6">
+                                   <!-- Họ Tên -->
+                                   <div class="form-group">
+                                       <label for="InputName">Họ Tên <span class="Notice">*</span></label>
+                                       <input type="text" class="form-control" id="InputName" aria-describedby="InputName" placeholder="" required>
+                                   </div>
+                                   <!-- Số Điện Thoại -->
+                                   <div class="form-group">
+                                       <label for="InputPhone">Số Điện Thoại <span class="Notice">*</span></label>
+                                       <input type="text" class="form-control" id="InputPhone" aria-describedby="InputPhone" placeholder="" required>
+                                   </div>
+                                   <!-- Phân Quyền -->
+                                   <div class="form-group">
+                                       <label for="InputAuthorize">Phân Quyền <span class="Notice">*</span></label>
+                                       <select class="form-control" id="InputAuthorize">
+                                          <option selected="">Phân Quyền</option>
+                                          <option>Nhân Viên Bán Hàng</option>
+                                          <option>Tư Vấn Khách Hàng</option>
+                                          <option>Quản Lí Sản Xuất</option>
+                                       </select>
+                                   </div>
+                                   <br>
+                                 </div>
+                                 <div class="col-xl-6">
+                                   <!-- Email -->
+                                   <div class="form-group">
+                                       <label for="InputEmail">Email <span class="Notice">*</span></label>
+                                       <input type="text" class="form-control" id="InputEmail" aria-describedby="InputEmail" placeholder="" required>
+                                   </div>
+                                   <!-- Mật Khẩu -->
+                                   <div class="form-group" id="AddEmployeePassword">
+                                       <label for="InputPassword">Mật Khẩu <span class="Notice">*</span></label>
+                                       <input type="password" class="form-control" id="txt-input-password" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                   <!-- Nhập Lại Mật Khẩu -->
+                                   <div class="form-group" id="AddEmployeeConfirmPassword">
+                                       <label for="InputPasswordConfirm">Nhập Lại Mật Khẩu <span class="Notice">*</span></label>
+                                       <input type="password" class="form-control" id="txt-input-password-confirm" aria-describedby="emailHelp" placeholder="" required>
+                                   </div>
+                                   <!-- Các Nút chức năng -->
+                                   <br>
 
-                               <div class="col-xl-6">
-                                 <!-- Họ Tên -->
-                                 <div class="form-group">
-                                     <label for="InputName">Họ Tên <span class="Notice">*</span></label>
-                                     <input type="text" class="form-control" id="InputName" aria-describedby="InputName" placeholder="">
                                  </div>
-                                 <!-- Số Điện Thoại -->
-                                 <div class="form-group">
-                                     <label for="InputPhone">Số Điện Thoại <span class="Notice">*</span></label>
-                                     <input type="text" class="form-control" id="InputPhone" aria-describedby="InputPhone" placeholder="">
-                                 </div>
-                                 <!-- Phân Quyền -->
-                                 <div class="form-group">
-                                     <label for="InputAuthorize">Phân Quyền <span class="Notice">*</span></label>
-                                     <select class="form-control" id="InputAuthorize">
-                                        <option selected="">Phân Quyền</option>
-                                        <option>Nhân Viên Bán Hàng</option>
-                                        <option>Tư Vấn Khách Hàng</option>
-                                        <option>Quản Lí Sản Xuất</option>
-                                     </select>
-                                 </div>
-                                 <br>
-                                 <a href="#" id="Employee-Save-Button"class="btn btn-success w-100">Lưu</a>
-                               </div>
-                               <div class="col-xl-6">
-                                 <!-- Email -->
-                                 <div class="form-group">
-                                     <label for="InputEmail">Email <span class="Notice">*</span></label>
-                                     <input type="text" class="form-control" id="InputEmail" aria-describedby="InputEmail" placeholder="">
-                                 </div>
-                                 <!-- Mật Khẩu -->
-                                 <div class="form-group" id="AddEmployeePassword">
-                                     <label for="InputPassword">Mật Khẩu <span class="Notice">*</span></label>
-                                     <input type="password" class="form-control" id="txt-input-password" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                                 <!-- Nhập Lại Mật Khẩu -->
-                                 <div class="form-group" id="AddEmployeeConfirmPassword">
-                                     <label for="InputPasswordConfirm">Nhập Lại Mật Khẩu <span class="Notice">*</span></label>
-                                     <input type="password" class="form-control" id="txt-input-password-confirm" aria-describedby="emailHelp" placeholder="">
-                                 </div>
-                                 <!-- Các Nút chức năng -->
-                                 <br>
-                                 <a href="#" id="Cancle-Button" class="btn btn-danger w-100">Huỷ</a>
-                               </div>
-                             </div>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                          <div class="row">
+                            <div class="col-xl-6">
+                              <input type="submit" name="" value="Thêm Nhân Viên" class="btn btn-success btn-block">
+                            </div>
+                            <div class="col-xl-6">
+                              <button type="button" name="button" class="btn btn-danger btn-block">Huỷ</button>
+                            </div>
+                          </div>
+                        <span class="Notice"> <small class="font-italic">* : Trường Bắt Buộc</small></span>
                       </div>
-                      <span class="Notice"> <small class="font-italic">* : Trường Bắt Buộc</small></span>
                     </div>
-                  </div>
+                  </form>
                 </div>
             </div>
         </div>
