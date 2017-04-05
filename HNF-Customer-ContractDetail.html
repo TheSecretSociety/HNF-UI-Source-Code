@@ -184,20 +184,30 @@
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                   <div class= "card form-input-margin">
                     <div class = "row">
-                      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+                      <!-- Upload -->
+                      <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
                         <div class="mb-2 mb-sm-0">
-                          <label class="custom-file w-100 mb-sm-2 mb-lg-0">
-                            <input type="file" id="file" class="custom-file-input hnf-custom-file-input" placeholder="Tải file lên">
-                            <span class="custom-file-control"></span>
-                          </label>
+                          <div class="input-group">
+                            <input type="file" id="file1" onchange="$('#txtMarketName').val($(this).val());" hidden>
+                            <label for="file1" class="btn btn-info btn-block">
+                                <i class="material-icons md-18 search-button" style="margin:0;padding:0;">cloud_upload</i>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+                      <!-- Download -->
+                      <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+                        <div class="input-group">
+                          <button type="button" name="button" class="btn btn-success btn-block"><i class="material-icons md-18 search-button" style="margin:0;padding:0;">cloud_download</i></button>
+                        </div>
+                      </div>
+                      <!-- File Name -->
+                      <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
                         <div class="input-group mb-2 mb-sm-0">
-                          <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Market" readonly>
+                          <input type="text" id="txtMarketName" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Market" readonly>
                         </div>
                       </div>
-                      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+                      <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
                         <div class="input-group mb-0 mr-sm-2 mb-sm-0">
                           <a href="./HNF-Customer-ContractDetail-DetailDesign.html" role="button" class="btn btn-primary btn-block">Chi Tiết Thiết Kế</a>
                         </div>
@@ -213,7 +223,6 @@
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
               <div class="card form-input-margin">
                 <div class="input-group">
-
                   <input type="text" class="form-control" aria-label="Báo Giá Sản Phẩm" placeholder="Báo Giá" readonly>
                 </div>
               </div>
@@ -222,20 +231,30 @@
             <div class= "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
               <div class= "card form-input-margin">
                 <div class="row">
-                  <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <div class="mb-2 mb-sm-0">
-                      <label class="custom-file w-100">
-                        <input type="file" id="file" class="custom-file-input hnf-custom-file-input">
-                        <span class="custom-file-control"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                      <div class="input-group mb-2 mb-sm-0">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Báo Giá" readonly>
+                    <!-- Upload -->
+                    <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0 mb-0 pb-0">
+                      <div class="input-group">
+                        <input type="file" id="file2" onchange="$('#txtQuotation').val($(this).val());" hidden>
+                        <label for="file2" class="btn btn-info btn-block">
+                            <i class="material-icons md-18 search-button" style="margin:0;padding:0;">cloud_upload</i>
+                        </label>
                       </div>
+                    </div>
+                    <!-- Download -->
+                    <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0 mb-0">
+                      <div class="input-group">
+                        <button type="button" name="button" class="btn btn-success btn-block"><i class="material-icons md-18 search-button" style="margin:0;padding:0;">cloud_download</i></button>
+                      </div>
+                    </div>
+                    <!-- file name -->
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
+                      <div class="input-group">
+                        <input type="text" class="form-control" id="txtQuotation" aria-label="Text input with checkbox" placeholder="Tên File Báo Giá" readonly>
+                      </div>
+                    </div>
 
-                  </div>
+
+
                 </div>
               </div>
             </div>
@@ -292,17 +311,17 @@
               <div class= "card form-input-margin">
                 <div class="row">
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <div class="mb-2 mb-sm-0">
-                      <label class="custom-file w-100">
-                        <input type="file" id="file" class="custom-file-input hnf-custom-file-input">
-                        <span class="custom-file-control"></span>
+                    <div class="input-group">
+                      <input type="file" id="file3" onchange="$('#txtConShirt').val($(this).val());" hidden>
+                      <label for="file3" class="btn btn-info btn-block">
+                          <i class="material-icons md-18 search-button" style="margin:0;padding:0;">cloud_upload</i>
                       </label>
                     </div>
                   </div>
                   <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
 
-                      <div class="input-group mb-2 mb-sm-0">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Áo Mẫu Đã Duyệt" readonly>
+                      <div class="input-group ">
+                        <input type="text" id="txtConShirt" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Áo Mẫu Đã Duyệt" readonly>
                       </div>
 
                   </div>
@@ -317,7 +336,6 @@
             <div class= "col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
               <div class="card form-input-margin">
                 <div class="input-group">
-
                   <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Hợp Đồng" readonly>
                 </div>
               </div>
@@ -327,17 +345,17 @@
               <div class= "card form-input-margin">
                 <div class="row">
                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <div class="mb-2 mb-sm-0">
-                      <label class="custom-file w-100">
-                        <input type="file" id="file" class="custom-file-input hnf-custom-file-input">
-                        <span class="custom-file-control"></span>
+                    <div class="input-group">
+                      <input type="file" id="file4" onchange="$('#txtContract').val($(this).val());" hidden>
+                      <label for="file4" class="btn btn-info btn-block">
+                          <i class="material-icons md-18 search-button" style="margin:0;padding:0;">cloud_upload</i>
                       </label>
                     </div>
                   </div>
                   <div class="col-xl-8 col-lg-8 col-md-4 col-sm-4 col-xs-4 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
 
                       <div class="input-group mb-2 mb-sm-0">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Hợp Đồng" readonly>
+                        <input type="text" id="txtContract" class="form-control" aria-label="Text input with checkbox" placeholder="Tên File Hợp Đồng" readonly>
                       </div>
 
                   </div>
