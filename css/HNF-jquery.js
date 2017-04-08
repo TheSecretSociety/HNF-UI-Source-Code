@@ -370,7 +370,7 @@
 
       // validate name format //
       function ANameValidate(NameValue){
-        var ANameRegEx= /^.{0,35}[^!@#.$%^&*()_+-=]$/;
+        var ANameRegEx= /^[^!@#.$%^&*()_+-=].{0,35}$/;
         console.log('Aname = ' + ANameRegEx.test(NameValue));
         return ANameRegEx.test(NameValue);
       }
