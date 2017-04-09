@@ -1,7 +1,7 @@
 // ***************************************************** //
 // *                ACTIVE ALL FUNCTION                * //
 // ***************************************************** //
-  // $(document).ready() only one so all function will be calling here
+  // $(document).ready() type one only, so all functions will be calling here
     $(document).ready(function() {
       LoginValidation();
       EmployeePersonalValidation();
@@ -301,12 +301,17 @@
     // HNF-Employee-AddEmployee Validaion
     function EmployeeAddValidation() {
       Validate();
+      var ValidationPass = true;
       function Validate() {
         $("#InputName").change(function () {
           var ANameValue = $("#InputName").val();
           $("#InputName").removeClass("bg-warning");
           if(ANameValidate(ANameValue)){
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else{
+            ValidationPass = false;
+            CheckValidation(ValidationPass);
             $("#InputName").addClass("bg-warning");
             $("#InputName").val('');
           }
@@ -315,7 +320,11 @@
           var APhoneValue = $("#InputPhone").val();
           $("#InputPhone").removeClass("bg-warning");
           if(APhoneValidate(APhoneValue)){
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else{
+            ValidationPass = false;
+            CheckValidation(ValidationPass);
             $("#InputPhone").addClass("bg-warning");
             $("#InputPhone").val('');
 
@@ -325,7 +334,11 @@
           var AEmailValue = $("#InputEmail").val();
           $("#InputEmail").removeClass("bg-warning");
           if(AEmailValidate(AEmailValue)){
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else{
+            ValidationPass = false;
+            CheckValidation(ValidationPass);
             $("#InputEmail").addClass("bg-warning");
             $("#InputEmail").val('');
 
@@ -335,7 +348,11 @@
           var APasswordValue = $('#txt-input-password').val();
           $('#txt-input-password').removeClass("bg-warning");
           if(APasswordValidate(APasswordValue)){
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else {
+            ValidationPass = false;
+            CheckValidation(ValidationPass);
             $('#txt-input-password').addClass("bg-warning");
             $('#txt-input-password').val('');
           }
@@ -344,7 +361,11 @@
           var APasswordValue = $('#txt-input-password-confirm').val();
           $('#txt-input-password-confirm').removeClass("bg-warning");
           if(APasswordValidate(APasswordValue)){
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else {
+            ValidationPass = false;
+            CheckValidation(ValidationPass);
             $('#txt-input-password-confirm').addClass("bg-warning");
             $('#txt-input-password-confirm').val('');
           }
@@ -358,19 +379,30 @@
           $('#txt-input-password').removeClass('bg-warning');
           $('#txt-input-password-confirm').removeClass('bg-warning');
           if (Password == ConfirmPassword) {
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
             console.log('Password & ConfirmPassword: true');
             return true;
           }else{
+            ValidationPass = false;
+            CheckValidation(ValidationPass);
             $('#txt-input-password').addClass('bg-warning');
             $('#txt-input-password-confirm').addClass('bg-warning');
             return false;
           }
         })
       }
-
+      // if validate fail this function will lock the submit button
+      function CheckValidation(ValidationPass) {
+        if (ValidationPass == true) {
+          $('#AddNewEmployeeBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-sucess');
+        }else{
+          $('#AddNewEmployeeBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+        }
+      }
       // validate name format //
       function ANameValidate(NameValue){
-        var ANameRegEx= /^[^!@#.$%^&*()_+-=].{0,35}$/;
+        var ANameRegEx= /^[^!@#.$%^&*()_+-=].{1,35}$/;
         console.log('Aname = ' + ANameRegEx.test(NameValue));
         return ANameRegEx.test(NameValue);
       }
@@ -398,19 +430,33 @@
     function CustomerDetailValidation(){
       Validate();
       function Validate() {
+        var ValidationPass = true;
         $('#txt-CName').change(function() {
           var CustomerName = $('#txt-CName').val();
           $('#txt-CName').removeClass('bg-warning');
           if (CName_Format_Validate(CustomerName)) {
+            // $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else{
+            ValidationPass = false;
+            CheckValidation(ValidationPass)
+            // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+            $('#txt-CName').val('');
             $('#txt-CName').addClass('bg-warning');
           }
-        })
+        });
         $('#txt-CPhone').change(function() {
           var CustomerPhone = $('#txt-CPhone').val();
           $('#txt-CPhone').removeClass('bg-warning');
           if (CPhone_Format_Validate(CustomerPhone)) {
+            ValidationPass = true;
+            CheckValidation(ValidationPass);
           }else{
+            ValidationPass = false;
+            CheckValidation(ValidationPass)
+            // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+            $('#txt-CPhone').val('');
             $('#txt-CPhone').addClass('bg-warning');
           }
         })
@@ -418,7 +464,10 @@
           var CustomerEmail = $('#txt-CEmail').val();
           $('#txt-CEmail').removeClass('bg-warning');
           if (CEmail_Format_Validate(CustomerEmail)) {
+            $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
           }else {
+            $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+            $('#txt-CEmail').val('');
             $('#txt-CEmail').addClass('bg-warning');
           }
         })
@@ -436,8 +485,16 @@
           $('#txt-CPriceRange').val(AntiNegativeValue(numcheck));
         })
       }
+      function CheckValidation(ValidationPass) {
+
+        if (ValidationPass == true) {
+          $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
+        }else{
+          $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+        }
+      }
       function CName_Format_Validate(txtCustomerName) {
-        var CustomerNameRegex = /^.[^.!@#$%^&*()_+-=]{0,35}$/;
+        var CustomerNameRegex = /^(([^!@#$%ˆ&*()<>?[{}0-9]))+$/;
         console.log('Customer Name : ' + CustomerNameRegex.test(txtCustomerName));
         return CustomerNameRegex.test(txtCustomerName);
       }
@@ -665,7 +722,6 @@
               ]
           },
           options: {
-
               scales: {
                   yAxes: [{
                       ticks: {
