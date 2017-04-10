@@ -89,7 +89,7 @@
         <li><a href="./HNF-CustomerCare.html"><i class="material-icons md-18">child_care</i>CHĂM SÓC KHÁCH HÀNG</a></li>
       </ul>
     </div>
-    <!--===== end of [SIDERBAR] =====-->
+
     <!--===== PAGE CONTENT =====-->
     <div id="page-content-wrapper">
       <div class="page-content">
@@ -100,9 +100,6 @@
             <!-- Thông Tin Khách Hàng & Thông Tin Sản Phẩm -->
             <div class="row">
               <!-- Thông Tin Khách Hàng -->
-              <div class="alertArea">
-
-              </div>
               <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card form-input-margin">
                   <h3>THÔNG TIN KHÁCH HÀNG</h3>
@@ -127,17 +124,17 @@
                       <!-- Thông Tin Công Ty -->
                       <div class="form-group">
                         <label >Thông Tin Công Ty</label>
-                        <input type="text" class="form-control" name="Company" aria-describedby="Company" placeholder="">
+                        <input type="text" class="form-control" name="Company" aria-describedby="Company" placeholder="" id="txt-CCompany">
                       </div>
                       <!-- Ngành Nghề -->
                       <div class="form-group">
                         <label >Ngành Nghề</label>
-                        <input type="text" class="form-control" name="Job" aria-describedby="Customer Job" placeholder="">
+                        <input type="text" class="form-control" name="Job" aria-describedby="Customer Job" placeholder="" id="txt-CJob">
                       </div>
                       <!-- Địa Chỉ -->
                       <div class="form-group">
                         <label >Địa Chỉ <span class="Notice">*</span></label>
-                        <input type="text" class="form-control txtCustomerDetail" name="Address" aria-describedby="Customer Address" placeholder="" required>
+                        <input type="text" class="form-control txtCustomerDetail" name="Address" aria-describedby="Customer Address" id="txt-CAddress" required>
                       </div>
                       <!-- Tình Trạng Tư Vấn -->
                       <div class="form-group">
@@ -160,12 +157,12 @@
                       <!-- Loại Áo Đã Làm -->
                       <div class="form-group">
                         <label >Loại Áo Đã Làm</label>
-                        <input type="text" class="form-control" name="LastProduct" aria-describedby="Shirt That Customer had done before" placeholder="" >
+                        <input type="text" class="form-control" name="LastProduct" aria-describedby="Shirt That Customer had done before" placeholder="" id="txt-CShirtBefore">
                       </div>
                       <!-- Loại Vải -->
                       <div class="form-group">
                         <label >Loại Vải</label>
-                        <input type="text" class="form-control" name="Fabric" aria-describedby="Shirt material" placeholder="">
+                        <input type="text" class="form-control" name="Fabric" aria-describedby="Shirt material" placeholder="" id="txt-CFabricBefore">
                       </div>
                       <!-- Giá Thành -->
                       <div class="form-group">
@@ -175,19 +172,21 @@
                       <!-- Nhận Xét -->
                       <div class="form-group">
                         <label >Nhận Xét</label>
-                        <input type="text" class="form-control" name="Review" aria-describedby="comment" placeholder="">
+                        <input type="text" class="form-control" name="Review" aria-describedby="comment" placeholder="" id="txt-CReview">
                       </div>
                       <!-- Công Ty Đã Thực Hiện -->
                       <div class="form-group">
                         <label >Công Ty Đã Thực Hiện</label>
-                        <input type="text" class="form-control" name="LastCompany" aria-describedby="Company that produce Customer's shirt" placeholder="">
+                        <input type="text" class="form-control" name="LastCompany" aria-describedby="Company that produce Customer's shirt" placeholder="" id="txt-CCompanyBefore">
                       </div>
                     </div>
-                  </div>
-                  <!-- Ghi Chú -->
-                  <div class="form-group">
-                    <label>Ghi Chú</label>
-                    <textarea class="form-control" name="Note" rows="3"></textarea>
+                    <!-- Ghi Chú -->
+                    <div class="col-xl-12">
+                      <div class="form-group">
+                        <label>Ghi Chú</label>
+                        <textarea class="form-control" name="Note" rows="3"></textarea>
+                      </div>
+                    </div>
                   </div>
                   <span class="Notice"> <small class="font-italic">* : Trường Bắt Buộc</small></span>
                 </div>
@@ -200,17 +199,17 @@
                     <!-- Loại Áo -->
                     <div class="form-group">
                       <label >Loại Áo</label>
-                      <input type="text" class="form-control" name="ShirtType" aria-describedby="emailHelp" placeholder=>
+                      <input type="text" class="form-control" name="ShirtType" aria-describedby="emailHelp" id="txt-CShirtType">
                     </div>
                     <!-- Loại Vải -->
                     <div class="form-group">
                       <label >Loại Vải</label>
-                      <input type="text" class="form-control" Name="FabricType" aria-describedby="emailHelp" placeholder=>
+                      <input type="text" class="form-control" Name="FabricType" aria-describedby="emailHelp" id="txt-CFabricType">
                     </div>
                     <!-- Mục Đích Sử Dụng -->
                     <div class="form-group">
                       <label >Mục Đích Sử Dụng</label>
-                      <input type="text" class="form-control" name="Use" aria-describedby="emailHelp" placeholder=>
+                      <input type="text" class="form-control" name="Use" aria-describedby="emailHelp" id="txt-CGoal">
                     </div>
                     <!-- Đã Có Thiết Kế Chưa ? -->
                     <div class="row">
@@ -226,7 +225,7 @@
                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="form-group">
                           <label for="exampleSelect1">Màu Sắc</label>
-                          <select class="form-control" Name="Color"
+                          <select class="form-control" Name="Color">
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -239,7 +238,7 @@
                   <!-- In / Thêu ? -->
                   <div class="form-group">
                     <label >In / Thêu ?</label>
-                    <input type="text" class="form-control" name="PrintSew" aria-describedby="emailHelp" placeholder="">
+                    <input type="text" class="form-control" name="PrintSew" aria-describedby="emailHelp" id="txt-CPrint">
                   </div>
                   <!-- Số Lượng & Tầm Giá-->
                   <div class="row">
@@ -272,29 +271,23 @@
           </div>
           <br>
           </form>
-        <!-- Nút chức năng -->
+          <!-- Nút chức năng -->
           <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-input-background">
-                <div class="row">
-                  <div class="offset-3 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-2 mb-xl-0 mb-lg-0">
-                    <a class="btn btn-success w-100" href="./HNF-Customer-ContractDetail.html" role="button">Tạo Hợp Đồng</a>
-                  </div>
-                  <!-- <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2 mb-xl-0 mb-lg-0">
-                    <a class="btn btn-warning w-100" href="#" role="button">Cập Nhập Hợp Đồng</a>
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                    <a class="btn btn-danger w-100" href="#" id="CustomerDetailDeleteBtn" role="button">Xoá Hợp Đồng</a>
-                  </div> -->
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-input-background">
+              <div class="row">
+                <div class="offset-lg-3 offset-xl-3 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-2 mb-xl-0 mb-lg-0">
+                  <a class="btn btn-success w-100" href="./HNF-Customer-ContractDetail.html" role="button">Tạo Hợp Đồng</a>
                 </div>
               </div>
             </div>
           </div>
-        <br>
+        </div>
+          <br>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 

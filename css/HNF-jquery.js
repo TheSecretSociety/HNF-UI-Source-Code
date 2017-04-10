@@ -185,12 +185,12 @@
       Validate();
       // keyboard input listener (Enter Key)
       function KeyboardInput() {
-        $("#TxtLoginPassword").keyup(function(event){
+        $("#TxtLoginPassword").change(function(event){
           if(event.keyCode == 13){
               $("#LoginButton").click();
           }
         });
-        $("#TxtLoginID").keyup(function(event){
+        $("#TxtLoginID").change(function(event){
           if(event.keyCode == 13){
               $("#LoginButton").click();
           }
@@ -431,7 +431,7 @@
       Validate();
       function Validate() {
         var ValidationPass = true;
-        $('#txt-CName').change(function() {
+        $('#txt-CName').focusout(function() {
           var CustomerName = $('#txt-CName').val();
           $('#txt-CName').removeClass('bg-warning');
           if (CName_Format_Validate(CustomerName)) {
@@ -446,7 +446,7 @@
             $('#txt-CName').addClass('bg-warning');
           }
         });
-        $('#txt-CPhone').change(function() {
+        $('#txt-CPhone').focusout(function() {
           var CustomerPhone = $('#txt-CPhone').val();
           $('#txt-CPhone').removeClass('bg-warning');
           if (CPhone_Format_Validate(CustomerPhone)) {
@@ -460,7 +460,7 @@
             $('#txt-CPhone').addClass('bg-warning');
           }
         })
-        $('#txt-CEmail').change(function () {
+        $('#txt-CEmail').focusout(function () {
           var CustomerEmail = $('#txt-CEmail').val();
           $('#txt-CEmail').removeClass('bg-warning');
           if (CEmail_Format_Validate(CustomerEmail)) {
@@ -471,45 +471,122 @@
             $('#txt-CEmail').addClass('bg-warning');
           }
         })
-        $('#txt-CPrice').change(function() {
+        $('#txt-CPrice').focusout(function() {
           var numcheck = $('#txt-CPrice').val();
           console.log("Price : " + numcheck);
           $('#txt-CPrice').val(AntiNegativeValue(numcheck));
         });
-        $('#txt-CQuantity').change(function() {
+        $('#txt-CQuantity').focusout(function() {
           var numcheck = $('#txt-CQuantity').val();
           $('#txt-CQuantity').val(AntiNegativeValue(numcheck));
         });
-        $('#txt-CPriceRange').change(function() {
+        $('#txt-CPriceRange').focusout(function() {
           var numcheck = $('#txt-CPriceRange').val();
           $('#txt-CPriceRange').val(AntiNegativeValue(numcheck));
         })
+        $('#txt-CCompany').focusout(function(){
+          var txtValue = $('#txt-CCompany').val();
+          if (COther_Format_Validate(txtValue) != true) {
+            $('#txt-CCompany').val('');
+          }
+        })
+        $('#txt-CJob').focusout(function(){
+          var txtValue = $('#txt-CJob').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CJob').val('');
+          }
+        })
+        $('#txt-CShirtBefore').focusout(function(){
+          var txtValue = $('#txt-CShirtBefore').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CShirtBefore').val('');
+          }
+        })
+        $('#txt-CFabricBefore').focusout(function(){
+          var txtValue = $('#txt-CFabricBefore').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CFabricBefore').val('');
+          }
+        })
+        $('#txt-CReview').focusout(function(){
+          var txtValue = $('#txt-CReview').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CReview').val('');
+          }
+        })
+        $('#txt-CCompanyBefore').focusout(function(){
+          var txtValue = $('#txt-CCompanyBefore').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CCompanyBefore').val('');
+          }
+        })
+        $('#txt-CShirtType').focusout(function(){
+          var txtValue = $('#txt-CShirtType').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CShirtType').val('');
+          }
+        })
+        $('#txt-CFabricType').focusout(function(){
+          var txtValue = $('#txt-CFabricType').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CFabricType').val('');
+          }
+        })
+        $('#txt-CGoal').focusout(function(){
+          var txtValue = $('#txt-CGoal').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CGoal').val('');
+          }
+        })
+        $('#txt-CPrint').focusout(function(){
+          var txtValue = $('#ttxt-CPrint').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CPrint').val('');
+          }
+        })
+        $('#txt-CGoal').focusout(function(){
+          var txtValue = $('#txt-CGoal').val();
+          if (COther_Format_Validate(txtValue)!= true) {
+            $('#txt-CGoal').val('');
+          }
+        })
       }
-      function CheckValidation(ValidationPass) {
 
+      function CheckValidation(ValidationPass) {
         if (ValidationPass == true) {
           $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
         }else{
           $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
         }
       }
+      // check name format
       function CName_Format_Validate(txtCustomerName) {
-        var CustomerNameRegex = /^(([^!@#$%ˆ&*()<>?[{}0-9]))+$/;
+        var CustomerNameRegex = /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+$/;
         console.log('Customer Name : ' + CustomerNameRegex.test(txtCustomerName));
         return CustomerNameRegex.test(txtCustomerName);
       }
+      // check phone format
       function CPhone_Format_Validate(txtCustomerPhone) {
         var CustomerPhoneRegex = /^[\d]{2,13}$/;
         console.log('Customer Phone : '+CustomerPhoneRegex.test(txtCustomerPhone));
         return CustomerPhoneRegex.test(txtCustomerPhone);
       }
+      // check email format
       function CEmail_Format_Validate(txtCustomerEmail) {
         var CustomerEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         console.log('Customer Email : ' + CustomerEmail.test(txtCustomerEmail));
         return CustomerEmail.test(txtCustomerEmail);
       }
+
+      // check other field (without *)
+      function COther_Format_Validate(txtField) {
+        var CustomerOther = /^[^-\s]([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`]){0,35}$/;
+        console.log(CustomerOther.test(txtField));
+        return CustomerOther.test(txtField);
+      }
+
       // make negative number into positive
-      function AntiNegativeValue(num) {
+      function AntiNegativeValue(num){
         if (num < 0) {
           num = -num;
           return num;
