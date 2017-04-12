@@ -73,7 +73,12 @@ a:link {
 /*==================*/
 /* các Alert*/
 /*==================*/
-
+.input-validate-wrong{
+  border: 1.5px solid red;
+}
+.input-validate-right{
+  border: 1.5px solid green;
+}
 
 
 /*==================*/

@@ -239,42 +239,65 @@
 
     // HNF-Employee-Personal Validation //
     function EmployeePersonalValidation(){
-      // trigger button
-      $('#Personal-Update-Button').click(function() {
-        EmployeePersonalValidate();
-      });
-      // check validtion (calling other function)
-      function EmployeePersonalValidate(e) {
-        var NameValue = $('#InputName').val();
-        var PhoneValue = $('#InputPhone').val();
-        var EmailValue = $('#InputEmail').val();
-        var OldPasswordValue = $('#txt-old-password').val();
-        var NewPasswordValue = $('#txt-new-password').val();
-        // check for validate when edit employee information
-        var check = 0;
-        if (EmployeeNameValidate(NameValue)){
-        }else {
-          check++;
-        }
+      Validate();
+      function Validate() {
+        $('#txt-EPName').focusout(function() {
+          var NameValue = $('#txt-EPName').val();
+          if (EmployeeNameValidate(NameValue)){
+            $(this).removeClass('input-validate-wrong');
+            return true;
+          }else{
+            $(this).addClass('input-validate-wrong').val('');
+            return false;
+          }
+        })
+        $('#txt-EPPhone').focusout(function() {
+          var PhoneValue = $(this).val();
+          if (EmployeePhoneValidate(PhoneValue)) {
+            $(this).removeClass('input-validate-wrong');
+          }else{
+            $(this).addClass('input-validate-wrong').val('');
+          }
+        })
+        $('#txt-EPMail').focusout(function() {
+          var EmailValue = $(this).val();
+          if (EmployeeEmailValidate(EmailValue)) {
+            $(this).removeClass('input-validate-wrong');
+          }else{
+            $(this).addClass('input-validate-wrong').val('');
+          }
+        })
+        // validate password (format & matching)
+        $('#txt-EPOldPassword').focusout(function() {
+          var OldPW = $('#txt-EPOldPassword').val();
+          if (EmployeePasswordValidate(OldPW)) {
+            $(this).removeClass('input-validate-wrong');
+          }else {
+            $(this).addClass('input-validate-wrong').val('');
+          }
+        });
+        $('#txt-EPNewPassword').focusout(function() {
+          var NewPW = $('#txt-EPNewPassword').val();
+          if (EmployeePasswordValidate(NewPW)) {
+            $(this).removeClass('input-validate-wrong');
+          }else {
+            $(this).addClass('input-validate-wrong').val('');
+          }
 
-        if(EmployeePhoneValidate(PhoneValue)){
-        }else{
-          check++;
-        }
-        if (EmployeeEmailValidate(EmailValue)){
-        }else{
-          check++;
-        }
+        });
+        $('#txt-EPConFirmNewPassword').focusout(function() {
+          var ConPW = $('#txt-EPConFirmNewPassword').val();
+          if (EmployeePasswordValidate(ConPW)) {
+            $(this).removeClass('input-validate-wrong');
+          }else {
+            $(this).addClass('input-validate-wrong').val('');
+          }
 
-        if(check == 0){
-          alert("Edit Successfully");
-        }else if(check != 0) {
-            alert("Edit Fail");
-        }
-      };
-      // validate name format //
+        });
+
+      }
       function EmployeeNameValidate(InputName){
-        var NameRegEx= /^.[^.!@#$%^&*()_+-=]{0,35}$/;
+        var NameRegEx= /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+$/;
         console.log(NameRegEx.test(InputName));
         return NameRegEx.test(InputName);
       }
@@ -291,11 +314,12 @@
         return EmailRegEx.test(InputEmail);
       }
       // validate old password //
-      function EmployeeOldPasswordValidate(InputOldPassword,InputNewPassword){
-        var OldPasswordRegEx= /^.\S{1,}$/;
-        console.log(OldPasswordRegEx.test(InputOldPassword,InputNewPassword));
-        return OldPasswordRegEx.test(InputOldPassword,InputNewPassword);
+      function EmployeePasswordValidate(InputPassword){
+        var PasswordRegEx= /^.\S{1,}$/;
+        console.log(PasswordRegEx.test(InputPassword));
+        return PasswordRegEx.test(InputPassword);
       }
+
     }
 
     // HNF-Employee-AddEmployee Validaion
@@ -442,8 +466,8 @@
             ValidationPass = false;
             CheckValidation(ValidationPass)
             // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
-            $('#txt-CName').val('');
-            $('#txt-CName').addClass('bg-warning');
+            $('#txt-CName').val('').addClass('bg-warning');
+
           }
         });
         $('#txt-CPhone').focusout(function() {
@@ -539,7 +563,7 @@
           }
         })
         $('#txt-CPrint').focusout(function(){
-          var txtValue = $('#ttxt-CPrint').val();
+          var txtValue = $('#txt-CPrint').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CPrint').val('');
           }
@@ -577,14 +601,12 @@
         console.log('Customer Email : ' + CustomerEmail.test(txtCustomerEmail));
         return CustomerEmail.test(txtCustomerEmail);
       }
-
       // check other field (without *)
       function COther_Format_Validate(txtField) {
         var CustomerOther = /^[^-\s]([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`]){0,35}$/;
         console.log(CustomerOther.test(txtField));
         return CustomerOther.test(txtField);
       }
-
       // make negative number into positive
       function AntiNegativeValue(num){
         if (num < 0) {
