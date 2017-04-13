@@ -14,7 +14,7 @@
       ProductionProgressBar();
       DatetimePicker();
 
-      //DemoChart();
+      DemoChart();
 
     });
 
@@ -55,6 +55,39 @@
 
     // Production line Bar animation //
     function ProductionProgressBar(){
+      if ($("#check1:checked").length>0) {
+        $('#progress1').css('width', '100%').css('transition', '0.5s')
+        $('#progress2').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
+        $("#check2").prop("disabled", false);
+      }
+      if($("#check2:checked").length>0) {
+        $('#progress2').css('width', '100%').css('transition', '0.5s')
+        $('#progress3').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
+        $("#check1").prop("disabled", true);
+        $("#check3").prop("disabled", false);
+      }
+      if($("#check3:checked").length>0) {
+        $('#progress3').css('width', '100%').css('transition', '0.5s')
+        $('#progress4').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
+        $("#check2").prop("disabled", true);
+        $("#check4").prop("disabled", false);
+      }
+      if($("#check4:checked").length>0) {
+        $('#progress4').css('width', '100%').css('transition', '0.5s')
+        $('#progress5').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
+        $("#check3").prop("disabled", true);
+        $("#check5").prop("disabled", false);
+      }
+      if($("#check5:checked").length>0) {
+        $('#progress5').css('width', '100%').css('transition', '0.5s')
+        $('#progress6').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
+        $("#check4").prop("disabled", true);
+        $("#check6").prop("disabled", false);
+      }
+      if($("#check6:checked").length>0) {
+        $('#progress6').css('width', '100%').css('transition', '0.5s')
+        $("#check5").prop("disabled", true);
+      }
       $('#check1').change(function () {
           // this will contain a reference to the checkbox
           if (this.checked) {
