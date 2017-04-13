@@ -14,7 +14,7 @@
       ProductionProgressBar();
       DatetimePicker();
 
-      DemoChart();
+      //DemoChart();
 
     });
 
@@ -94,14 +94,12 @@
               $('#progress4').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
               $("#check2").prop("disabled", true);
               $("#check4").prop("disabled", false);
-
           } else {
               // the checkbox3 is now no longer checked
               $('#progress3').css('width', '50%').css('transition', '0.5s').css('transition-delay','0.1s')
               $('#progress4').css('width', '0%').css('transition', '0.5s')
               $("#check2").prop("disabled", false);
               $("#check4").prop("disabled", true);
-
           }
       });
       $('#check4').change(function () {
@@ -236,65 +234,126 @@
         return PasswordRegEx.test(TxtLoginPassword);
       }
     }
-
     // HNF-Employee-Personal Validation //
-    function EmployeePersonalValidation(){
+    function EmployeePersonalValidation(form){
       Validate();
-      function Validate() {
+      $('#EmployeePersonalInformationForm').submit(function(event) {
+        Validate();
+      })
+      function Validate() { // calling validate functions
+        var NamePass = 0;
+        var PhonePass = 0;
+        var MailPass = 0;
+        var OPWPass = 0;
+        var NPWPass = 0;
+        var CPWPass = 0;
         $('#txt-EPName').focusout(function() {
           var NameValue = $('#txt-EPName').val();
           if (EmployeeNameValidate(NameValue)){
             $(this).removeClass('input-validate-wrong');
-            return true;
+            NamePass = 1;
           }else{
             $(this).addClass('input-validate-wrong').val('');
-            return false;
+            NamePass = 0;
           }
         })
         $('#txt-EPPhone').focusout(function() {
           var PhoneValue = $(this).val();
           if (EmployeePhoneValidate(PhoneValue)) {
             $(this).removeClass('input-validate-wrong');
+            PhonePass = 1;
           }else{
             $(this).addClass('input-validate-wrong').val('');
+            PhonePass = 0;
           }
         })
         $('#txt-EPMail').focusout(function() {
           var EmailValue = $(this).val();
           if (EmployeeEmailValidate(EmailValue)) {
             $(this).removeClass('input-validate-wrong');
+            MailPass = 1;
           }else{
             $(this).addClass('input-validate-wrong').val('');
+            MailPass = 0;
           }
         })
-        // validate password (format & matching)
-        $('#txt-EPOldPassword').focusout(function() {
+        $('#txt-EPOldPassword').on('focusout',function(){
+          var passwordvalue = $('#txt-EPOldPassword').val();
+          if (EmployeePasswordValidate(passwordvalue)) {
+            $('#txt-EPOldPassword-error').empty();
+            OPWPass = 1;
+          }else{
+            $('#txt-EPOldPassword-error').empty();
+            $('#txt-EPOldPassword').val('');
+            $('#txt-EPOldPassword-error').css("color","red").html('Mật khẩu không được có kí tự khoản trắng! Vui lòng nhập lại');
+            OPWPass = 0;
+          }
+        })
+        $('#txt-EPNewPassword').on('focusout',function(){
+          var passwordvalue = $('#txt-EPNewPassword').val();
+          if (EmployeePasswordValidate(passwordvalue)) {
+            $('#txt-EPNewPassword-error').empty();
+            NPWPass = 1;
+          }else{
+            $('#txt-EPNewPassword-error').empty();
+            $('#txt-EPNewPassword').val('');
+            $('#txt-EPNewPassword-error').css("color","red").html('Mật khẩu không được có kí tự khoản trắng! Vui lòng nhập lại');
+            NPWPass = 0;
+          }
+        })
+        $('#txt-EPConFirmNewPassword').on('focusout',function(){
+          var passwordvalue = $('#txt-EPConFirmNewPassword').val();
+          if (EmployeePasswordValidate(passwordvalue)) {
+            $('#txt-EPConFirmNewPassword-error').empty();
+            CPWPass = 1;
+          }else{
+            $('#txt-EPConFirmNewPassword-error').empty();
+            $('#txt-EPConFirmNewPassword').val('');
+            $('#txt-EPConFirmNewPassword-error').css("color","red").html('Mật khẩu không được có kí tự khoản trắng! Vui lòng nhập lại');
+            CPWPass = 0;
+          }
+        })
+        $('#txt-EPOldPassword,#txt-EPNewPassword').focusout(function() {// Comparing "Old Password" vs "New Password"
           var OldPW = $('#txt-EPOldPassword').val();
-          if (EmployeePasswordValidate(OldPW)) {
-            $(this).removeClass('input-validate-wrong');
-          }else {
-            $(this).addClass('input-validate-wrong').val('');
+          var NewPw = $('#txt-EPNewPassword').val();
+          if (OldPW == NewPw) {
+            $('#txt-EPOldPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong',true);
+            $('#txt-EPNewPassword-error').css("color","red").html('Mật khẩu Mới không được trùng mật khẩu Cũ');
+            OPWPass = 0;
+            NPWPass = 0;
+          }else{
+            $('#txt-EPOldPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong',false);
+            $('#txt-EPNewPassword-error').empty();
+            OPWPass = 1;
+            NPWPass = 1;
           }
-        });
-        $('#txt-EPNewPassword').focusout(function() {
-          var NewPW = $('#txt-EPNewPassword').val();
-          if (EmployeePasswordValidate(NewPW)) {
-            $(this).removeClass('input-validate-wrong');
-          }else {
-            $(this).addClass('input-validate-wrong').val('');
-          }
-
-        });
-        $('#txt-EPConFirmNewPassword').focusout(function() {
+        })
+        $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').focusout(function() { // Comparing "New Password" vs "Confirm New Password"
           var ConPW = $('#txt-EPConFirmNewPassword').val();
-          if (EmployeePasswordValidate(ConPW)) {
-            $(this).removeClass('input-validate-wrong');
-          }else {
-            $(this).addClass('input-validate-wrong').val('');
+          var NewPW = $('#txt-EPNewPassword').val();
+          if (ConPW == NewPW) {
+            $('#txt-EPConFirmNewPassword-error').css("color","green").html('Mật khẩu Mới trùng khớp'); //message
+            $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong', false);
+            NPWPass = 1;
+            CPWPass = 1;
+          }else{
+            $('#txt-EPConFirmNewPassword-error').css("color","red").html('Mật khẩu Mới không trùng khớp'); //message
+            $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong', true);
+            NPWPass = 0;
+            CPWPass = 0;
           }
-
         });
-
+        // btnEPSubmit
+        // #txt-EPName,#txt-EPPhone,#txt-EPMail,#txt-EPOldPassword,#txt-EPNewPassword,#txt-EPConFirmNewPassword
+        $('#btnEPSubmit').click(function() {
+          if (NamePass == 1 && PhonePass == 1 && MailPass == 1 && OPWPass == 1 && NPWPass == 1 && CPWPass == 1) {
+            return true;
+          }else{
+            alert('fail');
+             event.preventDefault();
+             return false;
+          }
+        })
       }
       function EmployeeNameValidate(InputName){
         var NameRegEx= /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+$/;
@@ -315,13 +374,11 @@
       }
       // validate old password //
       function EmployeePasswordValidate(InputPassword){
-        var PasswordRegEx= /^.\S{1,}$/;
+        var PasswordRegEx= /^(\S{1,})+$/;
         console.log(PasswordRegEx.test(InputPassword));
         return PasswordRegEx.test(InputPassword);
       }
-
     }
-
     // HNF-Employee-AddEmployee Validaion
     function EmployeeAddValidation() {
       Validate();
@@ -449,7 +506,6 @@
         return APasswordRegEx.test(PasswordValue);
       }
     }
-
     // HNF-Customer-Detail Validation //
     function CustomerDetailValidation(){
       Validate();
@@ -616,7 +672,6 @@
         return num;
       }
     }
-
     // HNF-Customer-ContractDetail-DetailDesign //
     function ContractDetailDesignValidation(){
       Validate();
