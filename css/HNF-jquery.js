@@ -55,7 +55,7 @@
 
     // Production line Bar animation //
     function ProductionProgressBar(){
-      if ($("#check1:checked").length>0) {
+      if($("#check1:checked").length>0) {
         $('#progress1').css('width', '100%').css('transition', '0.5s')
         $('#progress2').css('width', '50%').css('transition','0.5s').css('transition-delay','0.1s')
         $("#check2").prop("disabled", false);
@@ -269,17 +269,19 @@
     }
     // HNF-Employee-Personal Validation //
     function EmployeePersonalValidation(form){
-      Validate();
-      $('#EmployeePersonalInformationForm').submit(function(event) {
-        Validate();
+      EditInfoValidate();
+      EditPasswordValidate();
+      $('#formEPInfoEdit').submit(function(event) {
+        EditInfoValidate();
       })
-      function Validate() { // calling validate functions
+      $('#formEPPasswordEdit').submit(function(event) {
+        EditPasswordValidate();
+      })
+      function EditInfoValidate() { // validate when user change personal infor
         var NamePass = 0;
         var PhonePass = 0;
         var MailPass = 0;
-        var OPWPass = 0;
-        var NPWPass = 0;
-        var CPWPass = 0;
+        EPPreLoadInfoValidate();
         $('#txt-EPName').focusout(function() {
           var NameValue = $('#txt-EPName').val();
           if (EmployeeNameValidate(NameValue)){
@@ -310,6 +312,66 @@
             MailPass = 0;
           }
         })
+        function EPPreLoadInfoValidate() {
+          if ($('#txt-EPName').length>0) {
+            var NameValue = $('#txt-EPName').val();
+            if (EmployeeNameValidate(NameValue)){
+              $(this).removeClass('input-validate-wrong');
+              NamePass = 1;
+              console.log(NamePass);
+            }else{
+              $(this).addClass('input-validate-wrong').val('');
+              NamePass = 0;
+
+              console.log(NamePass);
+            }
+          }
+          if ($('#txt-EPPhone').length>0) {
+            var PhoneValue = $('#txt-EPPhone').val();
+            if (EmployeePhoneValidate(PhoneValue)) {
+              $(this).removeClass('input-validate-wrong');
+
+              PhonePass = 1;
+              console.log(PhonePass);
+            }else{
+              $(this).addClass('input-validate-wrong').val('');
+
+              PhonePass = 0;
+              console.log(PhonePass);
+            }
+          }
+          if ($('#txt-EPMail').length>0) {
+            var EmailValue = $('#txt-EPMail').val();
+            if (EmployeeEmailValidate(EmailValue)) {
+              $(this).removeClass('input-validate-wrong');
+
+              MailPass = 1;
+              console.log(MailPass);
+            }else{
+              $(this).addClass('input-validate-wrong').val('');
+
+              MailPass = 0;
+              console.log(MailPass);
+            }
+          }
+        }
+        $('#btnEPEditInfo').click(function() {
+            if (NamePass == 1 && PhonePass == 1 && MailPass == 1) {
+              return true;
+            }else{
+              alert('Personal Fail');
+            //  $('#btnEPSubmit').prop('disabled',true);
+               event.preventDefault();
+               return false;
+            }
+          })
+
+      }
+      function EditPasswordValidate() { // validate when user change personal password
+        var OPWPass = 0;
+        var NPWPass = 0;
+        var CPWPass = 0;
+        EPPasswordMatchingValidate();
         $('#txt-EPOldPassword').on('focusout',function(){
           var passwordvalue = $('#txt-EPOldPassword').val();
           if (EmployeePasswordValidate(passwordvalue)) {
@@ -346,48 +408,52 @@
             CPWPass = 0;
           }
         })
-        $('#txt-EPOldPassword,#txt-EPNewPassword').focusout(function() {// Comparing "Old Password" vs "New Password"
-          var OldPW = $('#txt-EPOldPassword').val();
-          var NewPw = $('#txt-EPNewPassword').val();
-          if (OldPW == NewPw) {
-            $('#txt-EPOldPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong',true);
-            $('#txt-EPNewPassword-error').css("color","red").html('Mật khẩu Mới không được trùng mật khẩu Cũ');
-            OPWPass = 0;
-            NPWPass = 0;
-          }else{
-            $('#txt-EPOldPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong',false);
-            $('#txt-EPNewPassword-error').empty();
-            OPWPass = 1;
-            NPWPass = 1;
-          }
-        })
-        $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').focusout(function() { // Comparing "New Password" vs "Confirm New Password"
-          var ConPW = $('#txt-EPConFirmNewPassword').val();
-          var NewPW = $('#txt-EPNewPassword').val();
-          if (ConPW == NewPW) {
-            $('#txt-EPConFirmNewPassword-error').css("color","green").html('Mật khẩu Mới trùng khớp'); //message
-            $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong', false);
-            NPWPass = 1;
-            CPWPass = 1;
-          }else{
-            $('#txt-EPConFirmNewPassword-error').css("color","red").html('Mật khẩu Mới không trùng khớp'); //message
-            $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong', true);
-            NPWPass = 0;
-            CPWPass = 0;
-          }
-        });
-        // btnEPSubmit
-        // #txt-EPName,#txt-EPPhone,#txt-EPMail,#txt-EPOldPassword,#txt-EPNewPassword,#txt-EPConFirmNewPassword
-        $('#btnEPSubmit').click(function() {
-          if (NamePass == 1 && PhonePass == 1 && MailPass == 1 && OPWPass == 1 && NPWPass == 1 && CPWPass == 1) {
+        function EPPasswordMatchingValidate() {
+          $('#txt-EPOldPassword,#txt-EPNewPassword').focusout(function() {// Comparing "Old Password" vs "New Password"
+            var OldPW = $('#txt-EPOldPassword').val();
+            var NewPw = $('#txt-EPNewPassword').val();
+            if (OldPW == NewPw) {
+              $('#txt-EPOldPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong',true);
+              $('#txt-EPNewPassword-error').css("color","red").html('Mật khẩu Mới không được trùng mật khẩu Cũ');
+              OPWPass = 0;
+              NPWPass = 0;
+            }else{
+              $('#txt-EPOldPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong',false);
+              $('#txt-EPNewPassword-error').empty();
+              OPWPass = 1;
+              NPWPass = 1;
+            }
+          })
+          $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').focusout(function() { // Comparing "New Password" vs "Confirm New Password"
+            var ConPW = $('#txt-EPConFirmNewPassword').val();
+            var NewPW = $('#txt-EPNewPassword').val();
+            if (ConPW == NewPW) {
+              $('#txt-EPConFirmNewPassword-error').css("color","green").html('Mật khẩu Mới trùng khớp'); //message
+              $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong', false);
+              NPWPass = 1;
+              CPWPass = 1;
+            }else{
+              $('#txt-EPConFirmNewPassword-error').css("color","red").html('Mật khẩu Mới không trùng khớp'); //message
+              $('#txt-EPConFirmNewPassword,#txt-EPNewPassword').toggleClass('input-validate-wrong', true);
+              NPWPass = 0;
+              CPWPass = 0;
+            }
+          });
+        }
+        $('#btnEPEditPassword').click(function() {
+          if (OPWPass == 1 && NPWPass == 1 && CPWPass == 1) {
+          //  $('#btnEPSubmit').prop('disabled',false);
             return true;
           }else{
-            alert('fail');
+            alert('Password Fail');
+            //  $('#btnEPSubmit').prop('disabled',true);
+            return false;
              event.preventDefault();
-             return false;
+
           }
         })
       }
+      // validate name format //
       function EmployeeNameValidate(InputName){
         var NameRegEx= /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+$/;
         console.log(NameRegEx.test(InputName));
@@ -664,7 +730,6 @@
           }
         })
       }
-
       function CheckValidation(ValidationPass) {
         if (ValidationPass == true) {
           $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
@@ -825,8 +890,6 @@
         }
       }
     }
-
-
   // ============= Statictis ============= //
   // Test Chart
 

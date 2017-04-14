@@ -97,77 +97,74 @@
           <div class="row">
             <div class="col-xl-12">
               <div class="card form-input-margin">
+                <h4>Thông Tin Cá Nhân</h4>
+                <!-- các trường thông tin -->
                 <div class="row">
-                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-sx-12">
-                    <h4>Thông Tin Cá Nhân</h4>
-                    <!-- Form Thông tin -->
-                    <form class="" action="" method="post" id="EmployeePersonalInformationForm" onsubmit="return EmployeePersonalValidation(this)">
-                      <!-- các trường thông tin -->
-                      <div class="row">
-                        <!-- Cột Trái -->
-                        <div class="col-xl-6">
-                          <!-- Họ Tên -->
-                          <div class="form-group">
-                            <label for="InputName" >Họ Tên</label>
-                            <input type="name" class="form-control" value="thuan" id="txt-EPName" aria-describedby="emailHelp"  required>
-
-                          </div>
-                          <!-- SDT -->
-                          <div class="form-group">
-                            <label for="InputPhone">Số Điện Thoại</label>
-                            <input type="phone" class="form-control" value="1234" id="txt-EPPhone" aria-describedby="emailHelp"  required>
-
-                          </div>
-                          <!-- Email -->
-                          <div class="form-group">
-                            <label for="InputEmail">Email</label>
-                            <input type="email" class="form-control" value="thuan@gmail.com" id="txt-EPMail" aria-describedby="emailHelp" required>
-
-                          </div>
-                          <!-- Phân Quyền -->
-                          <div class="form-group">
-                            <label for="InputAuthorize">Phân Quyền</label>
-                            <select class="form-control" id="InputAuthorize">
-                              <option selected="">Phân Quyền</option>
-                              <option>Nhân Viên Bán Hàng</option>
-                              <option>Tư Vấn Khách Hàng</option>
-                              <option>Quản Lí Sản Xuất</option>
-                            </select>
-                          </div>
+                  <!-- Cột Trái -->
+                    <div class="col-xl-6">
+                      <form class="" action="index.html" method="post" id="formEPInfoEdit" >
+                        <!-- Họ Tên -->
+                        <div class="form-group">
+                          <label for="InputName" >Họ Tên</label>
+                          <input type="name" class="form-control" value="thuan" id="txt-EPName" aria-describedby="emailHelp"  required>
                         </div>
-                        <!-- Cột Phải -->
-                        <div class="col-xl-6">
-                          <!-- Mật Khẩu Cũ -->
-                          <div class="form-group">
-                            <label id="InputOldPassword">Mật Khẩu Cũ</label>
-                            <input type="password" class="form-control" id="txt-EPOldPassword" aria-describedby="emailHelp" placeholder="" required>
-                            <small id="txt-EPOldPassword-error"></small>
-                          </div>
-                          <!-- Mật Khẩu Mới-->
-                          <div class="form-group">
-                            <label id="InputNewPassword">Mật Khẩu Mới</label>
-                            <input type="password" class="form-control" id="txt-EPNewPassword" aria-describedby="emailHelp" placeholder="" required>
-                            <small id="txt-EPNewPassword-error"></small>
-                          </div>
-                          <!-- Nhập Lại Mật Khẩu Mới -->
-                          <div class="form-group">
-                            <label id="InputNewPasswordConfirm">Nhập lại mật khẩu mới</label>
-                            <input type="password" class="form-control" id="txt-EPConFirmNewPassword" aria-describedby="emailHelp" placeholder="" required>
-                            <small id="txt-EPConFirmNewPassword-error"></small>
-                          </div>
-                          <!-- Nút Submit (dưới dạng thẻ <input>) -->
-                          <div class="row">
-                            <div class="col-xl-12">
-                              <div class="form-group">
-                                <br>
-                                <input type="submit" id="btnEPSubmit" name="" value="Lưu Thông Tin" class="btn btn-primary btn-block">
-                              </div>
-                            </div>
-                          </div>
+                        <!-- SDT -->
+                        <div class="form-group">
+                          <label for="InputPhone">Số Điện Thoại</label>
+                          <input type="phone" class="form-control" value="1234" id="txt-EPPhone" aria-describedby="emailHelp"  required>
+
                         </div>
+                        <!-- Email -->
+                        <div class="form-group">
+                          <label for="InputEmail">Email</label>
+                          <input type="email" class="form-control" value="thuan@gmail.com" id="txt-EPMail" aria-describedby="emailHelp" required>
+
+                        </div>
+                        <!-- Phân Quyền -->
+                        <div class="form-group">
+                        <label for="InputAuthorize">Phân Quyền</label>
+                        <select class="form-control" id="InputAuthorize">
+                          <option selected="">Phân Quyền</option>
+                          <option>Nhân Viên Bán Hàng</option>
+                          <option>Tư Vấn Khách Hàng</option>
+                          <option>Quản Lí Sản Xuất</option>
+                        </select>
                       </div>
-                    </form>
-                  </div>
+                      <!-- Nút Sửa Thông Tin (dưới dạng thẻ <input>) -->
+                      <div class="form-group">
+                        <br>
+                        <input type="submit" id="btnEPEditInfo" name="" value="Sửa Thông Tin" class="btn btn-primary btn-block">
+                      </div>
+                      </form>
+                    </div>
+                  <!-- Cột Phải -->
+                    <div class="col-xl-6">
+                      <form class="" action="index.html" id="formEPPasswordEdit" method="post">
+                      <!-- Nút Kích Thay Đỏi Mật Khẩu -->
+                      <!-- Mật Khẩu Cũ -->
+                      <div class="form-group">
+                        <label id="InputOldPassword">Mật Khẩu Cũ</label>
+                        <input type="password" class="form-control" id="txt-EPOldPassword" aria-describedby="emailHelp" placeholder="" required>
+                        <small id="txt-EPOldPassword-error"></small>
+                      </div>
+                      <!-- Mật Khẩu Mới-->
+                      <div class="form-group">
+                        <label id="InputNewPassword">Mật Khẩu Mới</label>
+                        <input type="password" class="form-control" id="txt-EPNewPassword" aria-describedby="emailHelp" placeholder="" required>
+                        <small id="txt-EPNewPassword-error"></small>
+                      </div>
+                      <!-- Nhập Lại Mật Khẩu Mới -->
+                      <div class="form-group">
+                        <label id="InputNewPasswordConfirm">Nhập lại mật khẩu mới</label>
+                        <input type="password" class="form-control" id="txt-EPConFirmNewPassword" aria-describedby="emailHelp" placeholder="" required>
+                        <small id="txt-EPConFirmNewPassword-error"></small>
+                      </div>
+                      <div class="form-group">
+                        <br>
+                        <input type="submit" id="btnEPEditPassword" onsubmit="return EmployeePersonalValidation(this)" name="" value="Sửa Mật Khẩu" class="btn btn-primary btn-block">
+                      </div>
+                      </form>
+                    </div>
                 </div>
               </div>
             </div>
