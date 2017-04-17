@@ -186,7 +186,7 @@
 
     // Datetimepicker //
     function DatetimePicker(){
-      $('#sandbox-container .input-group.date').datepicker({
+      $('#sandbox-container .input-group .date').datepicker({
         weekStart: 1,
         orientation: "bottom auto",
         autoclose: true,
@@ -204,10 +204,6 @@
         todayHighlight: true
       });
     }
-
-    // Alert //
-
-
   // ----------------------------------------------------- //
   // --------------------- VALIDATION -------------------- //
   // ----------------------------------------------------- //
@@ -892,7 +888,6 @@
     }
   // ============= Statictis ============= //
   // Test Chart
-
     function DemoChart() {
       // bar chart
         var barchart = document.getElementById("BarChart");
