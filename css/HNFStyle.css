@@ -398,3 +398,6 @@ a:link {
 .bar-100{
     width: 100%;
 }
+.highcharts-credits{
+  display: none !important;
+}

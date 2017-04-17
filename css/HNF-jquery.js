@@ -889,102 +889,16 @@
   // ============= Statictis ============= //
   // Test Chart
     function DemoChart() {
-      // bar chart
-        var barchart = document.getElementById("BarChart");
-        var myChart = new Chart(barchart, {
-          type: 'bar',
-          data:
-          {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets:
-            [
-              {
-                label: '1',
-                data: [Math.random(),Math.random(),Math.random(),Math.random(),Math.random(),Math.random(),Math.random()],
-                backgroundColor:
-                [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor:
-                [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-              },
 
-            ]
-          },
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero:true
-                      }
-                  }]
-              }
-          }
-        });
-      // line chart
-        var linechart = document.getElementById('LineChart');
-        var LineChartData = new Chart(linechart,{
-          type: 'line',
-          data:{
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets:
-              [
-                {
-                  label: "Doanh Số Bán Hàng",
-                  fill: true,
-                  lineTension: 0.1,
-                  backgroundColor: "rgba(75,192,192,0.4)",
-                  borderColor: "rgba(75,192,192,1)",
-                  borderCapStyle: 'butt',
-                  borderDash: [],
-                  borderDashOffset: 0.0,
-                  borderJoinStyle: 'miter',
-                  pointBorderColor: "rgba(75,192,192,1)",
-                  pointBackgroundColor: "#fff",
-                  pointBorderWidth: 2,
-                  pointHoverRadius: 5,
-                  pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                  pointHoverBorderColor: "rgba(220,220,220,1)",
-                  pointHoverBorderWidth: 2,
-                  pointRadius: 5,
-                  pointHitRadius: 10,
-                  data: [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-                  spanGaps: false,
-                }
-              ]
-          },
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero:true
-                      }
-                  }]
-              }
-          }
-        });
       // pie chart
         var piechart = document.getElementById('PieChart');
         var PieChartData = new Chart(piechart, {
           type: 'pie',
           data: {
             labels: [
-              "Red",
-              "Blue",
-              "Yellow"
+              "Thất Bại",
+              "Thành Công",
+              "Đang chờ phản hồi"
             ],
             datasets:
               [
@@ -1005,3 +919,51 @@
             },
         });
     }
+    $(document).ready(function () {
+      Highcharts.setOptions({
+        colors: ['#5cb85c', ' #d9534f', '#f0ad4e']
+      });
+    // Build the chart
+    Highcharts.chart('container', {
+
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Tỷ lệ hợp đồng trong tháng 4, 2017'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+
+        series: [{
+            name: 'Tỷ lệ',
+            colorByPoint: true,
+            data: [{
+                name: 'Thành công',
+                y: 10
+            }, {
+                name: 'Thất bại',
+                y: 24,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Đang chờ phản hồi',
+                y: 15
+            }]
+        }]
+    });
+});
