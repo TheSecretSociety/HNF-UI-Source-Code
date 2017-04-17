@@ -770,7 +770,12 @@
     function ContractDetailDesignValidation(){
       Validate();
       function Validate() { // this function will auto validate the input value everytime input has change
+
+        var ValidationPass = true;
         // Quantity Validate
+
+
+
         $("#txt_DD_Quantity").change(function TotalQuantityCheck() {
           var QuantityValue = Number($("#txt_DD_Quantity").val());
             $("#txt_DD_Quantity").val(AntiNegativeValue(QuantityValue)); // check negative value and return the value back to the input
@@ -841,6 +846,30 @@
           var TotalShirt = Number($('#txt_DD_Quantity').val());
           DDesign_Total_Quantity_Validate(MSmall,MMedium,MLarge,MXLarge,MXXLarge,MXXXLarge,FSmall,FMedium,FLarge,FXLarge,FXXLarge,FXXXLarge,TotalShirt);
         })
+        $('#txt_DD_Color').focusout(function(){
+          var txtValue = $('#txt_DD_Color').val();
+          if (COtherCL_Format_Validate(txtValue)!= true) {
+            $('#txt_DD_Color').val('');
+          }
+        });
+        $('#txt_DD_ArmNeck').focusout(function(){
+          var txtValue = $('#txt_DD_ArmNeck').val();
+          if (COtherCD_Format_Validate(txtValue)!= true) {
+            $('#txt_DD_ArmNeck').val('');
+          }
+        });
+        $('#txt_DD_Fabricate').focusout(function(){
+          var txtValue = $('#txt_DD_Fabricate').val();
+          if (COtherCD_Format_Validate(txtValue)!= true) {
+            $('#txt_DD_Fabricate').val('');
+          }
+        });
+        $('#txt_DD_fabric').focusout(function(){
+          var txtValue = $('#txt_DD_fabric').val();
+          if (COtherCD_Format_Validate(txtValue)!= true) {
+            $('#txt_DD_fabric').val('');
+          }
+        });
       }
       // make negative number into positive
       function AntiNegativeValue(num) {
@@ -849,6 +878,17 @@
           return num;
         }
         return num;
+      }
+      //validate Color and Length
+      function COtherCD_Format_Validate(txtField) {
+        var CustomerOther = /^[^-\s]([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`]){0,30}$/;
+        console.log(CustomerOther.test(txtField));
+        return CustomerOther.test(txtField);
+      }
+      function COtherCL_Format_Validate(txtField) {
+        var CustomerOther = /^[^-\s]([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`]){0,15}$/;
+        console.log(CustomerOther.test(txtField));
+        return CustomerOther.test(txtField);
       }
       // check the number type of Quantity Input
       function DDesign_Quantity_Validate(QuantityValue) {
