@@ -481,68 +481,68 @@
       function Validate() {
         $("#InputName").change(function () {
           var ANameValue = $("#InputName").val();
-          $("#InputName").removeClass("bg-warning");
+          $("#InputName").removeClass('input-validate-wrong');
           if(ANameValidate(ANameValue)){
             ValidationPass = true;
             CheckValidation(ValidationPass);
           }else{
             ValidationPass = false;
             CheckValidation(ValidationPass);
-            $("#InputName").addClass("bg-warning");
+            $("#InputName").addClass('input-validate-wrong');
             $("#InputName").val('');
           }
         });
         $("#InputPhone").change(function () {
           var APhoneValue = $("#InputPhone").val();
-          $("#InputPhone").removeClass("bg-warning");
+          $("#InputPhone").removeClass('input-validate-wrong');
           if(APhoneValidate(APhoneValue)){
             ValidationPass = true;
             CheckValidation(ValidationPass);
           }else{
             ValidationPass = false;
             CheckValidation(ValidationPass);
-            $("#InputPhone").addClass("bg-warning");
+            $("#InputPhone").addClass('input-validate-wrong');
             $("#InputPhone").val('');
 
           }
         });
         $("#InputEmail").change(function () {
           var AEmailValue = $("#InputEmail").val();
-          $("#InputEmail").removeClass("bg-warning");
+          $("#InputEmail").removeClass('input-validate-wrong');
           if(AEmailValidate(AEmailValue)){
             ValidationPass = true;
             CheckValidation(ValidationPass);
           }else{
             ValidationPass = false;
             CheckValidation(ValidationPass);
-            $("#InputEmail").addClass("bg-warning");
+            $("#InputEmail").addClass('input-validate-wrong');
             $("#InputEmail").val('');
 
           }
         });
         $('#txt-input-password').change(function(){
           var APasswordValue = $('#txt-input-password').val();
-          $('#txt-input-password').removeClass("bg-warning");
+          $('#txt-input-password').removeClass('input-validate-wrong');
           if(APasswordValidate(APasswordValue)){
             ValidationPass = true;
             CheckValidation(ValidationPass);
           }else {
             ValidationPass = false;
             CheckValidation(ValidationPass);
-            $('#txt-input-password').addClass("bg-warning");
+            $('#txt-input-password').addClass('input-validate-wrong');
             $('#txt-input-password').val('');
           }
         });
         $('#txt-input-password-confirm').change(function(){
           var APasswordValue = $('#txt-input-password-confirm').val();
-          $('#txt-input-password-confirm').removeClass("bg-warning");
+          $('#txt-input-password-confirm').removeClass('input-validate-wrong');
           if(APasswordValidate(APasswordValue)){
             ValidationPass = true;
             CheckValidation(ValidationPass);
           }else {
             ValidationPass = false;
             CheckValidation(ValidationPass);
-            $('#txt-input-password-confirm').addClass("bg-warning");
+            $('#txt-input-password-confirm').addClass('input-validate-wrong');
             $('#txt-input-password-confirm').val('');
           }
 
@@ -552,8 +552,8 @@
           console.log(Password);
           var ConfirmPassword = $('#txt-input-password-confirm').val();
           console.log(ConfirmPassword);
-          $('#txt-input-password').removeClass('bg-warning');
-          $('#txt-input-password-confirm').removeClass('bg-warning');
+          $('#txt-input-password').removeClass('input-validate-wrong');
+          $('#txt-input-password-confirm').removeClass('input-validate-wrong');
           if (Password == ConfirmPassword) {
             ValidationPass = true;
             CheckValidation(ValidationPass);
@@ -562,8 +562,8 @@
           }else{
             ValidationPass = false;
             CheckValidation(ValidationPass);
-            $('#txt-input-password').addClass('bg-warning');
-            $('#txt-input-password-confirm').addClass('bg-warning');
+            $('#txt-input-password').addClass('input-validate-wrong');
+            $('#txt-input-password-confirm').addClass('input-validate-wrong');
             return false;
           }
         })
@@ -608,7 +608,7 @@
         var ValidationPass = true;
         $('#txt-CName').focusout(function() {
           var CustomerName = $('#txt-CName').val();
-          $('#txt-CName').removeClass('bg-warning');
+          $('#txt-CName').removeClass('input-validate-wrong');
           if (CName_Format_Validate(CustomerName)) {
             // $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
             ValidationPass = true;
@@ -617,13 +617,13 @@
             ValidationPass = false;
             CheckValidation(ValidationPass)
             // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
-            $('#txt-CName').val('').addClass('bg-warning');
+            $('#txt-CName').val('').addClass('input-validate-wrong');
 
           }
         });
         $('#txt-CPhone').focusout(function() {
           var CustomerPhone = $('#txt-CPhone').val();
-          $('#txt-CPhone').removeClass('bg-warning');
+          $('#txt-CPhone').removeClass('input-validate-wrong');
           if (CPhone_Format_Validate(CustomerPhone)) {
             ValidationPass = true;
             CheckValidation(ValidationPass);
@@ -632,18 +632,18 @@
             CheckValidation(ValidationPass)
             // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
             $('#txt-CPhone').val('');
-            $('#txt-CPhone').addClass('bg-warning');
+            $('#txt-CPhone').addClass('input-validate-wrong');
           }
         })
         $('#txt-CEmail').focusout(function () {
           var CustomerEmail = $('#txt-CEmail').val();
-          $('#txt-CEmail').removeClass('bg-warning');
+          $('#txt-CEmail').removeClass('input-validate-wrong');
           if (CEmail_Format_Validate(CustomerEmail)) {
             $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
           }else {
             $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
             $('#txt-CEmail').val('');
-            $('#txt-CEmail').addClass('bg-warning');
+            $('#txt-CEmail').addClass('input-validate-wrong');
           }
         })
         $('#txt-CPrice').focusout(function() {
