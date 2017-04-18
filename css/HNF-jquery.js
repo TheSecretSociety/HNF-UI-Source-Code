@@ -451,7 +451,7 @@
       }
       // validate name format //
       function EmployeeNameValidate(InputName){
-        var NameRegEx= /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+$/;
+        var NameRegEx= /^([^-\s!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+[^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9]{1,35}$/;
         console.log(NameRegEx.test(InputName));
         return NameRegEx.test(InputName);
       }
@@ -578,7 +578,7 @@
       }
       // validate name format //
       function ANameValidate(NameValue){
-        var ANameRegEx= /^[^!@#.$%^&*()_+-=].{1,35}$/;
+        var ANameRegEx= /^([^-\s!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+[^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9]{1,35}$/;
         console.log('Aname = ' + ANameRegEx.test(NameValue));
         return ANameRegEx.test(NameValue);
       }
@@ -735,7 +735,7 @@
       }
       // check name format
       function CName_Format_Validate(txtCustomerName) {
-        var CustomerNameRegex = /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+$/;
+        var CustomerNameRegex = /^([^-\s!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9])+[^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`{}0-9]{1,35}$/;
         console.log('Customer Name : ' + CustomerNameRegex.test(txtCustomerName));
         return CustomerNameRegex.test(txtCustomerName);
       }
