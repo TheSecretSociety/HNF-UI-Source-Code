@@ -929,35 +929,8 @@
   // ============= Statictis ============= //
   // Test Chart
     function DemoChart() {
-
       // pie chart
         var piechart = document.getElementById('PieChart');
-        var PieChartData = new Chart(piechart, {
-          type: 'pie',
-          data: {
-            labels: [
-              "Thất Bại",
-              "Thành Công",
-              "Đang chờ phản hồi"
-            ],
-            datasets:
-              [
-                {
-                  data: [Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100)],
-                  backgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56"
-                  ],
-                  hoverBackgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56"
-                  ]
-                }
-              ]
-            },
-        });
     }
     $(document).ready(function () {
       Highcharts.setOptions({
@@ -965,7 +938,6 @@
       });
     // Build the chart
     Highcharts.chart('container', {
-
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -983,7 +955,9 @@
                 allowPointSelect: true,
                 cursor: 'pointer',
                 dataLabels: {
-                    enabled: false
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+
                 },
                 showInLegend: true
             }
