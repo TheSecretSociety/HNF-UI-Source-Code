@@ -937,7 +937,7 @@
         colors: ['#5cb85c', ' #d9534f', '#f0ad4e']
       });
     // Build the chart
-    Highcharts.chart('container', {
+    Highcharts.chart('container-1', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -968,16 +968,52 @@
             colorByPoint: true,
             data: [{
                 name: 'Thành công',
-                y: 10
-            }, {
-                name: 'Thất bại',
-                y: 24,
+                y: Math.round(Math.random()*100),
                 sliced: true,
                 selected: true
             }, {
+                name: 'Thất bại',
+                y: Math.round(Math.random()*100)
+
+            }, {
                 name: 'Đang chờ phản hồi',
-                y: 15
+                y: Math.round(Math.random()*100)
             }]
         }]
     });
+    Highcharts.setOptions({
+      colors: ['#5bc0de']
+    });
+    Highcharts.chart('container-2', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Tổng số hợp đồng trong năm'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
+    },
+    yAxis: {
+        title: {
+            text: 'Số lượng hợp đồng'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: true
+        }
+    },
+    series: [{
+        name: 'Số hợp đồng',
+        data: [Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100),
+           Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100)]
+    }]
+});
 });
