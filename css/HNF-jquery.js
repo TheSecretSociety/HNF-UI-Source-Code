@@ -606,7 +606,7 @@
       Validate();
       function Validate() {
         var ValidationPass = true;
-        $('#txt-CName').focusout(function() {
+        $('#txt-CName').click(function() {
           var CustomerName = $('#txt-CName').val();
           $('#txt-CName').removeClass('input-validate-wrong');
           if (CName_Format_Validate(CustomerName)) {
@@ -621,7 +621,7 @@
 
           }
         });
-        $('#txt-CPhone').focusout(function() {
+        $('#txt-CPhone').click(function() {
           var CustomerPhone = $('#txt-CPhone').val();
           $('#txt-CPhone').removeClass('input-validate-wrong');
           if (CPhone_Format_Validate(CustomerPhone)) {
@@ -635,7 +635,7 @@
             $('#txt-CPhone').addClass('input-validate-wrong');
           }
         })
-        $('#txt-CEmail').focusout(function () {
+        $('#txt-CEmail').click(function () {
           var CustomerEmail = $('#txt-CEmail').val();
           $('#txt-CEmail').removeClass('input-validate-wrong');
           if (CEmail_Format_Validate(CustomerEmail)) {
@@ -646,80 +646,80 @@
             $('#txt-CEmail').addClass('input-validate-wrong');
           }
         })
-        $('#txt-CPrice').focusout(function() {
+        $('#txt-CPrice').click(function() {
           var numcheck = $('#txt-CPrice').val();
           console.log("Price : " + numcheck);
           $('#txt-CPrice').val(AntiNegativeValue(numcheck));
         });
-        $('#txt-CQuantity').focusout(function() {
+        $('#txt-CQuantity').click(function() {
           var numcheck = $('#txt-CQuantity').val();
           $('#txt-CQuantity').val(AntiNegativeValue(numcheck));
         });
-        $('#txt-CPriceRange').focusout(function() {
+        $('#txt-CPriceRange').click(function() {
           var numcheck = $('#txt-CPriceRange').val();
           $('#txt-CPriceRange').val(AntiNegativeValue(numcheck));
         })
-        $('#txt-CCompany').focusout(function(){
+        $('#txt-CCompany').click(function(){
           var txtValue = $('#txt-CCompany').val();
           if (COther_Format_Validate(txtValue) != true) {
             $('#txt-CCompany').val('');
           }
         })
-        $('#txt-CJob').focusout(function(){
+        $('#txt-CJob').click(function(){
           var txtValue = $('#txt-CJob').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CJob').val('');
           }
         })
-        $('#txt-CShirtBefore').focusout(function(){
+        $('#txt-CShirtBefore').click(function(){
           var txtValue = $('#txt-CShirtBefore').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CShirtBefore').val('');
           }
         })
-        $('#txt-CFabricBefore').focusout(function(){
+        $('#txt-CFabricBefore').click(function(){
           var txtValue = $('#txt-CFabricBefore').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CFabricBefore').val('');
           }
         })
-        $('#txt-CReview').focusout(function(){
+        $('#txt-CReview').click(function(){
           var txtValue = $('#txt-CReview').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CReview').val('');
           }
         })
-        $('#txt-CCompanyBefore').focusout(function(){
+        $('#txt-CCompanyBefore').click(function(){
           var txtValue = $('#txt-CCompanyBefore').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CCompanyBefore').val('');
           }
         })
-        $('#txt-CShirtType').focusout(function(){
+        $('#txt-CShirtType').click(function(){
           var txtValue = $('#txt-CShirtType').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CShirtType').val('');
           }
         })
-        $('#txt-CFabricType').focusout(function(){
+        $('#txt-CFabricType').click(function(){
           var txtValue = $('#txt-CFabricType').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CFabricType').val('');
           }
         })
-        $('#txt-CGoal').focusout(function(){
+        $('#txt-CGoal').click(function(){
           var txtValue = $('#txt-CGoal').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CGoal').val('');
           }
         })
-        $('#txt-CPrint').focusout(function(){
+        $('#txt-CPrint').click(function(){
           var txtValue = $('#txt-CPrint').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CPrint').val('');
           }
         })
-        $('#txt-CGoal').focusout(function(){
+        $('#txt-CGoal').click(function(){
           var txtValue = $('#txt-CGoal').val();
           if (COther_Format_Validate(txtValue)!= true) {
             $('#txt-CGoal').val('');
@@ -753,7 +753,7 @@
       }
       // check other field (without *)
       function COther_Format_Validate(txtField) {
-        var CustomerOther = /^[^-\s]([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`]){0,35}$/;
+        var CustomerOther = /^([^-!@#$;%ˆ&*'()<>.?[{[}/^,:\\\]\~\`]){0,35}$/;
         console.log(CustomerOther.test(txtField));
         return CustomerOther.test(txtField);
       }

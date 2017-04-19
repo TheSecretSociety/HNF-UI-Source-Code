@@ -124,6 +124,12 @@
                           id="txt-CEmail">
                           <small class="form-text text-muted">Vui lòng nhập Email của bạn</small>
                         </div>
+                        <!-- Địa Chỉ -->
+                        <div class="form-group">
+                          <label >Địa Chỉ <span class="Notice">*</span></label>
+                          <input type="text" class="form-control txtCustomerDetail" name="Address" aria-describedby="Customer Address" id="txt-CAddress" required>
+                          <small class="form-text text-muted">Vui lòng nhập Địa chỉ của bạn</small>
+                        </div>
                         <!-- Thông Tin Công Ty -->
                         <div class="form-group">
                           <label >Thông Tin Công Ty</label>
@@ -134,29 +140,14 @@
                           <label >Ngành Nghề</label>
                           <input type="text" class="form-control" name="Job" aria-describedby="Customer Job" placeholder="" id="txt-CJob">
                         </div>
-                        <!-- Địa Chỉ -->
-                        <div class="form-group">
-                          <label >Địa Chỉ <span class="Notice">*</span></label>
-                          <input type="text" class="form-control txtCustomerDetail" name="Address" aria-describedby="Customer Address" id="txt-CAddress" required>
-                          <small class="form-text text-muted">Vui lòng nhập Địa chỉ của bạn</small>
-                        </div>
-                        <!-- Tình Trạng Tư Vấn -->
-                        <div class="form-group">
-                          <label>Tình Trạng Tư Vấn</label>
-                          <select class="form-control" name="Consulting" required>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
-                        </div>
+
+
                       </div>
                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <!-- Quan tâm về Dịch Vụ / Sản Phẩm gì -->
                         <div class="form-group">
                           <label for="exampleTextarea">Quan tâm về Dịch Vụ / Sản Phẩm gì?</label>
-                          <textarea class="form-control" name="Interest" rows="5"></textarea>
+                          <textarea class="form-control" name="Interest" rows="2"></textarea>
                         </div>
                         <!-- Loại Áo Đã Làm -->
                         <div class="form-group">
@@ -183,7 +174,19 @@
                           <label >Công Ty Đã Thực Hiện</label>
                           <input type="text" class="form-control" name="LastCompany" aria-describedby="Company that produce Customer's shirt" placeholder="" id="txt-CCompanyBefore">
                         </div>
+                        <!-- Tình Trạng Tư Vấn -->
+                        <div class="form-group">
+                          <label>Tình Trạng Tư Vấn</label>
+                          <select class="form-control" name="Consulting" required>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
                       </div>
+
                       <!-- Ghi Chú -->
                       <div class="col-xl-12">
                         <div class="form-group">
