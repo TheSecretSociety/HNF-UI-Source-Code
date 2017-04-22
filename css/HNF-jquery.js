@@ -604,44 +604,45 @@
     // HNF-Customer-Detail Validation //
     function CustomerDetailValidation(){
       Validate();
+      var NamePass = false;
+      var PhonePass = false;
+      var EmailPass = false;
+      $('#CustomerInfoSaveBtn').prop('disabled',true);
       function Validate() {
-        var ValidationPass = true;
-        $('#txt-CName').click(function() {
+        $('#txt-CName').focusout(function() {
           var CustomerName = $('#txt-CName').val();
           $('#txt-CName').removeClass('input-validate-wrong');
-          if (CName_Format_Validate(CustomerName)) {
-            // $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
-            ValidationPass = true;
-            CheckValidation(ValidationPass);
+          if (CName_Format_Validate(CustomerName)){
+            NamePass = true;
+            CheckValidation();
           }else{
-            ValidationPass = false;
-            CheckValidation(ValidationPass)
-            // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+            PhonePass = false;
+            CheckValidation();
             $('#txt-CName').val('').addClass('input-validate-wrong');
 
           }
         });
-        $('#txt-CPhone').click(function() {
+        $('#txt-CPhone').focusout(function() {
           var CustomerPhone = $('#txt-CPhone').val();
           $('#txt-CPhone').removeClass('input-validate-wrong');
           if (CPhone_Format_Validate(CustomerPhone)) {
-            ValidationPass = true;
-            CheckValidation(ValidationPass);
+            PhonePass = true;
+            CheckValidation();
           }else{
-            ValidationPass = false;
-            CheckValidation(ValidationPass)
-            // $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
-            $('#txt-CPhone').val('');
-            $('#txt-CPhone').addClass('input-validate-wrong');
+            PhonePass = false;
+            CheckValidation();
+            $('#txt-CPhone').val('').addClass('input-validate-wrong');
           }
         })
-        $('#txt-CEmail').click(function () {
+        $('#txt-CEmail').focusout(function () {
           var CustomerEmail = $('#txt-CEmail').val();
           $('#txt-CEmail').removeClass('input-validate-wrong');
           if (CEmail_Format_Validate(CustomerEmail)) {
-            $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
+            EmailPass = true;
+            CheckValidation();
           }else {
-            $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+            CheckValidation();
+            EmailPass = false;
             $('#txt-CEmail').val('');
             $('#txt-CEmail').addClass('input-validate-wrong');
           }
@@ -726,11 +727,11 @@
           }
         })
       }
-      function CheckValidation(ValidationPass) {
-        if (ValidationPass == true) {
-          $('#CustomerInfoSaveBtn').prop('disabled',false).removeClass('btn-secondary').addClass('btn-primary');
+      function CheckValidation() {
+        if (NamePass == true && PhonePass == true && EmailPass == true) {
+          $('#CustomerInfoSaveBtn').prop('disabled',false);
         }else{
-          $('#CustomerInfoSaveBtn').prop('disabled',true).removeClass('btn-primary').addClass('btn-secondary');
+          $('#CustomerInfoSaveBtn').prop('disabled',true);
         }
       }
       // check name format
@@ -770,12 +771,8 @@
     function ContractDetailDesignValidation(){
       Validate();
       function Validate() { // this function will auto validate the input value everytime input has change
-
         var ValidationPass = true;
         // Quantity Validate
-
-
-
         $("#txt_DD_Quantity").change(function TotalQuantityCheck() {
           var QuantityValue = Number($("#txt_DD_Quantity").val());
             $("#txt_DD_Quantity").val(AntiNegativeValue(QuantityValue)); // check negative value and return the value back to the input

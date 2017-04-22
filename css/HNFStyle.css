@@ -126,7 +126,7 @@ a:link {
 
 }
 .navbar-nav li a i{
-  
+
 }
 /*================*/
 /* Background style for element*/
@@ -270,9 +270,7 @@ a:link {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid white;
 }
-.hnf-nav-link {
-    color: black;
-}
+
 
 .hnf-button-group{
   width: 100%;
@@ -400,11 +398,14 @@ a:link {
 .highcharts-credits{
   display: none !important;
 }
-.nav-item:hover{
+.nav-item{
+  transition: 0.5s ;
+}
+.hnf-nav-link:hover{
+  color: black;
   background-color: orange !important;
   color: white!important;
   border-radius: 5px;
-}
-.nav-item > .nav-link:hover {
-  color:white !important;
+  transition: 0.5s ;
+  box-shadow: 0px 10px 10px -5px rgba(255, 144, 0,0.5) !important;
 }
