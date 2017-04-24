@@ -8,7 +8,6 @@
       CustomerDetailValidation();
       ContractDetailDesignValidation();
       EmployeeAddValidation();
-
       ClearButton();
       DeleteButtonWarning();
       ProductionProgressBar();
@@ -318,7 +317,6 @@
             }else{
               $(this).addClass('input-validate-wrong').val('');
               NamePass = 0;
-
               console.log(NamePass);
             }
           }
@@ -604,11 +602,12 @@
     // HNF-Customer-Detail Validation //
     function CustomerDetailValidation(){
       Validate();
-      var NamePass = false;
-      var PhonePass = false;
-      var EmailPass = false;
-      $('#CustomerInfoSaveBtn').prop('disabled',true);
+
       function Validate() {
+        PreloadValidation();
+        var NamePass = false;
+        var PhonePass = false;
+        var EmailPass = false;
         $('#txt-CName').focusout(function() {
           var CustomerName = $('#txt-CName').val();
           $('#txt-CName').removeClass('input-validate-wrong');
@@ -616,7 +615,7 @@
             NamePass = true;
             CheckValidation();
           }else{
-            PhonePass = false;
+            NamePass = false;
             CheckValidation();
             $('#txt-CName').val('').addClass('input-validate-wrong');
 
@@ -726,12 +725,54 @@
             $('#txt-CGoal').val('');
           }
         })
-      }
-      function CheckValidation() {
-        if (NamePass == true && PhonePass == true && EmailPass == true) {
-          $('#CustomerInfoSaveBtn').prop('disabled',false);
-        }else{
-          $('#CustomerInfoSaveBtn').prop('disabled',true);
+        // pre-load validation
+        function PreloadValidation() {
+          if ($('#txt-CName').length > 0) {
+            var CustomerName = $('#txt-CName').val();
+            $('#txt-CName').removeClass('input-validate-wrong');
+            if (CName_Format_Validate(CustomerName)){
+              NamePass = true;
+              CheckValidation();
+            }else{
+              NamePass = false;
+              CheckValidation();
+              $('#txt-CName').val('').addClass('input-validate-wrong');
+            }
+          }
+          if ($('#txt-CPhone').length > 0){
+            var CustomerPhone = $('#txt-CPhone').val();
+            $('#txt-CPhone').removeClass('input-validate-wrong');
+            if (CPhone_Format_Validate(CustomerPhone)) {
+              PhonePass = true;
+              CheckValidation();
+            }else{
+              PhonePass = false;
+              CheckValidation();
+              $('#txt-CPhone').val('').addClass('input-validate-wrong');
+            }
+          }
+          if ($('#txt-CEmail').length > 0){
+            var CustomerEmail = $('#txt-CEmail').val();
+            $('#txt-CEmail').removeClass('input-validate-wrong');
+            if (CEmail_Format_Validate(CustomerEmail)) {
+              EmailPass = true;
+              CheckValidation();
+            }else {
+              CheckValidation();
+              EmailPass = false;
+              $('#txt-CEmail').val('');
+              $('#txt-CEmail').addClass('input-validate-wrong');
+            }
+          }
+          CheckValidation();
+        }
+
+        function CheckValidation() {
+          if ((NamePass == true) && (PhonePass == true) && (EmailPass == true)) {
+            $('#CustomerInfoSaveBtn').prop('disabled',false);
+          }else{
+            $('#CustomerInfoSaveBtn').prop('disabled',true);
+          }
         }
       }
       // check name format
