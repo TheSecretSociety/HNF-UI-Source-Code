@@ -29,7 +29,7 @@
       <div class="login-form">
         <!-- Tiêu đề -->
         <div class="login-form-title">
-          <h3>HNF COMPANY</h3>
+          <img src="./image/hnf-logo.png" id="companyLogo-login" alt="company logo">
         </div>
         <form class="" action="" method="post">
           <div class="container">
@@ -37,9 +37,10 @@
             <div class="row">
               <div class="input-group">
                 <input class="input-control" type="email" id="TxtLoginID" name="username" placeholder="email" autocomplete="off" required>
-                <span class="input-group-addon hnf-input-group-addon" id="basic-addon2"><i class="material-icons md-light md-18">mail_outline</i></span>
+                <span class="input-group-addon hnf-input-group-addon" id="basic-addon2"><i class="material-icons md-dark md-18">mail_outline</i></span>
               </div>
             </div>
+            <!-- Email Error Area -->
             <div class="row">
               <div class="IDError">
               </div>
@@ -48,11 +49,18 @@
             <div class="row">
               <div class="input-group">
                 <input class="input-control" type="password" id="TxtLoginPassword" name="password" placeholder="password" autocomplete="off" required="">
-                <span class="input-group-addon hnf-input-group-addon" id="basic-addon2"><i class="material-icons md-light md-18">lock_outline</i></span>
+                <span class="input-group-addon hnf-input-group-addon" id="basic-addon2"><i class="material-icons md-dark md-18">lock_outline</i></span>
               </div>
             </div>
+            <!-- Password Error Area-->
             <div class="row">
               <div class="PasswordError">
+              </div>
+            </div>
+            <!-- Login Error Area -->
+            <div class="row">
+              <div class="login-error-noti">
+                <!-- điền thông báo vô đây -->
               </div>
             </div>
             <!-- Nút Login -->
