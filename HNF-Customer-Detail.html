@@ -96,20 +96,25 @@
           <br>
           <!-- bỏ vào form để check Validation -->
           <form class="" action="" method="post">
+            <!-- Khách Hàng Tiềm Năng -->
             <div class="row">
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="card form-input-margin">
-                  <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-outline-warning w-100 hnf-search-button" style="margin:0;">
-                      <i class="material-icons md-18" style="margin:0; padding:0; width:18px; margin-right:10px;">star_rate</i>
-                      <input type="checkbox" autocomplete="off">Khách Hàng Tiềm Năng<i class="material-icons md-18" style="margin:0; padding:0; width:18px; margin-left:10px;">star_rate</i>
-                    </label>
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="card form-input-margin">
+                              <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-outline-success w-100 hnf-search-button " style="margin:0;">
+                                      <i class="material-icons md-18" style="margin:0; padding:0; width:18px; margin-right:10px;">star_rate</i>
+                                      <input name="potential" value="1" type="radio" autocomplete="off"><span class="hidden-sm-down">Khách Hàng Tiềm Năng</span>
+                                  </label>
+                                  <label class="btn btn-outline-secondary w-100 hnf-search-button active" style="margin:0;">
+                                      <i class="material-icons">star_border</i>
+                                      <input name="potential" value="0" type="radio" autocomplete="off"><span class="hidden-sm-down">Khách Hàng Thường</span>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <!-- Thông Tin Khách Hàng & Thông Tin Sản Phẩm -->
             <br>
+            <!-- Thông Tin Khách Hàng & Thông Tin Sản Phẩm -->
             <div class="row">
               <!-- Thông Tin Khách Hàng -->
               <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -126,7 +131,7 @@
                       <!-- Số Điện Thoại -->
                       <div class="form-group">
                         <label>Số Điện Thoại <span class="Notice">*</span></label>
-                        <input type="tel" class="form-control " name="Phone" aria-describedby="Phone Number" placeholder="" value="0935755772" required id="txt-CPhone">
+                        <input type="tel" class="form-control " name="Phone" aria-describedby="Phone Number" placeholder="" value="0935755772" min="0" required id="txt-CPhone">
                         <small class="form-text text-muted">Vui lòng nhập số điện thoại của bạn</small>
                       </div>
                       <!-- Email -->
@@ -174,7 +179,7 @@
                       <!-- Giá Thành -->
                       <div class="form-group">
                         <label >Giá Thành</label>
-                        <input type="number" class="form-control" id="txt-CPrice" name="Price" aria-describedby="shirt price range" placeholder="" >
+                        <input type="number" min="0" class="form-control" id="txt-CPrice" name="Price" aria-describedby="shirt price range" placeholder="" >
                       </div>
                       <!-- Nhận Xét -->
                       <div class="form-group">
@@ -259,14 +264,14 @@
                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="form-group">
                           <label >Số Lượng</label>
-                          <input type="number" class="form-control" name="Quantity" aria-describedby="emailHelp" placeholder="" id="txt-CQuantity">
+                          <input type="number" min="0" class="form-control" name="Quantity" aria-describedby="emailHelp" placeholder="" id="txt-CQuantity">
                         </div>
                       </div>
                       <!-- Tầm Giá -->
                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="form-group">
                           <label >Tầm Giá</label>
-                          <input type="number" class="form-control" name="PriceRange" aria-describedby="emailHelp" placeholder="" id="txt-CPriceRange">
+                          <input type="number" min=0 class="form-control" name="PriceRange" aria-describedby="emailHelp" placeholder="" id="txt-CPriceRange">
                         </div>
                       </div>
                     </div>

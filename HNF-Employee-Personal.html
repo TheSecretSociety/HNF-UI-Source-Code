@@ -12,13 +12,8 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <!-- Datetime Picker CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.vi.min.js" integrity="sha256-TnMvef6AxT9fg6mNrTsZCgPDkU4g5EyB+tu66oLAI4U=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
   <!-- Google Icon CDN -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-  <!-- Datetime Picker (SandBox) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
   <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
   <!-- custom CSS & Jquery modify URL -->
@@ -101,27 +96,27 @@
                 <!-- các trường thông tin -->
                 <div class="row">
                   <!-- Cột Trái -->
-                    <div class="col-xl-6">
-                      <form class="" action="index.html" method="post" id="formEPInfoEdit" >
-                        <!-- Họ Tên -->
-                        <div class="form-group">
-                          <label for="InputName" >Họ Tên<span class="Notice">*</span></label>
-                          <input type="name" class="form-control" value="thuan" id="txt-EPName" aria-describedby="emailHelp"  required>
-                        </div>
-                        <!-- SDT -->
-                        <div class="form-group">
-                          <label for="InputPhone">Số Điện Thoại<span class="Notice">*</span></label>
-                          <input type="phone" class="form-control" value="1234" id="txt-EPPhone" aria-describedby="emailHelp"  required>
+                  <div class="col-xl-6">
+                    <form class="" action="index.html" method="post" id="formEPInfoEdit" >
+                      <!-- Họ Tên -->
+                      <div class="form-group">
+                        <label for="InputName" >Họ Tên<span class="Notice">*</span></label>
+                        <input type="name" class="form-control" value="thuan" id="txt-EPName" aria-describedby="emailHelp"  required>
+                      </div>
+                      <!-- SDT -->
+                      <div class="form-group">
+                        <label for="InputPhone">Số Điện Thoại<span class="Notice">*</span></label>
+                        <input type="phone" class="form-control" value="1234" id="txt-EPPhone" aria-describedby="emailHelp"  required>
 
-                        </div>
-                        <!-- Email -->
-                        <div class="form-group">
-                          <label for="InputEmail">Email<span class="Notice">*</span></label>
-                          <input type="email" class="form-control" value="thuan@gmail.com" id="txt-EPMail" aria-describedby="emailHelp" required>
+                      </div>
+                      <!-- Email -->
+                      <div class="form-group">
+                        <label for="InputEmail">Email<span class="Notice">*</span></label>
+                        <input type="email" class="form-control" value="thuan@gmail.com" id="txt-EPMail" aria-describedby="emailHelp" required>
 
-                        </div>
-                        <!-- Phân Quyền -->
-                        <div class="form-group">
+                      </div>
+                      <!-- Phân Quyền -->
+                      <div class="form-group">
                         <label for="InputAuthorize">Phân Quyền</label>
                         <select class="form-control" id="InputAuthorize">
                           <option selected="">Phân Quyền</option>
@@ -135,11 +130,11 @@
                         <br>
                         <input type="submit" id="btnEPEditInfo" name="" value="Sửa Thông Tin" class="btn btn-primary btn-block">
                       </div>
-                      </form>
-                    </div>
+                    </form>
+                  </div>
                   <!-- Cột Phải -->
-                    <div class="col-xl-6">
-                      <form class="" action="index.html" id="formEPPasswordEdit" method="post">
+                  <div class="col-xl-6">
+                    <form class="" action="index.html" id="formEPPasswordEdit" method="post">
                       <!-- Nút Kích Thay Đỏi Mật Khẩu -->
                       <!-- Mật Khẩu Cũ -->
                       <div class="form-group">
@@ -163,8 +158,8 @@
                         <br>
                         <input type="submit" id="btnEPEditPassword" onsubmit="return EmployeePersonalValidation(this)" name="" value="Sửa Mật Khẩu" class="btn btn-primary btn-block">
                       </div>
-                      </form>
-                    </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

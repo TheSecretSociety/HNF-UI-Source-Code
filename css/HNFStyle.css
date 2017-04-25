@@ -14,6 +14,7 @@ input:focus {
 }
 table {
     background-color: white;
+    overflow: auto;
 }
 .search-button{
   display: flex;

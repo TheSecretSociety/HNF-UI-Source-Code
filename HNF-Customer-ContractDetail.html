@@ -154,11 +154,18 @@
                   <!-- Ngày Tư Vấn & Ngày Hẹn Gặp 2 cái này daterange mặc định ngày hẹn gặp không thể trước ngày tư vấn, 2 ngày có thể trùng nhau  -->
                   <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 ">
                     <!-- datetime picker -->
-                    <div id="sandbox-container">
-                      <div class="input-daterange input-group" id="datepicker">
-                          <input type="text" class="input-sm form-control" placeholder="Ngày Tư Vấn (dd/mm/yyyy)"name="start" />
-                          <span class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></span>
-                          <input type="text" class="input-sm form-control" placeholder="Ngày Hẹn Gặp (dd/mm/yyyy)"name="end" />
+                    <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">Ngày Tư Vấn</span>
+                          <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">Ngày Hẹn Gặp</span>
+                          <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -275,11 +282,9 @@
               <div class= "card form-input-margin">
                 <div class="row">
                   <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <div id="sandbox-container">
-                      <div class="input-group date">
-                        <input type="text" class="form-control" placeholder="Ngày Hẹn Gặp (dd/mm/yyyy)"></span>
-                        <div class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></div>
-                      </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Ngày Hẹn Gặp</span>
+                      <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">
                     </div>
                   </div>
                   <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
@@ -379,15 +384,20 @@
               <div class= "card form-input-margin">
                 <div class="row">
                   <!-- Ngày Bắt Đầu & Ngày kết Thúc 2 cái này daterange mặc định Ngày kết Thúc không thể trước Ngày Bắt Đầu, 2 ngày có trùng nhau-->
-                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-xs-2 mb-sm-2 mb-md-0 mb-lg-0 mb-lg-0">
-                    <div id="sandbox-container">
-                      <div class="input-daterange input-group" id="datepicker">
-                          <input type="text" class="input-sm form-control" placeholder="Ngày Bắt Đầu (dd/mm/yyyy)"name="start" />
-                          <span class="input-group-addon"><i class="material-icons" style="margin:0; padding:0;">date_range</i></span>
-                          <input type="text" class="input-sm form-control" placeholder="Ngày Kết Thúc (dd/mm/yyyy)"name="end" />
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Ngày Bắt Đầu</span>
+                        <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">
                       </div>
                     </div>
-                  </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Ngày Kết Thúc</span>
+                        <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
                 </div>
               </div>
             </div>
@@ -515,7 +525,7 @@
                         <input type="radio" name="options" id="option1" autocomplete="off" > Đã Kí
                       </label>
                       <label class="btn btn-outline-warning w-100 mb-0 active">
-                        <input type="radio" name="options" id="option2" autocomplete="off" checked> Đang Chờ Phản Hồi
+                        <input type="radio" name="options" id="option2" autocomplete="off" checked>Chờ Phản Hồi
                       </label>
                       <label class="btn btn-outline-danger w-100 mb-0">
                         <input type="radio" name="options" id="option3" autocomplete="off"> Thất Bại
